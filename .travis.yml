@@ -1,4 +1,6 @@
-image: campuscode/ruby-gitlab-ci:2.3
+language: ruby
+rvm:
+ - 2.4.3
 
 variables:
   RAILS_ENV: test
@@ -13,7 +15,6 @@ stages:
   - quality assurance
 
 before_script:
-  - cp config/products.yml.sample config/products.yml
   - bundle install --without development production -j $(nproc) --path .ci_cache
 
 rspec:
