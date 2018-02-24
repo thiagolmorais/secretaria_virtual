@@ -1,24 +1,8 @@
 # README
+[![Build Status](https://travis-ci.org/thiagolmorais/secretaria_virtual.svg?branch=master)](https://travis-ci.org/thiagolmorais/secretaria_virtual)
+[![Dependency Status](https://beta.gemnasium.com/badges/github.com/thiagolmorais/secretaria_virtual.svg)](https://beta.gemnasium.com/projects/github.com/thiagolmorais/secretaria_virtual)
+[![Inline docs](http://inch-ci.org/github/thiagolmorais/secretaria_virtual.svg?branch=master)](http://inch-ci.org/github/thiagolmorais/secretaria_virtual)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Aplicação
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Esta aplicação é voltada para a resolução de um problema de pessoas autonomas que tem dificuldades para organizar seu trabalho
