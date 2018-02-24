@@ -1,0 +1,39 @@
+image: campuscode/ruby-gitlab-ci:2.3
+
+variables:
+  RAILS_ENV: test
+  TZ: America/Sao_Paulo
+
+cache:
+  paths:
+    - .ci_cache/
+
+stages:
+  - tests
+  - quality assurance
+
+before_script:
+  - cp config/products.yml.sample config/products.yml
+  - bundle install --without development production -j $(nproc) --path .ci_cache
+
+rspec:
+  stage: tests
+  except:
+    - tags
+  script:
+    - bundle exec rake db:drop db:create db:migrate
+    - bundle exec rspec
+
+rubocop:
+  stage: quality assurance
+  except:
+    - tags
+  script:
+    - bundle exec rubocop
+
+audit:
+  stage: quality assurance
+  except:
+    - tags
+  script:
+    - bundle-audit check --update
