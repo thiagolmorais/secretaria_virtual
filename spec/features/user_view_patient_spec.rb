@@ -8,7 +8,7 @@ feature 'User see patient name' do
     login_as(user)
     visit root_path
     click_on 'Pacientes'
-    
+
     expect(page).to have_link(patient.name)
   end
 end
