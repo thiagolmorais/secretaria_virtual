@@ -68,6 +68,6 @@ http://localhost:3000
 
 ### Acesso
 Para acessar a aplicação cadastre seu email e senha clicando em **sign_up** ou utilize o usuário de testes da aplicação:
->**Email:** user@email.com
+> **Email:** user@email.com
 <br>
->**Senha:** 123456
+  **Senha:** 123456
