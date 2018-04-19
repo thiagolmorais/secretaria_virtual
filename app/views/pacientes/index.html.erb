@@ -1,0 +1,5 @@
+<%= link_to 'Cadastrar', new_paciente_path %>
+
+<% @pacientes.each do |paciente| %>
+  <%= link_to paciente.nome, paciente_path(paciente) %>
+<% end %>

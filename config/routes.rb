@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "home#index"
-  resources :patients, only:[:index, :show]
+  resources :pacientes, only:[:index, :show, :new, :create, :edit, :upload]
 end
