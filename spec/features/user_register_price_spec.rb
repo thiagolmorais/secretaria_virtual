@@ -5,7 +5,7 @@ feature 'User edit price' do
     pending
     user = create(:user)
     patient = create(:patient)
-    price = create(:price)
+    create(:price)
 
     login_as(user)
     visit root_path
@@ -27,7 +27,7 @@ feature 'User edit price' do
     pending
     user = create(:user)
     patient = create(:patient)
-    price = create(:price)
+    create(:price)
 
     login_as(user)
     visit root_path
