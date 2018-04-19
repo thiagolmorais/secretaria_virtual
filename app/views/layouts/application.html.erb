@@ -20,8 +20,9 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <%= link_to 'Pacientes', pacientes_path if current_user %>
+    <%= link_to 'Sair', destroy_user_session_path, method: :delete if current_user %>
     <%= yield %>
-    <%= link_to "Sair", destroy_user_session_path, method: :delete if current_user %>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

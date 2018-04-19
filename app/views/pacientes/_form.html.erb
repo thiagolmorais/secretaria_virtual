@@ -1,0 +1,27 @@
+<%= form_for @paciente do |f| %>
+
+  <%= f.label :nome %>
+  <%= f.text_field :nome %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :telefone %>
+  <%= f.text_field :telefone %>
+
+  <%= f.label :nascimento %>
+  <%= f.text_field :nascimento %>
+
+  <%= f.label :sexo %>
+  <%= f.text_field :sexo %>
+
+  <%= f.label :paciente_desde %>
+  <%= f.text_field :paciente_desde %>
+
+  <%= f.label :observacao %>
+  <%= f.text_area :observacao %>
+
+  <%= f.submit 'Gravar' %>
+<% end %>
+
+<%= link_to 'Voltar', pacientes_path %>
