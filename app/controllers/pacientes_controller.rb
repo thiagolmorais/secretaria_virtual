@@ -21,7 +21,21 @@ class PacientesController < ApplicationController
     end
   end
 
+  def edit
+    @paciente = Paciente.find(params[:id])
+  end
+
+  def update
+    @paciente = Paciente.find(params[:id])
+    if @paciente.update(paciente_params)
+      redirect_to pacientes_path
+    else
+      render :edit
+    end
+  end
+
   private
+
   def paciente_params
     params.require(:paciente).permit(:nome, :telefone, :observacao, :email,
                                      :nascimento, :sexo, :paciente_desde)
