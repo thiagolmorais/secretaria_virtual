@@ -5,7 +5,6 @@ class PrecosController < ApplicationController
   end
 
   def create
-    binding.pry
     @preco = Preco.new(preco_params)
     @preco.paciente_id = params[:paciente_id]
 
