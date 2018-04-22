@@ -4,6 +4,17 @@
 <%= @paciente.email %>
 <%= @paciente.sexo %>
 <%= @paciente.paciente_desde %>
+<%= @paciente.actual_status %>
 <%= @paciente.observacao %>
+
+Preço Atual
+<%= @paciente.preco.last.valor %>
+
+Histórico de preço
+<% @paciente.preco.order(id: :desc).each do |preco| %>
+  <%= preco.valor %>
+<% end %>
+
+<%= link_to 'Cadastrar Preço', new_paciente_preco_path(params[:id]) %>
 
 <%= link_to 'Editar', edit_paciente_path %>
