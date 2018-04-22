@@ -1,5 +1,6 @@
-<%= link_to 'Cadastrar', new_paciente_path %>
+<h1>Pacientes</h1>
+<h2><%= link_to 'Cadastrar', new_paciente_path %></h2>
 
 <% @pacientes.each do |paciente| %>
-  <%= link_to paciente.nome, paciente_path(paciente) %>
+  <p><%= link_to paciente.nome, paciente_path(paciente) %></p>
 <% end %>

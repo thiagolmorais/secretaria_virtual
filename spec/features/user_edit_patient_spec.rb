@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-feature 'User edit patient' do
+feature 'User edit paciente' do
   scenario 'sucessfuly' do
     pending
     user = create(:user)
-    patient = create(:patient)
+    paciente = create(:paciente)
 
     login_as(user)
     visit root_path
     click_on 'Pacientes'
-    click_on patient.name
+    click_on paciente.name
     click_on 'Editar'
     fill_in 'Nome', with: 'Paciente A'
     fill_in 'Telefone', with: '999999999'
@@ -27,12 +27,12 @@ feature 'User edit patient' do
   scenario 'Error Field has blank' do
     pending
     user = create(:user)
-    patient = create(:patient)
+    paciente = create(:paciente)
 
     login_as(user)
     visit root_path
     click_on 'Pacientes'
-    click_on patient.name
+    click_on paciente.name
     click_on 'Editar'
     fill_in 'Nome', with: ''
     fill_in 'Telefone', with: ''

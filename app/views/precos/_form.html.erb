@@ -1,0 +1,12 @@
+<%= form_for @preco, url: form_url do |f| %>
+
+  <%= f.label :valor %>
+  <%= f.text_field :valor %>
+
+  <%= f.label :reajuste %>
+  <%= f.date_field :reajuste %>
+
+  <%= f.submit 'Gravar' %>
+<% end %>
+
+<%= link_to 'Voltar', pacientes_path %>

@@ -1,9 +1,21 @@
-<%= @paciente.nome %>
-<%= @paciente.telefone %>
-<%= @paciente.nascimento %>
-<%= @paciente.email %>
-<%= @paciente.sexo %>
-<%= @paciente.paciente_desde %>
-<%= @paciente.observacao %>
+<h1>Paciente</h1>
+<p>Nome: <%= @paciente.nome %></p>
+<p>Telefone: <%= @paciente.telefone %></p>
+<p>Data de nacimento: <%= @paciente.nascimento %></p>
+<p>Email: <%= @paciente.email %></p>
+<p>Sexo: <%= @paciente.sexo %></p>
+<p>Paciente desde:<%= @paciente.paciente_desde %></p>
+<p>Status: <%= @paciente.actual_status %></p>
+<p>Observação: <%= @paciente.observacao %></p>
+
+<h2>Preço Atual</h2>
+<%= @paciente.preco.last.valor %>
+
+<h2>Histórico de preço</h2>
+<% @paciente.preco.order(id: :desc).each do |preco| %>
+  <p><%= preco.valor %></p>
+<% end %>
+
+<%= link_to 'Cadastrar Preço', new_paciente_preco_path(params[:id]) %>
 
 <%= link_to 'Editar', edit_paciente_path %>
