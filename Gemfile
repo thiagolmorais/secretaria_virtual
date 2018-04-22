@@ -58,8 +58,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group production do
-  gem 'pg'
+group :production do
+  gem 'pg', '1.0.0'
   gem 'rails_12factor'
 end
 
