@@ -7,5 +7,6 @@ FactoryBot.define do
     nascimento '2018-04-18'
     sexo 'MyString'
     paciente_desde '2018-04-18'
+    status true
   end
 end
