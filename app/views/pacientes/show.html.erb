@@ -8,13 +8,17 @@
 <p>Status: <%= @paciente.actual_status %></p>
 <p>Observação: <%= @paciente.observacao %></p>
 
-<h2>Preço Atual</h2>
-<%= @paciente.preco.last.valor %>
+<% unless @paciente.ultimo_preco.blank? %>
+  <h2>Preço Atual</h2>
+  <%= @paciente.preco.last.valor %>
 
-<h2>Histórico de preço</h2>
-<% @paciente.preco.order(id: :desc).each do |preco| %>
-  <p><%= preco.valor %></p>
-<% end %>
+  <h2>Histórico de preço</h2>
+  <% @paciente.preco.order(id: :desc).each do |preco| %>
+    <p><%= preco.valor %></p>
+  <% end %>
+<% else %>
+  <p>Nenum preço cadastrado</p>
+<%end%>
 
 <%= link_to 'Cadastrar Preço', new_paciente_preco_path(params[:id]) %>
 

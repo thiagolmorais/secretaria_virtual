@@ -2,7 +2,6 @@ require 'rails_helper'
 
 feature 'User see patient name' do
   scenario 'sucessfuly' do
-    pending
     user = create(:user)
     paciente = create(:paciente)
 
@@ -10,6 +9,6 @@ feature 'User see patient name' do
     visit root_path
     click_on 'Pacientes'
 
-    expect(page).to have_link(paciente.name)
+    expect(page).to have_link(paciente.nome)
   end
 end
