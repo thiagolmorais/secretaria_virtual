@@ -1,0 +1,5 @@
+current directory: /home/vitor/Documentos/secretaria_virtual/vendor/bundle/ruby/2.3.0/gems/sqlite3-1.3.13/ext/sqlite3
+/usr/bin/ruby2.3 -r ./siteconf20180423-25695-1647wml.rb extconf.rb
+mkmf.rb can't find header files for ruby at /usr/lib/ruby/include/ruby.h
+
+extconf failed, exit code 1
