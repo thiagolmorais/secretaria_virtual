@@ -1,0 +1,19 @@
+current directory: /home/vitor/Documentos/secretaria_virtual/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.11/ext/mri
+/home/vitor/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20180423-3173-4jjva3.rb extconf.rb
+creating Makefile
+
+current directory: /home/vitor/Documentos/secretaria_virtual/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR=" clean
+
+current directory: /home/vitor/Documentos/secretaria_virtual/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR="
+compiling bcrypt_ext.c
+compiling crypt.c
+compiling crypt_blowfish.c
+compiling crypt_gensalt.c
+compiling wrapper.c
+linking shared-object bcrypt_ext.so
+
+current directory: /home/vitor/Documentos/secretaria_virtual/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20180423-3173-4shkcl

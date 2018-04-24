@@ -1,0 +1,15 @@
+current directory: /home/vitor/Documentos/secretaria_virtual/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+/home/vitor/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20180423-3173-fatgrr.rb extconf.rb
+creating Makefile
+
+current directory: /home/vitor/Documentos/secretaria_virtual/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /home/vitor/Documentos/secretaria_virtual/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.so
+
+current directory: /home/vitor/Documentos/secretaria_virtual/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20180423-3173-w3xf5u/bindex

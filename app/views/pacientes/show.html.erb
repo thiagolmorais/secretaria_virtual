@@ -1,4 +1,5 @@
-<h1>Paciente</h1>
+<div class="showp">
+<h3><%= @paciente.nome%></h3>
 <p>Nome: <%= @paciente.nome %></p>
 <p>Telefone: <%= @paciente.telefone %></p>
 <p>Data de nacimento: <%= @paciente.nascimento %></p>
@@ -9,10 +10,10 @@
 <p>Observação: <%= @paciente.observacao %></p>
 
 <% unless @paciente.ultimo_preco.blank? %>
-  <h2>Preço Atual</h2>
+  <h4>Preço Atual</h4>
   <%= @paciente.preco.last.valor %>
 
-  <h2>Histórico de preço</h2>
+  <h4>Histórico de preço</h4>
   <% @paciente.preco.order(id: :desc).each do |preco| %>
     <p><%= preco.valor %></p>
   <% end %>
@@ -20,6 +21,10 @@
   <p>Nenhum preço cadastrado</p>
 <%end%>
 
-<%= link_to 'Cadastrar Preço', new_paciente_preco_path(params[:id]) %>
 
-<%= link_to 'Editar', edit_paciente_path %>
+<%= link_to 'Cadastrar Preço', new_paciente_preco_path(params[:id]),:class => "mdl-button mdl-js-button mdl-button--primary"%>
+
+
+  <%= link_to 'Editar', edit_paciente_path,:class => "mdl-button mdl-js-button mdl-button--accent" %>
+  </div>
+

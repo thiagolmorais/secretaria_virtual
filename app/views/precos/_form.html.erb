@@ -1,12 +1,15 @@
 <%= form_for @preco, url: form_url do |f| %>
+  <div class="cash">
 
-  <%= f.label :valor %>
-  <%= f.text_field :valor %>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+  <input class="mdl-textfield__input" type="text" id="sample3"   <%= f.text_field :valor %> 
+  <label class="mdl-textfield__label" for="sample3">  <%= f.label :valor %></label>
+  </div><br>
 
   <%= f.label :reajuste %>
-  <%= f.date_field :reajuste %>
+  <%= f.date_field :reajuste %><br>
 
-  <%= f.submit 'Gravar' %>
+  <%= f.submit 'Gravar',:class => 'btn btn-primary' %>  <%= link_to 'Voltar', pacientes_path,:class => 'btn btn-danger'  %>
 <% end %>
 
-<%= link_to 'Voltar', pacientes_path %>
+</div>

@@ -1,6 +1,41 @@
-<h1>Pacientes</h1>
-<h2><%= link_to 'Cadastrar', new_paciente_path %></h2>
+<h3>Pacientes</h3>
+<div class="list">
+<ul class="demo-list-icon mdl-list">
 
+<div class="busca" id="teste">
+<input type="search" placeholder="busca" id="busca" class=""/>
+
+<table>
 <% @pacientes.each do |paciente| %>
-  <p><%= link_to paciente.nome, paciente_path(paciente) %></p>
+<ul><%= link_to paciente.nome, paciente_path(paciente), class: "paciente" %></ul>
+  <li class="mdl-list__item">
+  <span class="mdl-list__item-primary-content">
+  <i class="material-icons mdl-list__item-icon">person</i>
+  <%= link_to paciente.nome, paciente_path(paciente) %>
+  </span>
+</li>
 <% end %>
+</ul>
+</table>
+</div>
+
+<script>
+const busca = document.querySelector("#busca");
+busca.addEventListener('input', function () {
+    const pacientes = document.querySelectorAll(".paciente");
+    for (let paciente of pacientes) {
+        var compara = paciente.textContent.substr(0, busca.value.length);
+        if (busca.value.length !== 0) {
+            if (busca.value.toUpperCase() != compara.toUpperCase()) {
+                paciente.parentNode.classList.add('some');
+            } else {
+                paciente.parentNode.classList.remove('some');
+            }
+        } else {
+            paciente.parentNode.classList.remove('some');
+        }
+    }
+
+})
+</script>
+</div>
