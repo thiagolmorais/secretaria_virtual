@@ -1,0 +1,15 @@
+<%= form_for @consulta, url: form_url do |f| %>
+
+  <%= f.label :paciente_id %>
+  <%= f.collection_select :paciente_id, @pacientes, :id, :nome %>
+
+  <%= f.label :data %>
+  <%= f.date_field :data %>
+
+  <%= f.label :hora %>
+  <%= f.time_field :hora %>
+
+  <%= f.submit 'Gravar' %>
+<% end %>
+
+<%= link_to 'Voltar', consultas_path %>

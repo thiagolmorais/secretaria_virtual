@@ -21,6 +21,7 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= link_to 'Pacientes', pacientes_path if current_user %>
+    <%= link_to 'Consulta', consultas_path if current_user %>
     <%= link_to 'Sair', destroy_user_session_path, method: :delete if current_user %>
     <%= yield %>
 

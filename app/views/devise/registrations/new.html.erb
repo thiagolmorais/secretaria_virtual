@@ -6,6 +6,11 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :usuario, class:"sr-only" %>
+    <%= f.text_field :usuario, autofocus: true, autocomplete: "nome", placeholder:"Nome", class:"form-control" %>
+  </div>
+
+  <div class="field">
     <%= f.label :email, class:"sr-only" %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", class:"form-control" %>
   </div>
