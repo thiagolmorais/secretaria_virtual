@@ -24,15 +24,15 @@ main{
     margin-left: auto;
     margin-right: auto;
 }
-ul{
-  width: 100%;
+#listap{
+    width: 99%;
     border-left: 1px solid black;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    list-style: none;
 }
 .demo-list-icon {
     width: 300px;
@@ -99,4 +99,19 @@ span{
 
 .no-js{
   display: none;
+}
+
+.busca{
+  width: 100%;
+  margin-left: 42%;
+  margin-right: auto;
+}
+#btn{
+  width: 20px;
+  bottom: 0;
+  position: fixed;
+  background-color:rgb(63, 81, 181);
+}
+.title{
+  color: white;
 }

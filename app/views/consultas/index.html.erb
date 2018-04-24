@@ -1,14 +1,17 @@
-<h1>Consultas</h1>
-<h2><%= link_to 'Cadastrar', new_consulta_path %></h2>
 
-<div class="busca" >
-<input type="search" placeholder="busca" id="busca" class=""/>
+<h3>Consultas</h3>
+<div class="busca">
+<div class="mdl-textfield mdl-js-textfield">
+<label class="mdl-textfield__label" for="busca">Text...</label>
+<input type="search" class="mdl-textfield__input" placeholder="busca" id="busca" class=""/>
+</div>
 <% @consultas.each do |consulta| %>
   <p>
     <%= link_to consulta.data, consulta_path(consulta), class: "consulta" %>
     <%= link_to consulta.paciente.nome, paciente_path(consulta.paciente), class: "paciente" %>
   </p>
 <% end %>
+<%= link_to 'Cadastrar', new_consulta_path,:class=>'mdl-button mdl-js-button mdl-button--primary'%>
 </div>
 
 

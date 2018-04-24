@@ -1,5 +1,20 @@
 <h3>Pacientes</h3>
-<div class="list">
+
+
+<div class="busca" id="teste">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="busca">
+            <i class="material-icons">search</i>
+        </label>
+    <div class="mdl-textfield__expandable-holder">
+        <input type="search" placeholder="busca" id="busca" class="mdl-textfield__input"/>
+        <label class="mdl-textfield__label" for="sample-expandable">Busca</label>
+    </div>
+    </div>
+
+<br><br><br>
+
+<div id="listap">
 <ul class="demo-list-icon mdl-list">
 
 <div class="busca" id="teste">
@@ -36,6 +51,27 @@ busca.addEventListener('input', function () {
         }
     }
 
+})
+</script>
+</div>
+</div>
+
+<script>
+const busca = document.querySelector("#busca");
+busca.addEventListener('input', function () {
+    const pacientes = document.querySelectorAll(".paciente");
+    for (let paciente of pacientes) {
+        var compara = paciente.textContent.substr(0, busca.value.length);
+        if (busca.value.length !== 0) {
+            if (busca.value.toUpperCase() != compara.toUpperCase()) {
+                paciente.parentNode.classList.add('some');
+            } else {
+                paciente.parentNode.classList.remove('some');
+            }
+        } else {
+            paciente.parentNode.classList.remove('some');
+        }
+    }
 })
 </script>
 </div>
