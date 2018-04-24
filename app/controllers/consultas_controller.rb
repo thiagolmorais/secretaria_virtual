@@ -13,6 +13,7 @@ class ConsultasController < ApplicationController
     @pacientes = Paciente.all
     @consulta = Consulta.new
   end
+
   def create
     @consulta = Consulta.new(consulta_params)
     if @consulta.save
