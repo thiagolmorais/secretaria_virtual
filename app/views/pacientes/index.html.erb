@@ -1,14 +1,15 @@
 <h3>Pacientes</h3>
 <div class="list">
+
+  <input type="search" placeholder="busca" id="busca" class=""/>
 <ul class="demo-list-icon mdl-list">
 
-<div class="busca" id="teste">
-<input type="search" placeholder="busca" id="busca" class=""/>
+
 
 <table>
+  <ul>
 <% @pacientes.each do |paciente| %>
-<ul><%= link_to paciente.nome, paciente_path(paciente), class: "paciente" %></ul>
-  <li class="mdl-list__item">
+  <li class="mdl-list__item paciente">
   <span class="mdl-list__item-primary-content">
   <i class="material-icons mdl-list__item-icon">person</i>
   <%= link_to paciente.nome, paciente_path(paciente) %>
@@ -16,6 +17,8 @@
 </li>
 <% end %>
 </ul>
+</ul>
+
 </table>
 </div>
 
