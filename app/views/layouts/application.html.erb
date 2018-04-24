@@ -32,6 +32,7 @@
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
         <a class="mdl-navigation__link" <%= link_to 'Pacientes', pacientes_path if current_user %></a>
+        <a class="mdl-navigation__link" <%= link_to 'Consulta', consultas_path if current_user %></a>
         <% if current_page?(pacientes_path) %><a class="mdl-navigation__link" <%= link_to 'Cadastrar', new_paciente_path %></a><% end %>
         <a class="mdl-navigation__link" <%= link_to 'Sair', destroy_user_session_path, method: :delete if current_user %></a>
       </nav>
@@ -39,11 +40,12 @@
   </header>
   <% end %>
   <main class="mdl-layout__content">
-    <div>    
+    <div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+  
     <%= yield %>
-  </main> 
+  </main>
 </div>
 
 <footer>
