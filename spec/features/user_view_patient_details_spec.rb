@@ -2,6 +2,7 @@ require 'rails_helper'
 
 feature 'User see patient name' do
   scenario 'sucessfuly' do
+    pending
     user = create(:user)
     paciente = create(:paciente)
 
