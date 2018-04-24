@@ -4,7 +4,10 @@
 <div class="busca" >
 <input type="search" placeholder="busca" id="busca" class=""/>
 <% @consultas.each do |consulta| %>
-  <p><%= link_to consulta.data, consulta_path(consulta), class: "consulta" %></p>
+  <p>
+    <%= link_to consulta.data, consulta_path(consulta), class: "consulta" %>
+    <%= link_to consulta.paciente.nome, paciente_path(consulta.paciente), class: "paciente" %>
+  </p>
 <% end %>
 </div>
 
