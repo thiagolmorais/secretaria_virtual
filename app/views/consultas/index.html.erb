@@ -4,15 +4,22 @@
 <div class="mdl-textfield mdl-js-textfield">
 <input type="search" class="mdl-textfield__input" placeholder="busca" id="busca" class=""/>
 </div>
+<table>
+  <tr>
+    <th>Dia</th>
+    <th>Hora</th>
+    <th>Paciente</th>
+  </tr>
 <% @consultas.each do |consulta| %>
-  <p>
-    <%= link_to I18n.localize(consulta.data), consulta_path(consulta), class: "consulta" %>
-    <%= link_to consulta.paciente.nome, paciente_path(consulta.paciente), class: "paciente" %>
-  </p>
+  <tr>
+    <td><%= link_to I18n.localize(consulta.data), consulta_path(consulta), class: "consulta" %></td>
+    <td><%= consulta.hora.strftime('%R') %></td>
+    <td><%= link_to consulta.paciente.nome, paciente_path(consulta.paciente), class: "paciente" %></td>
+  </tr>
 <% end %>
 <%= link_to 'Cadastrar', new_consulta_path,:class=>'mdl-button mdl-js-button mdl-button--primary'%>
 </div>
-
+</table>
 
 <script>
 const busca = document.querySelector("#busca");

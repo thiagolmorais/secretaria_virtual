@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20180424005822) do
 
   create_table "consulta", force: :cascade do |t|
     t.date "data"
-    t.date "hora"
+    t.time "hora"
     t.integer "paciente_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
