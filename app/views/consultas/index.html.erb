@@ -1,15 +1,22 @@
 
 <h3>Consultas</h3>
 <div class="busca">
-<div class="mdl-textfield mdl-js-textfield">
-<input type="search" class="mdl-textfield__input" placeholder="busca" id="busca" class=""/>
+<div class="md-form form-lg">
+    <input type="text" id="inputLGEx" class="form-control form-control-lg">
+    <label for="inputLGEx">Busca</label>
 </div>
-<table>
-  <tr>
-    <th>Dia</th>
-    <th>Hora</th>
-    <th>Paciente</th>
-  </tr>
+<table class="table table-hover">
+
+    <!--Table head-->
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Dia</th>
+            <th>Hora</th>
+            <th>Paciente</th>
+        </tr>
+    </thead>
+    <tbody>
 <% @consultas.each do |consulta| %>
   <tr>
     <td><%= link_to I18n.localize(consulta.data), consulta_path(consulta), class: "consulta" %></td>
@@ -17,10 +24,12 @@
     <td><%= link_to consulta.paciente.nome, paciente_path(consulta.paciente), class: "paciente" %></td>
   </tr>
 <% end %>
-<%= link_to 'Cadastrar', new_consulta_path,:class=>'mdl-button mdl-js-button mdl-button--primary'%>
+
 </div>
+</tbody>
 </table>
 
+<%= link_to 'Cadastrar', new_consulta_path,:class=>''%>
 <script>
 const busca = document.querySelector("#busca");
 busca.addEventListener('input', function () {
@@ -39,4 +48,5 @@ busca.addEventListener('input', function () {
     }
 
 })
+$('#input_starttime').pickatime({});
 </script>

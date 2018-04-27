@@ -1,10 +1,11 @@
 <%= form_for @preco, url: form_url do |f| %>
   <div class="cash">
 
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-  <input class="mdl-textfield__input" type="text" id="sample3"   <%= f.text_field :valor %> 
-  <label class="mdl-textfield__label" for="sample3">  <%= f.label :valor %></label>
-  </div><br>
+
+  <div class="md-form">
+  <%= f.text_field :valor,:id=>"inputMDEx" ,:class =>"form-control"%>
+    <%= f.label :valor,:for=>"inputMDEx" %>
+  </div>
 
   <%= f.label :reajuste %>
   <%= f.date_field :reajuste %><br>

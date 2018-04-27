@@ -1,44 +1,38 @@
 <%= form_for @paciente do |f| %>
-  <div class="formp">
-  <div id="floatl">
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-  <input class="mdl-textfield__input" type="text" id="sample3"   <%= f.text_field :nome %>
-  <label class="mdl-textfield__label" for="sample3">  <%= f.label :nome %></label>
-  </div><br><br><br>
 
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-  <input class="mdl-textfield__input" type="text" id="sample3"   <%= f.text_field :email %>
-  <label class="mdl-textfield__label" for="sample3">  <%= f.label :email %></label>
-  </div><br><br><br>
+    <div class="md-form">
+    <%= f.text_field :nome,:id=>"inputMDEx" ,:class =>"form-control"%>
+      <%= f.label :nome,:for=>"inputMDEx" %>
+  </div>
 
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-  <input class="mdl-textfield__input" type="text" id="sample3"   <%= f.text_field :telefone %>
-  <label class="mdl-textfield__label" for="sample3">  <%= f.label :telefone %></label>
-  </div><br><br><br>
+  <div class="md-form">
+  <%= f.text_field :email,:id=>"inputMDEx" ,:class =>"form-control"%>
+    <%= f.label :email,:for=>"inputMDEx" %>
+  </div>
 
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-  <input class="mdl-textfield__input" type="text" id="sample3"   <%= f.text_field :sexo %>
-  <label class="mdl-textfield__label" for="sample3">  <%= f.label :sexo %></label>
-  </div><br><br><br><br><br>
-  <div>
+  <div class="md-form">
+  <%= f.text_field :telefone,:id=>"inputMDEx" ,:class =>"form-control"%>
+    <%= f.label :telefone,:for=>"inputMDEx" %>
+  </div>
 
-  <div id="floatr">
+  <div class="md-form">
+  <%= f.text_field :sexo,:id=>"inputMDEx" ,:class =>"form-control"%>
+    <%= f.label :sexo,:for=>"inputMDEx" %>
+  </div>
+
   <%= f.label :nascimento %>
-  <%= f.date_field :nascimento %><br><br><br><br>
+  <%= f.date_field :nascimento,:id=>"date-picker-example"%>
 
   <%= f.label :paciente_desde %>
-  <%= f.date_field :paciente_desde %><br><br><br><br>
-
+  <%= f.date_field :paciente_desde,:id=>"date-picker-example" %><br><br>
 
   <%= f.label :status %>
-  <%= f.select(:status, [['Ativo', true], ['Inativo', false]],{}, { :class => 'custom-select my-1 mr-sm-2' })%><br>
-  <br><br><br><br>
+  <%= f.select(:status, [['Ativo', true], ['Inativo', false]],{}, { :class => 'custom-select my-1 mr-sm-2' })%><br><br>
+  
+  <i class="fa fa-pencil prefix"></i>
+  <%= f.label :observacao,:for=>"textareaPrefix" %>
+   <%= f.text_area :observacao,:id=>"textareaPrefix" ,:class=>"form-control md-textarea",:rows=>"3"%>
 
-  <%= f.label :observacao %>
-  <%= f.text_area :observacao %><br><br><br><br><br>
-  </div>
-  </div>
-  <div class="buttoms">
-  <%= f.submit 'Gravar', :class => 'btn btn-primary'%>   <%= link_to 'Voltar', pacientes_path, :class => 'btn btn-danger' %>
-  </div>
+  <%= f.submit 'Gravar', :class => 'btn btn-primary btn-md'%>   <%= link_to 'Voltar', pacientes_path, :class => 'btn btn-danger btn-md' %>
+
 <% end %>
