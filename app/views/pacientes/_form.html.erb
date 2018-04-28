@@ -1,3 +1,11 @@
+<% if @paciente.errors.any? %>
+  <% @paciente.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+<% end %>
+
+<br>
+
 <%= form_for @paciente do |f| %>
 
     <div class="md-form">
@@ -28,7 +36,7 @@
 
   <%= f.label :status %>
   <%= f.select(:status, [['Ativo', true], ['Inativo', false]],{}, { :class => 'custom-select my-1 mr-sm-2' })%><br><br>
-  
+
   <i class="fa fa-pencil prefix"></i>
   <%= f.label :observacao,:for=>"textareaPrefix" %>
    <%= f.text_area :observacao,:id=>"textareaPrefix" ,:class=>"form-control md-textarea",:rows=>"3"%>

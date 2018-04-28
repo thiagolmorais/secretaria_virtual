@@ -1,3 +1,12 @@
+
+<% if @consulta.errors.any? %>
+  <% @consulta.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+<% end %>
+
+<br>
+
 <%= form_for @consulta, url: form_url do |f| %>
 
   <%= f.label :paciente_id %>
@@ -8,9 +17,6 @@
 
   <%= f.label :hora %>
   <%= f.time_field :hora %><br>
-  
+
   <%= f.submit 'Gravar',:class=>'btn btn-indigo' %><%= link_to 'Voltar', consultas_path,:class=>'btn btn-unique'%>
 <% end %>
-
-
-
