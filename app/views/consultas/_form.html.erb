@@ -1,15 +1,22 @@
+
+<% if @consulta.errors.any? %>
+  <% @consulta.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+<% end %>
+
+<br>
+
 <%= form_for @consulta, url: form_url do |f| %>
 
   <%= f.label :paciente_id %>
   <%= f.collection_select :paciente_id, @pacientes, :id, :nome %>
 
-  <%= f.label :data %>
-  <%= f.date_field :data %>
+  <%= f.label :data,:for=>"date-picker-example" %>
+  <%= f.date_field :data,:id=>"date-picker-example"%>
 
   <%= f.label :hora %>
-  <%= f.time_field :hora %>
+  <%= f.time_field :hora %><br>
 
-  <%= f.submit 'Gravar' %>
+  <%= f.submit 'Gravar',:class=>'btn btn-indigo' %><%= link_to 'Voltar', consultas_path,:class=>'btn btn-unique'%>
 <% end %>
-
-<%= link_to 'Voltar', consultas_path %>

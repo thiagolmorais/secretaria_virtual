@@ -19,6 +19,7 @@ class ConsultasController < ApplicationController
     if @consulta.save
       redirect_to consultas_path
     else
+      @pacientes = Paciente.all
       render :new
     end
   end

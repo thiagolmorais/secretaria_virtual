@@ -1,29 +1,55 @@
-<div class="showp">
+
 <h3><%= @paciente.nome%></h3>
-<p>Nome: <%= @paciente.nome %></p>
-<p>Telefone: <%= @paciente.telefone %></p>
-<p>Data de nacimento: <%= I18n.localize @paciente.nascimento %></p>
-<p>Email: <%= @paciente.email %></p>
-<p>Sexo: <%= @paciente.sexo %></p>
-<p>Paciente desde:<%= I18n.localize @paciente.paciente_desde %></p>
-<p>Status: <%= @paciente.actual_status %></p>
-<p>Observação: <%= @paciente.observacao %></p>
 
-<% unless @paciente.ultimo_preco.blank? %>
-  <h4>Preço Atual</h4>
-  <%= number_to_currency @paciente.preco.last.valor %>
+<ul class="list-group">
+  <li class="list-group-item active waves-light">Nome: <%= @paciente.nome %></li>
+  <li class="list-group-item">Telefone: <%= @paciente.telefone %></li>
+  <li class="list-group-item">Data de nacimento: <%= I18n.localize @paciente.nascimento %></li>
+  <li class="list-group-item">Email: <%= @paciente.email %> </li>
+  <li class="list-group-item">Sexo: <%= @paciente.sexo %></li>
+  <li class="list-group-item">Paciente desde:<%= I18n.localize @paciente.paciente_desde %></li>
+  <li class="list-group-item">Status: <%= @paciente.actual_status %></li>
+  <li class="list-group-item">Observação: <%= @paciente.observacao %></li>
+</ul>
+                
+                                
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-info animated fadeInLeft" data-toggle="modal" data-target="#exampleModal">
+    Exibir Preços
+</button>
 
-  <h4>Histórico de preço</h4>
-  <% @paciente.preco.order(id: :desc).each do |preco| %>
-    <p><%= number_to_currency preco.valor %></p>
-  <% end %>
-<% else %>
-  <p>Nenhum preço cadastrado</p>
-<%end%>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-backdrop="false" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Historico Preços</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <% unless @paciente.ultimo_preco.blank? %>
+            <h4>Preço Atual</h4>
+            <%= number_to_currency @paciente.preco.last.valor %>
+          
+            <h4>Histórico de preço</h4>
+            <% @paciente.preco.order(id: :desc).each do |preco| %>
+              <p><%= number_to_currency preco.valor %></p>
+            <% end %>
+          <% else %>
+            <p>Nenhum preço cadastrado</p>
+          <%end%>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+                                
+<%= link_to 'Cadastrar Preço', new_paciente_preco_path(params[:id]),:class => "btn btn-primary animated fadeInUp"%>
 
 
-<%= link_to 'Cadastrar Preço', new_paciente_preco_path(params[:id]),:class => "mdl-button mdl-js-button mdl-button--primary"%>
-
-
-  <%= link_to 'Editar', edit_paciente_path,:class => "mdl-button mdl-js-button mdl-button--accent" %>
+  <%= link_to 'Editar', edit_paciente_path,:class => "btn btn-default animated fadeInRight" %>
   </div>

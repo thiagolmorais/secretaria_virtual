@@ -5,11 +5,12 @@ class PrecosController < ApplicationController
   end
 
   def create
+    novo_preco_params = preco_params[:valor].tr(',', '.')
     @preco = Preco.new(preco_params)
     @preco.paciente_id = params[:paciente_id]
-
+    @preco.valor = novo_preco_params
     if @preco.save
-      redirect_to pacientes_path
+      redirect_to paciente_path(@preco.paciente_id)
     else
       render :new
     end

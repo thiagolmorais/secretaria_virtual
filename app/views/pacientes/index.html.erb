@@ -1,33 +1,33 @@
 <h3>Pacientes</h3>
 
+<div class="busca">
+<div class="md-form form-lg">
+    <input type="text" id="inputLGEx" class="form-control form-control-lg">
+    <label for="inputLGEx">Busca</label>
+</div>
+<table class="table table-hover">
 
-<div class="busca" id="teste">
-
-
-<br><br><br>
-
-<div id="listap">
-<ul class="demo-list-icon mdl-list">
-
-<div class="busca" id="teste">
-<input type="search" placeholder="busca" id="busca" class=""/>
-
-<table>
+    <!--Table head-->
+    <thead>
+        <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
 <% @pacientes.each do |paciente| %>
-<ul>
-  <li class="mdl-list__item paciente">
-  <span class="mdl-list__item-primary-content">
-  <i class="material-icons mdl-list__item-icon">person</i>
-  <%= link_to paciente.nome, paciente_path(paciente) %>
-  </span>
-</li>
-<% end %>
-</ul>
+    <tr>
+        <td><%= paciente.nome %></td>
+        <td><%= paciente.email %></td>
+        <td><%= link_to 'Consultar', paciente_path(paciente),:class => 'btn btn-outline-primary waves-effect' %></td>
+    <% end %>
+    </tbody>
 </table>
 </div>
 
 <script>
-const busca = document.querySelector("#busca");
+const busca = document.querySelector("#inputLGEx");
 busca.addEventListener('input', function () {
     const pacientes = document.querySelectorAll(".paciente");
     for (let paciente of pacientes) {
@@ -49,7 +49,7 @@ busca.addEventListener('input', function () {
 </div>
 
 <script>
-const busca = document.querySelector("#busca");
+const busca = document.querySelector("#inputLGEx");
 busca.addEventListener('input', function () {
     const pacientes = document.querySelectorAll(".paciente");
     for (let paciente of pacientes) {
