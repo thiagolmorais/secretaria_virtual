@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180424005822) do
+ActiveRecord::Schema.define(version: 20180429224435) do
 
   create_table "consulta", force: :cascade do |t|
     t.date "data"
     t.time "hora"
+    t.boolean "status", default: false
     t.integer "paciente_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 20180424005822) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "status", default: true
+    t.integer "dia_vencimento"
   end
 
   create_table "precos", force: :cascade do |t|

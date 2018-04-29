@@ -1,9 +1,9 @@
 class Paciente < ApplicationRecord
-  validates :nome, :nascimento, :paciente_desde, presence: true
+  validates :nome, :nascimento, :paciente_desde, :dia_vencimento, presence: true
   has_many :preco, dependent: :delete_all
   has_many :consulta, dependent: :delete_all
 
-  def actual_status
+  def status_paciente
     status ? 'Ativo' : 'Inativo'
   end
 

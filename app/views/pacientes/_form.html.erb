@@ -14,7 +14,7 @@
   </div>
 
   <div class="md-form">
-  <%= f.text_field :email,:id=>"inputMDEx" ,:class =>"form-control"%>
+  <%= f.email_field :email,:id=>"inputMDEx" ,:class =>"form-control"%>
     <%= f.label :email,:for=>"inputMDEx" %>
   </div>
 
@@ -23,10 +23,8 @@
     <%= f.label :telefone,:for=>"inputMDEx" %>
   </div>
 
-  <div class="md-form">
-  <%= f.text_field :sexo,:id=>"inputMDEx" ,:class =>"form-control"%>
-    <%= f.label :sexo,:for=>"inputMDEx" %>
-  </div>
+  <%= f.label :sexo %>
+  <%= f.select(:sexo, ['Maculino', 'Feminino'],{}, { :class => 'custom-select my-1 mr-sm-2' })%><br><br>
 
   <%= f.label :nascimento %>
   <%= f.date_field :nascimento,:id=>"date-picker-example"%>
@@ -36,6 +34,10 @@
 
   <%= f.label :status %>
   <%= f.select(:status, [['Ativo', true], ['Inativo', false]],{}, { :class => 'custom-select my-1 mr-sm-2' })%><br><br>
+
+  <%= f.label :dia_vencimento %>
+  <%= f.select(:dia_vencimento, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+    17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],{}, { :class => 'custom-select my-1 mr-sm-2' })%><br><br>
 
   <i class="fa fa-pencil prefix"></i>
   <%= f.label :observacao,:for=>"textareaPrefix" %>

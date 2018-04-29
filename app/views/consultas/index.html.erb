@@ -15,6 +15,9 @@
             <th>Dia</th>
             <th>Hora</th>
             <th>Paciente</th>
+            <th>Status</th>
+            <th>Atender</th>
+            <th>#</th>
         </tr>
     </thead>
     <tbody>
@@ -22,7 +25,9 @@
   <tr>
     <td><%= link_to I18n.localize(consulta.data), consulta_path(consulta), class: "consulta" %></td>
     <td><%= consulta.hora.strftime('%R') %></td>
-    <td><%= link_to consulta.paciente.nome, paciente_path(consulta.paciente), class: "paciente" %></td>
+    <td><%= link_to consulta.paciente.nome, paciente_path(consulta.paciente), class: "consulta" %></td>
+    <td><%= consulta.status_consulta %></td>
+    <td><%= link_to 'Deletar', consulta_path(consulta), method: :delete, class: "consulta" %></td>
   </tr>
 <% end %>
 

@@ -38,6 +38,13 @@ class ConsultasController < ApplicationController
     end
   end
 
+  def destroy
+    @consulta = Consulta.find(params[:id])
+    @consulta.destroy
+    flash[:sucess] = 'Consulta excluída com sucesso!'
+    redirect_to consultas_path
+  end
+
   private
 
   def consulta_params

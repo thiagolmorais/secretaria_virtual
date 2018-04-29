@@ -3,7 +3,7 @@ class CreateConsulta < ActiveRecord::Migration[5.1]
     create_table :consulta do |t|
       t.date :data
       t.time :hora
-      t.integer :paciente_id
+      t.boolean :status, default: false
       t.references :paciente, foreign_key: true
 
       t.timestamps
