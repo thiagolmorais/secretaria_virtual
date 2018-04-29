@@ -8,11 +8,12 @@
   <li class="list-group-item">Email: <%= @paciente.email %> </li>
   <li class="list-group-item">Sexo: <%= @paciente.sexo %></li>
   <li class="list-group-item">Paciente desde:<%= I18n.localize @paciente.paciente_desde %></li>
-  <li class="list-group-item">Status: <%= @paciente.actual_status %></li>
+  <li class="list-group-item">Status: <%= @paciente.status_paciente %></li>
+  <li class="list-group-item">Dia de vencimento: <%= @paciente.dia_vencimento %></li>
   <li class="list-group-item">Observação: <%= @paciente.observacao %></li>
 </ul>
-                
-                                
+
+
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-info animated fadeInLeft" data-toggle="modal" data-target="#exampleModal">
     Exibir Preços
@@ -32,7 +33,7 @@
             <% unless @paciente.ultimo_preco.blank? %>
             <h4>Preço Atual</h4>
             <%= number_to_currency @paciente.preco.last.valor %>
-          
+
             <h4>Histórico de preço</h4>
             <% @paciente.preco.order(id: :desc).each do |preco| %>
               <p><%= number_to_currency preco.valor %></p>
@@ -47,7 +48,7 @@
         </div>
     </div>
 </div>
-                                
+
 <%= link_to 'Cadastrar Preço', new_paciente_preco_path(params[:id]),:class => "btn btn-primary animated fadeInUp"%>
 
 

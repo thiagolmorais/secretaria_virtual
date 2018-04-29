@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :pacientes, only:[:index, :show, :new, :create, :edit, :update] do
       resources :precos, only:[:new, :create]
   end
-  resources :consultas, only:[:index, :show, :new, :create, :edit, :update]
+  resources :consultas
 end
