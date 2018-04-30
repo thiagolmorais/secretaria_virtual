@@ -15,7 +15,7 @@
             <th>Paciente</th>
             <th>Status</th>
             <th>Atender</th>
-            <th>#</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -25,6 +25,7 @@
     <td><%= consulta.hora.strftime('%R') %></td>
     <td><%= link_to consulta.paciente.nome, paciente_path(consulta.paciente), class: "consulta" %></td>
     <td><%= consulta.status_consulta %></td>
+    <td><%= link_to consulta.atendimento(consulta), consultas_path %></td>
     <td><%= link_to 'Deletar', consulta_path(consulta), method: :delete, class: "consulta" %></td>
   </tr>
 <% end %>

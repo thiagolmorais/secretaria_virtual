@@ -5,4 +5,10 @@ class Consulta < ApplicationRecord
   def status_consulta
     status ? 'Atendido' : 'Agendado'
   end
+
+  def atendimento(consulta)
+    consulta.status = true
+    consulta.save
+    #redirect_to consultas_path
+  end
 end
