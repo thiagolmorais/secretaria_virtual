@@ -10,4 +10,13 @@ class Paciente < ApplicationRecord
   def ultimo_preco
     preco << Preco.where(paciente_id: @paciente)
   end
+
+  def preco_vigente
+    preco_valido = []
+    precos = self.preco.order(:reajuste)
+    precos.each do |preco|
+      preco_valido << preco if preco.reajuste < Time.now
+    end
+    preco_valido.last
+  end
 end

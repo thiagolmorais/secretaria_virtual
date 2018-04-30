@@ -1,5 +1,6 @@
 class PacientesController < ApplicationController
   before_action :authenticate_user!
+
   def index
     @pacientes = Paciente.all
   end

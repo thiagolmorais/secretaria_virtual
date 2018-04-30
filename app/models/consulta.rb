@@ -7,8 +7,21 @@ class Consulta < ApplicationRecord
   end
 
   def atendimento(consulta)
-    consulta.status = true
+    if status == false
+      consulta.status = true
+      #consulta.gera_fatura
+    else
+      consulta.status = false
+    end
     consulta.save
-    #redirect_to consultas_path
+  end
+
+  def gera_fatura
+    @fatura = Fatura.new(consulta_id: self.id, valor: valor_consulta, status: true, competencia: self.data, vencimento: self.data)
+    @fatura.save
+  end
+
+  def valor_consulta
+    self.paciente.preco_vigente
   end
 end
