@@ -30,12 +30,21 @@ class ConsultasController < ApplicationController
   end
 
   def update
+    @pacientes = Paciente.all
     @consulta = Consulta.find(params[:id])
     if @consulta.update(consulta_params)
       redirect_to consultas_path
     else
+      @pacientes = Paciente.all
       render :edit
     end
+  end
+
+  def destroy
+    @consulta = Consulta.find(params[:id])
+    @consulta.destroy
+    flash[:sucess] = 'Consulta excluída com sucesso!'
+    redirect_to consultas_path
   end
 
   private
