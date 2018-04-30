@@ -131,7 +131,11 @@ span{
   z-index: 5;
   top: 0;
   left: 0;
-  background: linear-gradient(to right, #0099cc 0%, #33ccff 100%);
+  background: #3b679e; /* Old browsers */
+  background: -moz-linear-gradient(top, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
