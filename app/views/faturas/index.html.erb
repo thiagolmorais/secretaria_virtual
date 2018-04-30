@@ -1,0 +1,69 @@
+<h3>Faturas</h3>
+
+<div class="busca">
+<div class="md-form form-lg">
+    <input type="text" id="inputLGEx" class="form-control form-control-lg">
+    <label for="inputLGEx">Busca</label>
+</div>
+<table class="table table-hover">
+
+    <!--Table head-->
+    <thead>
+        <tr>
+        <th>Nome</th>
+        <th>Valor em aberto</th>
+        <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+<% @pacientes.each do |paciente| %>
+    <tr>
+        <td><%= paciente.nome %></td>
+        <td><%= number_to_currency Fatura.where(consulta_id: Consulta.where(paciente_id: paciente)).sum(:valor) %></td>
+        <td><%= link_to 'Detalhes', paciente_path(paciente),:class => 'btn btn-outline-primary waves-effect' %></td>
+    <% end %>
+    </tbody>
+</table>
+</div>
+
+<script>
+const busca = document.querySelector("#inputLGEx");
+busca.addEventListener('input', function () {
+    const pacientes = document.querySelectorAll(".paciente");
+    for (let paciente of pacientes) {
+        var compara = paciente.textContent.substr(0, busca.value.length);
+        if (busca.value.length !== 0) {
+            if (busca.value.toUpperCase() != compara.toUpperCase()) {
+                paciente.parentNode.classList.add('some');
+            } else {
+                paciente.parentNode.classList.remove('some');
+            }
+        } else {
+            paciente.parentNode.classList.remove('some');
+        }
+    }
+
+})
+</script>
+</div>
+</div>
+
+<script>
+const busca = document.querySelector("#inputLGEx");
+busca.addEventListener('input', function () {
+    const pacientes = document.querySelectorAll(".paciente");
+    for (let paciente of pacientes) {
+        var compara = paciente.textContent.substr(0, busca.value.length);
+        if (busca.value.length !== 0) {
+            if (busca.value.toUpperCase() != compara.toUpperCase()) {
+                paciente.parentNode.classList.add('some');
+            } else {
+                paciente.parentNode.classList.remove('some');
+            }
+        } else {
+            paciente.parentNode.classList.remove('some');
+        }
+    }
+})
+</script>
+</div>

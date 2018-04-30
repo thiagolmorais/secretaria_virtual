@@ -66,19 +66,35 @@
 
         <!-- Dropdown Consulta -->
         <li class="nav-item dropdown">
+<<<<<<< 602b854fc6ff4b8b4743ee406a7bb9a1509cfadf
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulta</a>
             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
             <%= link_to 'Consultas', consultas_path,:id=>'drop' %>
             <%= link_to 'Cadastrar Consulta', new_consulta_path,:id=>'drop'%>
 
+=======
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fatura</a>
+          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+            <%= link_to 'Faturas', faturas_path if current_user %>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulta</a>
+          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+            <%= link_to 'Consultas', consultas_path if current_user %>
+            <%= link_to 'Cadastrar Consulta', new_consulta_path%>
+          </div>
+        </li>
+>>>>>>> Fix fatura
             <!-- Dropdown Paciente -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paciente</a>
-                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                <%= link_to 'Consultar Paciente',pacientes_path,:id=>'drop' %>
-                  <%= link_to 'Cadastrar Paciente', new_paciente_path,:id=>'drop' %>
-                </div>
-            </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paciente</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+            <%= link_to 'Consultar Paciente',pacientes_path,:id=>'drop' %>
+              <%= link_to 'Cadastrar Paciente', new_paciente_path,:id=>'drop' %>
+            </div>
+        </li>
             </ul>
     <li id="no-list">
          <%= link_to 'Sair', destroy_user_session_path, method: :delete,:class=>"btn btn-outline-white btn-md my-2 my-sm-0 ml-3" %>
@@ -86,17 +102,23 @@
     </div>
     <!-- Collapsible content -->
 </nav>
-</div>
+
    <% end %>
   <main id="main" class="animated fadeInDown ">
     <div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
+<<<<<<< 602b854fc6ff4b8b4743ee406a7bb9a1509cfadf
     <%= yield %>
   </main>
 </div>
  <div id='remote_container'></div>
+=======
+      <%= yield %>
+    </div>
+    </main>
+>>>>>>> Fix fatura
 
 <% if current_user %>
 <div id="footer">

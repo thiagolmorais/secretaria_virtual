@@ -30,14 +30,26 @@
                 </button>
             </div>
             <div class="modal-body">
-            <% unless @paciente.ultimo_preco.blank? %>
-            <h4>Preço Atual</h4>
-            <%= number_to_currency @paciente.preco.last.valor %>
+            <% unless @paciente.preco_vigente.blank? %>
+            <h4>Preço Vigente</h4>
+            <%= number_to_currency @paciente.preco_vigente.valor %>
+            <br>
 
             <h4>Histórico de preço</h4>
-            <% @paciente.preco.order(id: :desc).each do |preco| %>
-              <p><%= number_to_currency preco.valor %></p>
+            <table>
+              <tr>
+                  <th>Data de Reajuste</th>
+                  <th>Valor</th>
+              </tr>
+            <% @paciente.preco.order(reajuste: :desc).each do |preco| %>
+              <p>
+                  <tr>
+                      <td><%= I18n.localize preco.reajuste %></td>
+                      <td><%= number_to_currency preco.valor %></td>
+                  </tr>
+              </p>
             <% end %>
+          </table>
           <% else %>
             <p>Nenhum preço cadastrado</p>
           <%end%>

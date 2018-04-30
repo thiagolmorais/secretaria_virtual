@@ -30,10 +30,12 @@ class ConsultasController < ApplicationController
   end
 
   def update
+    @pacientes = Paciente.all
     @consulta = Consulta.find(params[:id])
     if @consulta.update(consulta_params)
       redirect_to consultas_path
     else
+      @pacientes = Paciente.all
       render :edit
     end
   end
