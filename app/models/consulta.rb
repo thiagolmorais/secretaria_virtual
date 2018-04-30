@@ -6,22 +6,16 @@ class Consulta < ApplicationRecord
     status ? 'Atendido' : 'Agendado'
   end
 
-  def atendimento(consulta)
-    if status == false
-      consulta.status = true
-      #consulta.gera_fatura
-    else
-      consulta.status = false
-    end
-    consulta.save
-  end
-
   def gera_fatura
-    @fatura = Fatura.new(consulta_id: self.id, valor: valor_consulta, status: true, competencia: self.data, vencimento: self.data)
-    @fatura.save
+    fatura = Fatura.create(consulta_id: self.id, valor: valor_consulta.valor, status: true, competencia: self.data, vencimento: self.data)
   end
 
   def valor_consulta
-    self.paciente.preco_vigente
+    preco_valido = []
+    precos = Preco.where(paciente_id: self.paciente_id).order(:reajuste)
+    precos.each do |preco|
+      preco_valido << preco if preco.reajuste < self.data
+    end
+    preco_valido.last.valor
   end
 end

@@ -5,5 +5,5 @@ Rails.application.routes.draw do
       resources :precos, only:[:new, :create]
   end
   resources :consultas
-  resources :faturas, only:[:index, :show]
+  resources :faturas, only:[:index, :create, :destroy]
 end

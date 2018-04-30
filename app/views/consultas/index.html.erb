@@ -25,7 +25,22 @@
     <td><%= consulta.hora.strftime('%R') %></td>
     <td><%= link_to consulta.paciente.nome, paciente_path(consulta.paciente), class: "consulta" %></td>
     <td><%= consulta.status_consulta %></td>
-    <td><%= link_to 'Atender', consulta.atendimento(consulta) %></td>
+    <td>
+      <% if consulta.status == false %>
+        <%= form_tag(faturas_path, method: :post) do %>
+          <%= hidden_field_tag(:consulta_id, consulta.id) %>
+          <%= hidden_field_tag(:competencia, consulta.data) %>
+          <%= submit_tag('Atender') %>
+        <% end %>
+      <% end %>
+      <% if consulta.status == true %>
+        <%= form_tag(fatura_path(Fatura.find_by(consulta_id: consulta.id)), method: :delete) do %>
+          <%= hidden_field_tag(:consulta_id, consulta.id) %>
+          <%= submit_tag('Cancelar Fatura') %>
+        <% end %>
+      <% end %>
+    </td>
+    <!-- <td><%#= link_to 'Atender', model: consulta.gera_fatura, class: "consulta" %></td> -->
     <td><%= link_to 'Deletar', consulta_path(consulta), method: :delete, class: "consulta" %></td>
   </tr>
 <% end %>

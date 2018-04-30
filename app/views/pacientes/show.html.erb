@@ -32,7 +32,7 @@
             <div class="modal-body">
             <% unless @paciente.preco_vigente.blank? %>
             <h4>Preço Vigente</h4>
-            <%= number_to_currency @paciente.preco_vigente.valor %>
+            <%= number_to_currency @paciente.preco_vigente %>
             <br>
 
             <h4>Histórico de preço</h4>

@@ -17,6 +17,6 @@ class Paciente < ApplicationRecord
     precos.each do |preco|
       preco_valido << preco if preco.reajuste < Time.now
     end
-    preco_valido.last
+    preco_valido.last.valor
   end
 end

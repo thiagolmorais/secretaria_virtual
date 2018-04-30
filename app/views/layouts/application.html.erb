@@ -9,95 +9,147 @@
     <title>SecretariaVirtual</title>
     <%= csrf_meta_tags %>
 
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- Bootstrap core CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-<!-- Material Design Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
   </head>
 
   <body>
-  <% if current_user %>
-  <!--Navbar-->
-  <nav class="navbar navbar-expand-lg navbar-dark indigo darken-3">
+    <% if current_user %>
+      <!-- Sidemenu mobile -->
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
 
-    <!-- Navbar brand -->
-    <%= link_to 'Secretaria Virtual',root_path,:class=>"btn btn-outline-primary waves-effect"%>
+          <!-- Dropdown Consulta -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fatura</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to 'Faturas', faturas_path, :id=>'drop' %>
+            </div>
+          </li>
 
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="basicExampleNav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulta</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to 'Exibir Consultas', consultas_path,:id=>'drop' %>
+              <%= link_to 'Cadastrar Consulta', new_consulta_path,:id=>'drop'%>
+            </div>
+          </li>
+
+          <!-- Dropdown Paciente -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paciente</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to 'Consultar Paciente',pacientes_path,:id=>'drop' %>
+              <%= link_to 'Cadastrar Paciente', new_paciente_path,:id=>'drop' %>
+            </div>
+          </li>
+        </ul>
+        <%= link_to 'Sair', destroy_user_session_path, method: :delete,:class=>"btn btn-outline-white btn-md my-2 my-sm-0 ml-3" %></a>
+    </div>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark indigo darken-3">
+
+      <!-- Navbar brand -->
+      <i class="fa fa-reorder" onclick="openNav()" id="mobile" aria-hidden="true"></i>
+      <%= link_to 'Secretaria Virtual',root_path,:class=>"btn btn-outline-primary waves-effect"%>
+
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="basicExampleNav">
 
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
 
-        <!-- Dropdown Consulta -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fatura</a>
-          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to 'Faturas', faturas_path if current_user %>
-          </div>
-        </li>
+          <!-- Dropdown Fatura -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fatura</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to 'Faturas', faturas_path %>
+            </div>
+          </li>
+          <!-- Dropdown Consulta -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulta</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to 'Consultas', consultas_path %>
+              <%= link_to 'Cadastrar Consulta', new_consulta_path%>
+            </div>
+          </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulta</a>
-          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to 'Consultas', consultas_path if current_user %>
-            <%= link_to 'Cadastrar Consulta', new_consulta_path%>
-          </div>
-        </li>
-            <!-- Dropdown Paciente -->
-        <li class="nav-item dropdown">
+          <!-- Dropdown Paciente -->
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paciente</a>
             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to 'Consultar Paciente',pacientes_path,:id=>'drop' %>
-              <%= link_to 'Cadastrar Paciente', new_paciente_path,:id=>'drop' %>
+              <%= link_to 'Consultar Paciente',pacientes_path %>
+              <%= link_to 'Cadastrar Paciente', new_paciente_path %>
             </div>
-        </li>
-            </ul>
-    <li id="no-list">
-         <%= link_to 'Sair', destroy_user_session_path, method: :delete,:class=>"btn btn-outline-white btn-md my-2 my-sm-0 ml-3" %></a>
-    </li>
-    </div>
-    <!-- Collapsible content -->
-</nav>
+          </li>
 
-   <% end %>
-  <main class="animated fadeInDown ">
+        </ul>
+
+        <li id="no-list">
+          <%= link_to 'Sair', destroy_user_session_path, method: :delete, :class=>"btn btn-outline-white btn-md my-2 my-sm-0 ml-3" %>
+        </li>
+
+      </div>
+      <!-- Collapsible content -->
+    </nav>
+
+  <% end %>
+  <main id="main" class="animated fadeInDown ">
     <div>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
       <%= yield %>
     </div>
-    </main>
+  </main>
 
-<% if current_user %>
-<div id="footer">
-</div>
-<br>
-<br>
-<footer>
-footer
-</footer>
-<% end %>
+  <% if current_user %>
+    <div id="footer"></div>
+    <br>
+    <br>
+    <footer>
+      <a href="#">
+        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+      </a>
+      <a href="#">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+    </footer>
+  <% end %>
 
+  <!-- JQuery -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
 
-<!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
-
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+      document.body.style.backgroundColor = "white";
+    }
+  </script>
   </body>
 </html>
