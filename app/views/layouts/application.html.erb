@@ -26,10 +26,36 @@
 
   <body>
   <% if current_user %>
+  <!-- Sidemenu mobile -->
+  <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <!-- Links -->
+  <ul class="navbar-nav mr-auto">
+
+  <!-- Dropdown Consulta -->
+  <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulta</a>
+      <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+      <%= link_to 'Exibir Consultas', consultas_path,:id=>'drop' %>
+      <%= link_to 'Cadastrar Consulta', new_consulta_path,:id=>'drop'%>
+
+      <!-- Dropdown Paciente -->
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paciente</a>
+          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <%= link_to 'Consultar Paciente',pacientes_path,:id=>'drop' %>
+            <%= link_to 'Cadastrar Paciente', new_paciente_path,:id=>'drop' %>
+          </div>
+      </li>
+      </ul>
+      <%= link_to 'Sair', destroy_user_session_path, method: :delete,:class=>"btn btn-outline-white btn-md my-2 my-sm-0 ml-3" %></a>
+</div> 
+
   <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark indigo darken-3">
 
     <!-- Navbar brand -->
+    <i class="fa fa-reorder" onclick="openNav()" id="mobile" aria-hidden="true"></i>
     <%= link_to 'Secretaria Virtual',root_path,:class=>"btn btn-outline-primary waves-effect"%>
 
     <!-- Collapsible content -->
@@ -42,8 +68,8 @@
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulta</a>
             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to 'Consultas', consultas_path if current_user %>
-            <%= link_to 'Cadastrar Consulta', new_consulta_path%>
+            <%= link_to 'Consultas', consultas_path if current_user,:id=>'drop' %>
+            <%= link_to 'Cadastrar Consulta', new_consulta_path,:id=>'drop'%>
 
             <!-- Dropdown Paciente -->
             <li class="nav-item dropdown">
@@ -55,14 +81,14 @@
             </li>
             </ul>
     <li id="no-list">
-         <%= link_to 'Sair', destroy_user_session_path, method: :delete,:class=>"btn btn-outline-white btn-md my-2 my-sm-0 ml-3" %></a>
+         <%= link_to 'Sair', destroy_user_session_path, method: :delete,:class=>"btn btn-outline-white btn-md my-2 my-sm-0 ml-3" %>
     </li>
     </div>
     <!-- Collapsible content -->
 </nav>
 </div>
    <% end %>
-  <main class="animated fadeInDown ">
+  <main id="main" class="animated fadeInDown ">
     <div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
@@ -77,7 +103,7 @@
 <br>
 <br>
 <footer>
-footer
+<a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
 </footer>
 <% end %>
 
@@ -90,6 +116,18 @@ footer
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
 
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+}
+</script>
   </body>
 </html>

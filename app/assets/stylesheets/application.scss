@@ -104,4 +104,67 @@ span{
   background: #0d47a1;
   color: white;
 }
+.fa{
+  cursor: pointer;
+  color: white;
+}
+#mobile{
+  display:none;
+}
 
+@media only screen and (max-width: 991px) {
+  #mobile{
+    display:block;
+  }
+  main{
+    width: 88vw;
+  }
+  #table{
+    width: 30px;
+  }
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, #0099cc 0%, #33ccff 100%);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  color: white;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  transition: 0.5s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
+}
