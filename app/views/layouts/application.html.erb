@@ -25,6 +25,7 @@
   </head>
 
   <body>
+<<<<<<< c8147b88821393b0e3cfd5166137c67ef31117c9
   <% if current_user %>
   <!-- Sidemenu mobile -->
   <div id="mySidenav" class="sidenav">
@@ -60,6 +61,52 @@
 
     <!-- Collapsible content -->
     <div class="collapse navbar-collapse" id="basicExampleNav">
+=======
+    <% if current_user %>
+      <!-- Sidemenu mobile -->
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+
+          <!-- Dropdown Consulta -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fatura</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to 'Faturas', faturas_path, :id=>'drop' %>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulta</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to 'Exibir Consultas', consultas_path,:id=>'drop' %>
+              <%= link_to 'Cadastrar Consulta', new_consulta_path,:id=>'drop'%>
+            </div>
+          </li>
+
+          <!-- Dropdown Paciente -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paciente</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to 'Consultar Paciente',pacientes_path,:id=>'drop' %>
+              <%= link_to 'Cadastrar Paciente', new_paciente_path,:id=>'drop' %>
+            </div>
+          </li>
+        </ul>
+        <%= link_to 'Sair', destroy_user_session_path, method: :delete, :class=>"btn btn-outline-white btn-md my-2 my-sm-0 ml-3" %>
+    </div>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark indigo darken-3">
+
+      <!-- Navbar brand -->
+      <i class="fa fa-reorder" onclick="openNav()" id="mobile" aria-hidden="true"></i>
+      <%= link_to 'Secretaria Virtual',root_path,:class=>"btn btn-outline-primary waves-effect"%>
+
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="basicExampleNav">
+>>>>>>> Fix paciente
 
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
