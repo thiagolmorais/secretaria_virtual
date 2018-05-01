@@ -14,6 +14,7 @@
 @import "bootstrap";
  *= require_tree .
  *= require_self
+ *= require fullcalendar
  */
 main{
     width: 90%;
@@ -61,9 +62,7 @@ main{
   h4,h3,.showp,.cash{
   text-align: center;
   }
-span{
-  color: white;
-}
+
 .notice,.alert{
   text-align: center;
 }
@@ -99,9 +98,8 @@ span{
   box-shadow: 0 1px 1px rgba(0,0,0,0.05);
   color: black;
 }
- 
+
 .app{
   background: #0d47a1;
   color: white;
 }
-
