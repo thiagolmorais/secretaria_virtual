@@ -16,6 +16,6 @@ class Consulta < ApplicationRecord
     precos.each do |preco|
       preco_valido << preco if preco.reajuste < self.data
     end
-    preco_valido.last.valor
+    preco_valido.last
   end
 end

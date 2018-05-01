@@ -13,7 +13,7 @@ class FaturasController < ApplicationController
   def create
     @fatura = Fatura.new(fatura_params)
     @consulta = Consulta.find(params[:consulta_id])
-    @fatura.valor = @consulta.valor_consulta
+    @fatura.valor = @consulta.valor_consulta.valor
     @fatura.vencimento = @fatura.competencia
     @consulta.status = true
     @fatura.save
