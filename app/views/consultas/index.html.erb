@@ -7,61 +7,7 @@
 </div>
 <div id="calendar"><div>
 
-<table class="table table-hover">
 
-    <!--Table head-->
-    <thead>
-        <tr>
-            <th>Dia</th>
-            <th>Hora</th>
-            <th>Paciente</th>
-            <th>Status</th>
-            <th>Atender</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-<% @consultas.each do |consulta| %>
-  <tr>
-    <td><%= link_to I18n.localize(consulta.data), consulta_path(consulta), class: "consulta" %></td>
-    <td><%= consulta.hora.strftime('%R') %></td>
-    <td><%= link_to consulta.paciente.nome, paciente_path(consulta.paciente), class: "consulta" %></td>
-    <td><%= consulta.status_consulta %></td>
-    <td><%= link_to 'Atender', consulta.atendimento(consulta) %></td>
-    <td><%= link_to 'Deletar', consulta_path(consulta), method: :delete, class: "consulta" %></td>
-  </tr>
-<% end %>
-
-</div>
-</tbody>
-</table>
 
 <%= link_to 'Cadastrar', new_consulta_path,:class=>''%>
-<%= javascript_include_tag "full_calendar.js"%>
-<script>
-
-console.log('index');
-
-
-
-
-
-const busca = document.querySelector("#busca");
-busca.addEventListener('input', function () {
-    const consultas = document.querySelectorAll(".consulta");
-    for (let consulta of consultas) {
-        var compara = consulta.textContent.substr(0, busca.value.length);
-        if (busca.value.length !== 0) {
-            if (busca.value.toUpperCase() != compara.toUpperCase()) {
-                consulta.parentNode.classList.add('some');
-            } else {
-                consulta.parentNode.classList.remove('some');
-            }
-        } else {
-            consulta.parentNode.classList.remove('some');
-        }
-    }
-
-})
-$('#input_starttime').pickatime({});
-</script>
+<%= javascript_include_tag "busca.js full_calendar.js"%>

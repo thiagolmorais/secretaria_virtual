@@ -22,15 +22,11 @@ class Consulta < ApplicationRecord
   end
 
   def valor_consulta
-<<<<<<< c8147b88821393b0e3cfd5166137c67ef31117c9
-    self.paciente.preco_vigente
-=======
     preco_valido = []
     precos = Preco.where(paciente_id: self.paciente_id).order(:reajuste)
     precos.each do |preco|
       preco_valido << preco if preco.reajuste < self.data
     end
     preco_valido.last
->>>>>>> Fix paciente
   end
 end
