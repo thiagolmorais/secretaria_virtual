@@ -5,7 +5,7 @@
     <input type="text" id="inputLGEx" class="form-control form-control-lg">
     <label for="inputLGEx">Busca</label>
 </div>
-<table id="table" class="table table-hover">
+<table class="table table-hover">
 
     <!--Table head-->
     <thead>
@@ -18,52 +18,17 @@
     <tbody>
 <% @pacientes.each do |paciente| %>
     <tr>
-        <td><%= paciente.nome %></td>
-        <td><%= paciente.email %></td>
+        <td class="buscar"><%= paciente.nome %></td>
+        <td class="buscar"><%= paciente.email %></td>
         <td><%= link_to 'Consultar', paciente_path(paciente),:class => 'btn btn-outline-primary waves-effect' %></td>
     <% end %>
     </tbody>
 </table>
 </div>
 
-<script>
-const busca = document.querySelector("#inputLGEx");
-busca.addEventListener('input', function () {
-    const pacientes = document.querySelectorAll(".paciente");
-    for (let paciente of pacientes) {
-        var compara = paciente.textContent.substr(0, busca.value.length);
-        if (busca.value.length !== 0) {
-            if (busca.value.toUpperCase() != compara.toUpperCase()) {
-                paciente.parentNode.classList.add('some');
-            } else {
-                paciente.parentNode.classList.remove('some');
-            }
-        } else {
-            paciente.parentNode.classList.remove('some');
-        }
-    }
 
-})
-</script>
-</div>
-</div>
 
-<script>
-const busca = document.querySelector("#inputLGEx");
-busca.addEventListener('input', function () {
-    const pacientes = document.querySelectorAll(".paciente");
-    for (let paciente of pacientes) {
-        var compara = paciente.textContent.substr(0, busca.value.length);
-        if (busca.value.length !== 0) {
-            if (busca.value.toUpperCase() != compara.toUpperCase()) {
-                paciente.parentNode.classList.add('some');
-            } else {
-                paciente.parentNode.classList.remove('some');
-            }
-        } else {
-            paciente.parentNode.classList.remove('some');
-        }
-    }
-})
-</script>
 </div>
+</div>
+</div>
+<%= javascript_include_tag "busca.js"%>
