@@ -30,7 +30,7 @@
         <%= form_tag(faturas_path, method: :post) do %>
           <%= hidden_field_tag(:consulta_id, consulta.id) %>
           <%= hidden_field_tag(:competencia, consulta.data) %>
-          <%= submit_tag('Atender') %>
+          <%= submit_tag('Atender',class:'btn btn-md btn-default') %>
         <% end %>
       <% end %>
       <% if consulta.status == true %>
@@ -41,7 +41,7 @@
       <% end %>
     </td>
     <!-- <td><%#= link_to 'Atender', model: consulta.gera_fatura, class: "consulta" %></td> -->
-    <td><%= link_to 'Deletar', consulta_path(consulta), method: :delete, class: "consulta" %></td>
+    <td id="delete"><%= link_to '', consulta_path(consulta), method: :delete, class: "fa fa-close consulta"%></td>
   </tr>
 <% end %>
 
@@ -49,5 +49,6 @@
 </tbody>
 </table>
 
-<%= link_to 'Cadastrar', new_consulta_path,:class=>''%>
+<%= link_to 'Cadastrar', new_consulta_path,:class=>'btn btn-md btn-indigo'%>
 <%= javascript_include_tag "busca.js"%>
+
