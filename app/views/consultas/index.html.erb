@@ -23,7 +23,7 @@
   <tr>
     <td><%= link_to I18n.localize(consulta.data), consulta_path(consulta), class: "consulta" %></td>
     <td><%= consulta.hora.strftime('%R') %></td>
-    <td><%= link_to consulta.paciente.nome, paciente_path(consulta.paciente), class: "consulta" %></td>
+    <td class="buscar"><%= link_to consulta.paciente.nome, paciente_path(consulta.paciente), class: "consulta" %></td>
     <td><%= consulta.status_consulta %></td>
     <td>
       <% if consulta.status == false %>
@@ -50,23 +50,4 @@
 </table>
 
 <%= link_to 'Cadastrar', new_consulta_path,:class=>''%>
-<script>
-const busca = document.querySelector("#busca");
-busca.addEventListener('input', function () {
-    const consultas = document.querySelectorAll(".consulta");
-    for (let consulta of consultas) {
-        var compara = consulta.textContent.substr(0, busca.value.length);
-        if (busca.value.length !== 0) {
-            if (busca.value.toUpperCase() != compara.toUpperCase()) {
-                consulta.parentNode.classList.add('some');
-            } else {
-                consulta.parentNode.classList.remove('some');
-            }
-        } else {
-            consulta.parentNode.classList.remove('some');
-        }
-    }
-
-})
-$('#input_starttime').pickatime({});
-</script>
+<%= javascript_include_tag "busca.js"%>
