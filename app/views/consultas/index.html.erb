@@ -29,7 +29,11 @@
         <%= form_tag(faturas_path, method: :post) do %>
           <%= hidden_field_tag(:consulta_id, consulta.id) %>
           <%= hidden_field_tag(:competencia, consulta.data) %>
+<<<<<<< bb013a543d95635fa58a94d1ab15eb396d3bde54
           <%= submit_tag('Atender',class:'btn btn-outline-default waves-effect') %>
+=======
+          <%= submit_tag('Atender',class:'btn btn-md btn-default') %>
+>>>>>>> Front improvements
         <% end %>
       <% end %>
       <% if consulta.status == true %>
@@ -40,11 +44,20 @@
       <% end %>
     </td>
     <!-- <td><%#= link_to 'Atender', model: consulta.gera_fatura, class: "consulta" %></td> -->
+<<<<<<< bb013a543d95635fa58a94d1ab15eb396d3bde54
     <td><%= link_to '', consulta_path(consulta), method: :delete, class: "fa fa-times-circle consulta" %></td>
+=======
+    <td id="delete"><%= link_to '', consulta_path(consulta), method: :delete, class: "fa fa-close consulta"%></td>
+>>>>>>> Front improvements
   </tr>
 <% end %>
 
 
+<<<<<<< bb013a543d95635fa58a94d1ab15eb396d3bde54
 <%= link_to 'Cadastrar', new_consulta_path,:class=>''%>
 <%= javascript_include_tag "full_calendar.js"%>
+=======
+<%= link_to 'Cadastrar', new_consulta_path,:class=>'btn btn-md btn-indigo'%>
+>>>>>>> Front improvements
 <%= javascript_include_tag "busca.js"%>
+

@@ -1,6 +1,6 @@
 <% if @paciente.errors.any? %>
   <% @paciente.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
+    <li class="alert-e fa fa-warning animated bounceInUp"><%=  msg %></li>
   <% end %>
 <% end %>
 

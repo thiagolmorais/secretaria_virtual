@@ -21,6 +21,7 @@ main{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 #listap{
     width: 99%;
@@ -54,7 +55,8 @@ main{
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 30px;
+  height: 35px;
+  z-index: 4;
   }
   .showp{
     column-count: 2;
@@ -82,15 +84,11 @@ main{
 #no-list{
   list-style: none;
 }
-#drop:hover{
-  background: #283593;
-  color: white;
-}
 #panel{
+  margin-top:13%;
   background: white;
   height: 380px;
   max-width: 430px;
-  margin: 0 auto 25px;
   margin-bottom: 20px;
   border-radius: 8px;
   border: 1px solid transparent;
@@ -130,28 +128,24 @@ main{
   z-index: 5;
   top: 0;
   left: 0;
-  background: #3b679e; /* Old browsers */
-  background: -moz-linear-gradient(top, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+  background: #3f51b5; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
   color: white;
+  font-family: 'Do Hyeon', sans-serif;
 }
 
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: black;
+  color: white;
   display: block;
-  transition: 0.5s;
 }
 
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: white
 }
 
 .sidenav .closebtn {
@@ -171,6 +165,7 @@ main{
 .sidenav {padding-top: 15px;}
 .sidenav a {font-size: 18px;}
 }
+<<<<<<< bb013a543d95635fa58a94d1ab15eb396d3bde54
 <<<<<<< 74140d0cc02613dfc1510d5852add1f7b33ae772
 =======
 
@@ -186,3 +181,190 @@ main{
   right: 0;
 }
 >>>>>>> Add db pagamentos [
+=======
+
+.alert-s{
+  animation-delay: 0.2s;
+  background: #00c851;
+  height: 54px;
+  width: 300px;
+  position: fixed;
+  right: 0;
+  border: 1px solid #00c851;
+  border-radius: 10px;
+  display: none;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+input[type="date"] {
+  color: navy;
+  -webkit-align-items: center;
+  display: -webkit-inline-flex;
+  font-family: monospace;
+  overflow: hidden;
+  padding: 0;
+  -webkit-padding-start: 1px;
+}
+
+input::-webkit-datetime-edit {
+ -webkit-flex: 1;
+ -webkit-user-modify: read-only !important;
+ display: inline-block;
+ min-width: 0;
+ overflow: hidden;
+}
+
+input::-webkit-datetime-edit-fields-wrapper {
+ -webkit-user-modify: read-only !important;
+ display: inline-block;
+ padding: 1px 0;
+ white-space: pre;
+}
+.loader {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #283593;
+  border-bottom: 16px solid #283593;
+  width: 150px;
+  height: 150px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  z-index: 5;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+body{
+  opacity: 0.2;
+  font-family: Roboto,sans-serif;
+}
+.alert-e{
+  animation-delay: 0.2s;
+  background: #ff3547;
+  height: 54px;
+  width: 300px;
+  position: fixed;
+  margin: auto;
+  top: 1;
+  right: 0;
+  left:0;
+  text-align: center;
+  border: 1px solid #ff3547;
+  box-shadow: grey 2px 2px;
+  border-radius: 3px;
+  display: none;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+#fab-button{
+  cursor: pointer;
+  margin-bottom: 0;
+  padding-top: 2px;
+  background: #f44336;
+  border: 1px solid #f44336;
+  border-radius: 50%;
+  width: 47px;
+  height: 47px;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  margin: 10px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  padding: 0;
+}
+
+#fab-button i{
+  font-size: 1.25rem;
+  line-height: 47px;
+  display: inline-block;
+  width: inherit;
+  text-align: center;
+  color: #fff;
+}
+
+#fab-list{
+  display: none;
+  position: fixed !important;
+  z-index: 998;
+  right: 35px;
+  bottom: 35px;
+  margin-bottom: 0;
+  padding-top: 15px;
+
+}  
+#fab{
+    display: none;
+  }
+@media only screen and (max-width: 415px) {
+    #mobile{
+      display:initial;
+    }
+    #no-mobile{
+      display: none;
+    }
+    .alert-s{
+    height: 40px;
+    }
+    #panel{
+      height: 400px;
+    }
+}
+
+#main-title{
+  font-family: 'Graduate', cursive;
+  font-size: 15px;
+}
+
+#delete a{
+  color:white;
+  background: red;
+  border: 1px ridge red;
+  border-radius: 50%;
+  width: 35px;
+  height: 30px;
+  padding-top: 2px;
+  box-shadow: grey 1px 1px;
+  font-size: 20px;
+}
+#delete a:hover{
+  color:red;
+  background: white;
+}
+.colls,.colls-c,.colls-p{
+  display: none;
+}
+
+hr.sidehr{
+  border-top: 1px solid white;
+  height: 5px;
+}
+.actions{
+  margin-top:3%;
+}
+.fixed{
+  top: 0;
+  z-index: 4;
+  position: fixed;
+  width: 100%;
+}
+>>>>>>> Front improvements
