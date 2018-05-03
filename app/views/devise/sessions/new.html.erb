@@ -54,9 +54,12 @@
           </div>
         <% end -%>
         <br>
-        <div class="actions">
-          <%= f.submit "Entrar", class:"btn btn-md btn-deep-purple" %><%= render "devise/shared/links" %>
+        <div id="mobile" class="actions">
+          <%= f.submit "Entrar", class:"btn btn-sm btn-deep-purple" %><%= render "devise/shared/links" %>
         </div>
+        <div id="no-mobile" class="actions">
+        <%= f.submit "Entrar", class:"btn btn-sm btn-deep-purple" %><%= render "devise/shared/links" %>
+      </div>
 
 
         <% end %>
