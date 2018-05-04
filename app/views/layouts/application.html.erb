@@ -109,7 +109,9 @@
   <% end %>
   <main id="main" class="animated fadeInDown ">
     <div>
+      <div id="notice">
       <p class="notice"><%= notice %></p>
+    </div>
       <p class="alert"><%= alert %></p>
 
       <%= yield %>
@@ -150,6 +152,8 @@
       document.getElementById("main").style.marginLeft = "0";
       document.body.style.backgroundColor = "white";
     }
+
+    // document.getElementById("notice").style.display = "block";
   </script>
   </body>
 </html>
