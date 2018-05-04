@@ -1,4 +1,3 @@
-
 <h3>Consultas</h3>
 <div class="busca">
 <div class="md-form form-lg">
@@ -30,18 +29,22 @@
         <%= form_tag(faturas_path, method: :post) do %>
           <%= hidden_field_tag(:consulta_id, consulta.id) %>
           <%= hidden_field_tag(:competencia, consulta.data) %>
+
           <%= submit_tag('Atender',class:'btn btn-md btn-default') %>
+
         <% end %>
       <% end %>
       <% if consulta.status == true %>
         <%= form_tag(fatura_path(Fatura.find_by(consulta_id: consulta.id)), method: :delete) do %>
           <%= hidden_field_tag(:consulta_id, consulta.id) %>
-          <%= submit_tag('Cancelar Fatura') %>
+          <%= submit_tag('Cancelar Fatura',class:'btn btn-md btn-outline-danger waves-effect') %>
         <% end %>
       <% end %>
     </td>
     <!-- <td><%#= link_to 'Atender', model: consulta.gera_fatura, class: "consulta" %></td> -->
+
     <td id="delete"><%= link_to '', consulta_path(consulta), method: :delete, class: "fa fa-close consulta"%></td>
+
   </tr>
 <% end %>
 

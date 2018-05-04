@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180430040632) do
+ActiveRecord::Schema.define(version: 20180502130436) do
 
   create_table "consulta", force: :cascade do |t|
     t.date "data"
@@ -45,6 +45,15 @@ ActiveRecord::Schema.define(version: 20180430040632) do
     t.datetime "updated_at", null: false
     t.boolean "status", default: true
     t.integer "dia_vencimento"
+  end
+
+  create_table "pagamentos", force: :cascade do |t|
+    t.decimal "valor"
+    t.date "data"
+    t.integer "fatura_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fatura_id"], name: "index_pagamentos_on_fatura_id"
   end
 
   create_table "precos", force: :cascade do |t|
