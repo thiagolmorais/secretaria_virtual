@@ -12,7 +12,10 @@
 
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-info animated fadeInLeft" data-toggle="modal" data-target="#exampleModal">
+<button type="button" id="no-mobile" class="btn btn-info animated fadeInLeft" data-toggle="modal" data-target="#exampleModal">
+    Exibir Preços
+</button>
+<button type="button" id="mobile" class="btn btn-sm btn-info animated fadeInLeft" data-toggle="modal" data-target="#exampleModal">
     Exibir Preços
 </button>
 
@@ -51,15 +54,21 @@
             <p>Nenhum preço cadastrado</p>
           <%end%>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                </div>
             </div>
         </div>
     </div>
+    <abbr id="no-mobile">
+    <%= link_to 'Cadastrar Preço', new_paciente_preco_path(params[:id]),:class => "btn btn-primary animated fadeInUp"%>
+    <%= link_to 'Editar', edit_paciente_path,:class => "btn btn-default animated fadeInRight" %>
+    </div>
+</abbr>
+<div id="mobile">
+    <%= link_to 'Cadastrar Preço', new_paciente_preco_path(params[:id]),:class => "btn btn-sm btn-primary animated fadeInUp"%><br>
+    <%= link_to 'Editar', edit_paciente_path,:class => "btn btn-sm btn-default animated fadeInRight" %>
 </div>
 
-<%= link_to 'Cadastrar Preço', new_paciente_preco_path(params[:id]),:class => "btn btn-primary animated fadeInUp"%>
 
 
-  <%= link_to 'Editar', edit_paciente_path,:class => "btn btn-default animated fadeInRight" %>
-  </div>

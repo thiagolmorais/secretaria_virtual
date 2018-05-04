@@ -20,7 +20,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
-  </head>
+    <link href="https://fonts.googleapis.com/css?family=Graduate|Poiret+One|Reenie+Beanie" rel="stylesheet">  
+    </head>
 
   <body>
     <% if current_user %>
@@ -28,42 +29,42 @@
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <!-- Links -->
-        <ul class="navbar-nav mr-auto">
+        <hr class="sidehr">
+          <!-- Dropdown Fatura -->
+            <a class="downcol fa fa-credit-card" onclick="openCol()"> Fatura <i class="fa animated flipInX fa-arrow-down"></i></a>
+            <a class="upcol fa fa-credit-card" onclick="closeCol()"> Fatura<i class="fa animated flipInX fa-arrow-up"></i></a>
+              <div class="colls">
+              <p class="smallnav"><%= link_to 'Faturas', faturas_path%>
+              </div>
+              <hr class="sidehr">
 
-          <!-- Dropdown Consulta -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fatura</a>
-            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-              <%= link_to 'Faturas', faturas_path, :id=>'drop' %>
-            </div>
-          </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulta</a>
-            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-              <%= link_to 'Exibir Consultas', consultas_path,:id=>'drop' %>
-              <%= link_to 'Cadastrar Consulta', new_consulta_path,:id=>'drop'%>
+            <a class="downcolc fa fa-calendar-check-o" onclick="openColc()"> Consulta <i class="fa animated flipInX fa-arrow-down"></i></a>
+            <a class="upcolc fa fa-calendar-check-o" onclick="closeColc()"> Consulta  <i class="fa animated flipInX  fa-arrow-up"></i></a>
+              <div class="colls-c">
+              <%= link_to 'Exibir Consultas', consultas_path,class:'smallnav'%>
+              <%= link_to 'Cadastrar Consulta', new_consulta_path,class:'smallnav'%>
             </div>
-          </li>
+            <hr class="sidehr">
 
           <!-- Dropdown Paciente -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paciente</a>
-            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-              <%= link_to 'Consultar Paciente',pacientes_path,:id=>'drop' %>
-              <%= link_to 'Cadastrar Paciente', new_paciente_path,:id=>'drop' %>
+          <a class="downcolp fa fa-address-book-o" onclick="openColp()"> Paciente <i class="fa animated flipInX fa-arrow-down"></i></a>
+          <a class="upcolp fa fa-address-book-o" onclick="closeColp()"> Paciente  <i class="fa animated flipInX fa-arrow-up"></i></a>
+            <div class="colls-p">
+              <%= link_to 'Consultar Paciente',pacientes_path,class:'smallnav'%>
+              <%= link_to 'Cadastrar Paciente', new_paciente_path,class:'smallnav'%>
             </div>
-          </li>
-        </ul>
-        <%= link_to 'Sair', destroy_user_session_path, method: :delete, :class=>"btn btn-outline-white btn-md my-2 my-sm-0 ml-3" %>
+          <hr class="sidehr">
+        <%= link_to 'Sair', destroy_user_session_path, method: :delete, :class=>"btn btn-outline-white btn-sm" %>
     </div>
 
     <!--Navbar-->
+    <section>
     <nav class="navbar navbar-expand-lg navbar-dark indigo darken-3">
 
       <!-- Navbar brand -->
       <i class="fa fa-reorder" onclick="openNav()" id="mobile" aria-hidden="true"></i>
-      <%= link_to 'Secretaria Virtual',root_path,:class=>"btn btn-outline-primary waves-effect"%>
+      <%= link_to 'Secretaria Virtual',root_path,:class=>"btn btn-outline-primary waves-effect",id:"main-title"%>
 
       <!-- Collapsible content -->
       <div class="collapse navbar-collapse" id="basicExampleNav">
@@ -105,15 +106,22 @@
       </div>
       <!-- Collapsible content -->
     </nav>
+    </section>
 
   <% end %>
-  <main id="main" class="animated fadeInDown ">
-    <div>
-      <div id="notice">
-      <p class="notice"><%= notice %></p>
-    </div>
-      <p class="alert"><%= alert %></p>
 
+  <main id="main">
+    <div class="animated fadeInDown">
+    <div class="notice alert-s animated fadeInRightBig">
+    <i class="fa fa-check" aria-hidden="true"></i>
+      <span id="notice"><%= notice %></span>
+      </div>
+      <p class="alert"><%= alert %></p>      
+
+
+      <!--Big blue-->
+      <div class="loader"></div>
+                                
       <%= yield %>
     </div>
   </main>
@@ -124,10 +132,10 @@
     <br>
     <footer>
       <a href="#">
-        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+        <i data-toggle="tooltip" data-placement="top" title="Facebook!" class="fa fa-facebook-official" aria-hidden="true"></i>
       </a>
       <a href="#">
-        <i class="fa fa-github" aria-hidden="true"></i>
+        <i data-toggle="tooltip" data-placement="top" title="Github!" class="fa fa-github" aria-hidden="true"></i>
       </a>
     </footer>
   <% end %>
@@ -141,6 +149,10 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
   <script>
+  $('.upcol').hide();
+  $('.upcolc').hide();
+  $('.upcolp').hide();
+
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
       document.getElementById("main").style.marginLeft = "250px";
@@ -153,7 +165,71 @@
       document.body.style.backgroundColor = "white";
     }
 
-    // document.getElementById("notice").style.display = "block";
+    /FATURA/
+    function openCol(){
+      $('.colls').slideDown();
+      $('.downcol').hide();
+      $('.upcol').show();
+    }
+
+    function closeCol(){
+      $('.colls').slideUp();
+      $('.downcol').show();
+      $('.upcol').hide();
+    }
+
+    /Consulta/
+    function openColc(){
+      $('.colls-c').slideDown();
+      $('.downcolc').hide();
+      $('.upcolc').show();
+    }
+
+    function closeColc(){
+      $('.colls-c').slideUp();
+      $('.downcolc').show();
+      $('.upcolc').hide();
+    }
+
+    /Paciente/
+    function openColp(){
+      $('.colls-p').slideDown();
+      $('.downcolp').hide();
+      $('.upcolp').show();
+    }
+
+    function closeColp(){
+      $('.colls-p').slideUp();
+      $('.downcolp').show();
+      $('.upcolp').hide();
+    }
+
+    $(document).ready(function(){
+        $('.loader').fadeOut();
+      document.body.style.opacity ="1";
+    });
+
+  var booln = document.querySelector("#notice").innerHTML; 
+  if (booln != '') {
+    document.querySelector(".alert-s").style.display = "block";
+    setTimeout(function() {
+        $('.alert-s').fadeOut(2000);
+    }, 4000);
+  }
+
+
+  var bool = document.querySelector(".alert-e").innerHTML;
+  if (bool != '') {
+    document.querySelector(".alert-e").style.display = "block";
+    setTimeout(function() {
+        $('.alert-e').fadeOut(2000);
+    }, 4000);
+  }
+
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
   </script>
   </body>
 </html>

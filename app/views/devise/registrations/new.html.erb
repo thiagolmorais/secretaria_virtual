@@ -3,7 +3,7 @@
 <h2 class="form-signin-heading">Novo Cadastro</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <div><%= devise_error_messages! %></div>
 
   <div class="md-form">
   <%= f.text_field :usuario,:id=>"inputMDEx" ,:class =>"form-control"%>

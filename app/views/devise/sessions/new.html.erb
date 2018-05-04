@@ -1,18 +1,4 @@
 <style>
-      #loader {
-        transition: all 0.3s ease-in-out;
-        opacity: 1;
-        visibility: visible;
-        position: fixed;
-        height: 100vh;
-        width: 100%;
-        background: #fff;
-        z-index: 90000;
-      }
-      #loader.fadeOut {
-        opacity: 0;
-        visibility: hidden;
-      }
       .spinner {
         width: 40px;
         height: 40px;
@@ -47,26 +33,10 @@
       }
     </style>
   </head>
-  <body class="app animated bounceInLeft">
-    <div id='loader'>
-      <div class="spinner"></div>
-    </div>
 
-    <script>
-      window.addEventListener('load', () => {
-        const loader = document.getElementById('loader');
-        setTimeout(() => {
-          loader.classList.add('fadeOut');
-        }, 300);
-      });
-
-      $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-    </script>
-
-<div class="container" id="panel">
-<h2>Login</h2>
+  <body class="app animated fadeInUpBig">
+    <div class="container" id="panel">
+      <h2>Login</h2>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="md-form">
         <%= f.email_field :email,:id=>"inputMDEx" ,:class =>"form-control"%>
@@ -83,10 +53,13 @@
             <%= f.label :remember_me %>
           </div>
         <% end -%>
-        <br><br>
-        <div class="actions">
-          <%= f.submit "Entrar", class:"btn btn-md btn-deep-purple" %><%= render "devise/shared/links" %>
+        <br>
+        <div id="mobile" class="actions">
+          <%= f.submit "Entrar", class:"btn btn-sm btn-deep-purple" %><%= render "devise/shared/links" %>
         </div>
+        <div id="no-mobile" class="actions">
+        <%= f.submit "Entrar", class:"btn btn-sm btn-deep-purple" %><%= render "devise/shared/links" %>
+      </div>
 
 
         <% end %>
@@ -98,3 +71,16 @@
 
 
     </div> <!-- /container -->
+
+    <script>
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      setTimeout(() => {
+        loader.classList.add('fadeOut');
+      }, 300);
+    });
+
+    $(function () {
+$('[data-toggle="tooltip"]').tooltip()
+})
+  </script>
