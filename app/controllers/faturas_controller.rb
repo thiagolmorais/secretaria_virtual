@@ -13,14 +13,19 @@ class FaturasController < ApplicationController
   end
 
   def create
-    @fatura = Fatura.new(fatura_params)
     @consulta = Consulta.find(params[:consulta_id])
-    @fatura.valor = @consulta.valor_consulta.valor
-    @fatura.vencimento = @fatura.competencia
-    @consulta.status = true
-    @fatura.save
-    @consulta.save
-    redirect_to consultas_path
+    if @consulta.valor_consulta.nil?
+      flash[:alert] = 'Não foi possível efetuar o atendimento, porque o paciente não possui preço cadastrado. Favor cadastrar um preço.'
+      redirect_to new_paciente_preco_path(@consulta.paciente_id)
+    else
+      @fatura = Fatura.new(fatura_params)
+      @fatura.valor = @consulta.valor_consulta.valor
+      @fatura.vencimento = @fatura.competencia
+      @consulta.status = true
+      @fatura.save
+      @consulta.save
+      redirect_to consultas_path
+    end
   end
 
   def destroy
