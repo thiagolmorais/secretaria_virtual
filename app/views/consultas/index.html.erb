@@ -28,9 +28,9 @@
       <% if consulta.status == false %>
         <%= form_tag(faturas_path, method: :post) do %>
           <%= hidden_field_tag(:consulta_id, consulta.id) %>
-          <%= hidden_field_tag(:competencia, consulta.data) %>
-
-          <%= submit_tag('Atender',class:'btn btn-md btn-default') %>
+          <%= hidden_field_tag(:competencia, "#{consulta.data.month}#{consulta.data.year}") %>
+          <%= hidden_field_tag(:vencimento, consulta.data) %>
+        <%= submit_tag('Atender',class:'btn btn-md btn-default') %>
 
         <% end %>
       <% end %>
@@ -54,4 +54,3 @@
 
 <%= link_to 'Cadastrar', new_consulta_path,:class=>'btn btn-md btn-indigo'%>
 <%= javascript_include_tag "busca.js"%>
-

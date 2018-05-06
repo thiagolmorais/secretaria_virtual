@@ -1,3 +1,3 @@
 class Pagamento < ApplicationRecord
-  belongs_to :fatura
+  belongs_to :paciente
 end
