@@ -19,4 +19,8 @@ class Paciente < ApplicationRecord
     end
     preco_valido.last
   end
+
+  def competencias
+    Fatura.select(:competencia).where(consulta_id: Consulta.where(paciente_id: self)).distinct
+  end
 end

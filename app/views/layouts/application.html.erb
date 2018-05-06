@@ -77,6 +77,13 @@
         <!-- Links -->
         <hr class="sidehr">
           <!-- Dropdown Fatura -->
+            <a class="downcol fa fa-credit-card" onclick="openCol()"> Pagamento <i class="fa animated flipInX fa-arrow-down"></i></a>
+            <a class="upcol fa fa-credit-card" onclick="closeCol()"> Pagamento<i class="fa animated flipInX fa-arrow-up"></i></a>
+              <div class="colls">
+              <p class="smallnav"><%= link_to 'Pagamentos', pagamentos_path%>
+              </div>
+              <hr class="sidehr">
+
             <a class="downcol fa fa-credit-card" onclick="openCol()"> Fatura <i class="fa animated flipInX fa-arrow-down"></i></a>
             <a class="upcol fa fa-credit-card" onclick="closeCol()"> Fatura<i class="fa animated flipInX fa-arrow-up"></i></a>
               <div class="colls">
@@ -119,6 +126,7 @@
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
 
+<<<<<<< 74309523c5b935712a4ebdb274e2668bba5fcd1b
         <!-- Dropdown Consulta -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fatura</a>
@@ -126,6 +134,29 @@
             <%= link_to 'Faturas', faturas_path if current_user %>
           </div>
         </li>
+=======
+          <!-- Dropdown Fatura -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pagamento</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to 'Pagamentos', pagamentos_path %>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fatura</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to 'Faturas', faturas_path %>
+            </div>
+          </li>
+          <!-- Dropdown Consulta -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulta</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to 'Consultas', consultas_path %>
+              <%= link_to 'Cadastrar Consulta', new_consulta_path%>
+            </div>
+          </li>
+>>>>>>> implementação do pagamento
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulta</a>
@@ -171,8 +202,13 @@
     <i class="fa fa-check" aria-hidden="true"></i>
       <span id="notice"><%= notice %></span>
       </div>
+<<<<<<< 74309523c5b935712a4ebdb274e2668bba5fcd1b
       <p class="alert"><%= alert %></p>      
 >>>>>>> Front improvements
+=======
+      <p class="alert"><%= alert %></p>
+
+>>>>>>> implementação do pagamento
 
       <!--Big blue-->
       <div class="loader"></div>

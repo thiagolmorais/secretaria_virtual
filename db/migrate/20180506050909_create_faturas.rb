@@ -3,9 +3,9 @@ class CreateFaturas < ActiveRecord::Migration[5.1]
     create_table :faturas do |t|
       t.date :vencimento
       t.boolean :status, default: false
-      t.integer :consulta_id
       t.decimal :valor
-      t.date :competencia
+      t.integer :competencia
+      t.integer :consulta_id
       t.references :consulta, foreign_key: true
 
       t.timestamps

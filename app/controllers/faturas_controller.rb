@@ -20,7 +20,7 @@ class FaturasController < ApplicationController
     else
       @fatura = Fatura.new(fatura_params)
       @fatura.valor = @consulta.valor_consulta.valor
-      @fatura.vencimento = @fatura.competencia
+      @fatura.vencimento = Time.now
       @consulta.status = true
       @fatura.save
       @consulta.save
@@ -40,7 +40,7 @@ class FaturasController < ApplicationController
   private
 
   def fatura_params
-    params.permit(:consulta_id, :competencia)
+    params.permit(:consulta_id, :competencia, :vencimento)
   end
 >>>>>>> Fix paciente
 end
