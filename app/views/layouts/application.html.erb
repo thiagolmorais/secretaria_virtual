@@ -77,23 +77,23 @@
         <!-- Links -->
         <hr class="sidehr">
           <!-- Dropdown Fatura -->
-            <a class="downcol fa fa-credit-card" onclick="openCol()"> Pagamento <i class="fa animated flipInX fa-arrow-down"></i></a>
-            <a class="upcol fa fa-credit-card" onclick="closeCol()"> Pagamento<i class="fa animated flipInX fa-arrow-up"></i></a>
-              <div class="colls">
+            <a class="downcolf fa fa-money" onclick="openColf()"> Pagamento <i class="fa animated flipInX fa-sort-down"></i></a> 
+            <a class="upcolf fa fa-money" onclick="closeColf()"> Pagamento <i class="fa animated flipInX fa-sort-up"></i></a>
+              <div class="colls-f">
               <p class="smallnav"><%= link_to 'Pagamentos', pagamentos_path%>
               </div>
               <hr class="sidehr">
 
-            <a class="downcol fa fa-credit-card" onclick="openCol()"> Fatura <i class="fa animated flipInX fa-arrow-down"></i></a>
-            <a class="upcol fa fa-credit-card" onclick="closeCol()"> Fatura<i class="fa animated flipInX fa-arrow-up"></i></a>
+            <a class="downcol fa fa-credit-card" onclick="openCol()"> Fatura <i class="fa animated flipInX fa-sort-down"></i></a>
+            <a class="upcol fa fa-credit-card" onclick="closeCol()"> Fatura <i class="fa animated flipInX fa-sort-up"></i></a>
               <div class="colls">
               <p class="smallnav"><%= link_to 'Faturas', faturas_path%>
               </div>
               <hr class="sidehr">
 
 
-            <a class="downcolc fa fa-calendar-check-o" onclick="openColc()"> Consulta <i class="fa animated flipInX fa-arrow-down"></i></a>
-            <a class="upcolc fa fa-calendar-check-o" onclick="closeColc()"> Consulta  <i class="fa animated flipInX  fa-arrow-up"></i></a>
+            <a class="downcolc fa fa-calendar-check-o" onclick="openColc()"> Consulta <i class="fa animated flipInX fa-sort-down"></i></a>
+            <a class="upcolc fa fa-calendar-check-o" onclick="closeColc()"> Consulta  <i class="fa animated flipInX  fa-sort-up"></i></a>
               <div class="colls-c">
               <%= link_to 'Exibir Consultas', consultas_path,class:'smallnav'%>
               <%= link_to 'Cadastrar Consulta', new_consulta_path,class:'smallnav'%>
@@ -101,8 +101,8 @@
             <hr class="sidehr">
 
           <!-- Dropdown Paciente -->
-          <a class="downcolp fa fa-address-book-o" onclick="openColp()"> Paciente <i class="fa animated flipInX fa-arrow-down"></i></a>
-          <a class="upcolp fa fa-address-book-o" onclick="closeColp()"> Paciente  <i class="fa animated flipInX fa-arrow-up"></i></a>
+          <a class="downcolp fa fa-address-book-o" onclick="openColp()"> Paciente <i class="fa animated flipInX fa-sort-down"></i></a>
+          <a class="upcolp fa fa-address-book-o" onclick="closeColp()"> Paciente  <i class="fa animated flipInX fa-sort-up"></i></a>
             <div class="colls-p">
               <%= link_to 'Consultar Paciente',pacientes_path,class:'smallnav'%>
               <%= link_to 'Cadastrar Paciente', new_paciente_path,class:'smallnav'%>
@@ -112,20 +112,22 @@
     </div>
 
     <!--Navbar-->
-    <section>
-    <nav class="navbar navbar-expand-lg navbar-dark indigo darken-3">
+
+    <nav class="scrolling-navbar">
 
       <!-- Navbar brand -->
-      <i class="fa fa-reorder" onclick="openNav()" id="mobile" aria-hidden="true"></i>
+      <i class="fa fa-reorder" onclick="openNav()" id="mobile"></i>
       <%= link_to 'Secretaria Virtual',root_path,:class=>"btn btn-outline-primary waves-effect",id:"main-title"%>
 
       <!-- Collapsible content -->
+<<<<<<< c7f829fcbc9a2a8f6c3b5b09bb52d2a3513dd70b
       <div class="collapse navbar-collapse" id="basicExampleNav">
 >>>>>>> Front improvements
+=======
+>>>>>>> melhoria geral no front
 
-        <!-- Links -->
-        <ul class="navbar-nav mr-auto">
 
+<<<<<<< c7f829fcbc9a2a8f6c3b5b09bb52d2a3513dd70b
 <<<<<<< 74309523c5b935712a4ebdb274e2668bba5fcd1b
         <!-- Dropdown Consulta -->
         <li class="nav-item dropdown">
@@ -190,11 +192,47 @@
     </div>
       <p class="alert"><%= alert %></p>
 =======
-      </div>
-      <!-- Collapsible content -->
-    </nav>
-    </section>
+=======
+        <!-- Links -->
+  <abbr id ="no-mobile">
+          <!-- Dropdown Fatura -->
+      <abbr class="links">
+        <abbr class="col-2">
+          <a data-toggle="tooltip" data-placement="top" title="Pagamento!" class="btn-group  point fa fa-money">
+             <%= link_to '  Pagamentos', pagamentos_path,class:'alink' %>
+             </a>
+        </abbr>
 
+        <abbr class="col-2">
+          <a data-toggle="tooltip" data-placement="top" title="Fatura!" class="btn-group point fa fa-credit-card">
+              <%= link_to '  Faturas', faturas_path,class:'alink' %>
+            </abbr>
+
+
+          <!-- Dropdown Consulta--> 
+          <abbr class="col-2">
+              <button id="dropc" class="btn btn-md btn-deep-purple"><i class="fa fa-book" aria-hidden="true"></i>  Consulta  <i class="fa fa-sort-down"></i></button>
+              <div id="no-mobile" class="drop-menuc border border-info">
+              <%= link_to 'Exibir Consultas', consultas_path,class:"dropdown-item" %>
+              <%= link_to 'Cadastrar Consulta', new_consulta_path,class:"dropdown-item"%>
+              </div>
+          </div>
+          
+          <!--Dropdown Paciente -->
+
+          <abbr class="col-2">
+              <button id="dropp" class="btn btn-md btn-deep-purple"><i class="fa fa-address-book-o"></i>  Paciente  <i class="fa fa-sort-down"></i></button>
+              <div id="no-mobile" class="drop-menup border border-info">
+              <%= link_to 'Consultar Paciente',pacientes_path,class:"dropdown-item" %>
+              <%= link_to 'Cadastrar Paciente', new_paciente_path,class:"dropdown-item" %>
+            </div>
+          </abbr>
+
+          <%= link_to 'Sair', destroy_user_session_path, method: :delete, id:"exit" ,:class=>"btn btn-outline-white btn-md" %>
+>>>>>>> melhoria geral no front
+      </div>
+      </abbr>
+    </nav>
   <% end %>
   <main id="main">
     <div class="animated fadeInDown">
@@ -243,6 +281,7 @@
   $('.upcol').hide();
   $('.upcolc').hide();
   $('.upcolp').hide();
+  $('.upcolf').hide();
 
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
@@ -257,9 +296,13 @@
     }
 <<<<<<< bb013a543d95635fa58a94d1ab15eb396d3bde54
 
+<<<<<<< c7f829fcbc9a2a8f6c3b5b09bb52d2a3513dd70b
     // document.getElementById("notice").style.display = "block";
 =======
     /FATURA/
+=======
+    /Fatura/
+>>>>>>> melhoria geral no front
     function openCol(){
       $('.colls').slideDown();
       $('.downcol').hide();
@@ -298,22 +341,58 @@
       $('.upcolp').hide();
     }
 
+    /Pagamento/
+    function openColf(){
+      $('.colls-f').slideDown();
+      $('.downcolf').hide();
+      $('.upcolf').show();
+    }
+
+    function closeColf(){
+      $('.colls-f').slideUp();
+      $('.downcolf').show();
+      $('.upcolf').hide();
+    }
+
+  $("#dropp").click(function(){
+    var drop = document.querySelector(".drop-menup").style.display;
+      if (drop != 'block'){
+        if (document.querySelector(".drop-menuc").style.display == 'block'){
+          $('.drop-menuc').slideUp();
+        }
+        $('.drop-menup').slideDown();
+      }
+      else{
+        $('.drop-menup').slideUp();
+      }
+  });
+
+  $("#dropc").click(function(){
+    var dropc = document.querySelector(".drop-menuc").style.display;
+      if (dropc != 'block'){
+        if (document.querySelector(".drop-menup").style.display == 'block'){
+          $('.drop-menup').slideUp();
+        }
+        $('.drop-menuc').slideDown();
+      }
+      else{
+        $('.drop-menuc').slideUp();
+      }
+  });
+
     $(document).ready(function(){
         $('.loader').fadeOut();
       document.body.style.opacity ="1";
     });
 
-  var booln = document.querySelector("#notice").innerHTML;
-  if (booln != '') {
+  if (document.querySelector("#notice").innerHTML !== '') {
     document.querySelector(".alert-s").style.display = "block";
     setTimeout(function() {
         $('.alert-s').fadeOut(2000);
     }, 4000);
   }
-
-
-  var bool = document.querySelector(".alert-e").innerHTML;
-  if (bool != '') {
+  
+  if (document.querySelector(".alert").innerHTML !== '') {
     document.querySelector(".alert-e").style.display = "block";
     setTimeout(function() {
         $('.alert-e').fadeOut(2000);
@@ -323,7 +402,14 @@
   $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
+<<<<<<< c7f829fcbc9a2a8f6c3b5b09bb52d2a3513dd70b
 >>>>>>> Front improvements
+=======
+
+var current_url = window.location.pathname;
+
+
+>>>>>>> melhoria geral no front
   </script>
   </body>
 </html>
