@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :fatura do
-    vencimento "2018-04-30"
+    vencimento "2018-05-06"
     status false
-    consulta_id 1
     valor "9.99"
-    competencia "2018-04-30"
+    competencia 1
+    consulta_id 1
     consulta nil
   end
 end

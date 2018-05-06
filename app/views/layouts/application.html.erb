@@ -31,6 +31,13 @@
         <!-- Links -->
         <hr class="sidehr">
           <!-- Dropdown Fatura -->
+            <a class="downcol fa fa-credit-card" onclick="openCol()"> Pagamento <i class="fa animated flipInX fa-arrow-down"></i></a>
+            <a class="upcol fa fa-credit-card" onclick="closeCol()"> Pagamento<i class="fa animated flipInX fa-arrow-up"></i></a>
+              <div class="colls">
+              <p class="smallnav"><%= link_to 'Pagamentos', pagamentos_path%>
+              </div>
+              <hr class="sidehr">
+
             <a class="downcol fa fa-credit-card" onclick="openCol()"> Fatura <i class="fa animated flipInX fa-arrow-down"></i></a>
             <a class="upcol fa fa-credit-card" onclick="closeCol()"> Fatura<i class="fa animated flipInX fa-arrow-up"></i></a>
               <div class="colls">
@@ -74,6 +81,12 @@
 
           <!-- Dropdown Fatura -->
           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pagamento</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to 'Pagamentos', pagamentos_path %>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fatura</a>
             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
               <%= link_to 'Faturas', faturas_path %>
@@ -116,7 +129,7 @@
     <i class="fa fa-check" aria-hidden="true"></i>
       <span id="notice"><%= notice %></span>
       </div>
-      <p class="alert"><%= alert %></p>      
+      <p class="alert"><%= alert %></p>
 
 
       <!--Big blue-->
