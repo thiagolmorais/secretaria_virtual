@@ -272,8 +272,10 @@
   $('[data-toggle="tooltip"]').tooltip()
 })
 
-var current_url = window.location.pathname;
-
+if(screen.width < 600 && screen.height < 800){
+  $( "table" ).addClass( "table-responsive" );
+  $( "nav" ).addClass( "fixed" );
+}
 
   </script>
   </body>

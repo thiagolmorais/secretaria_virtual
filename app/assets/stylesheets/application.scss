@@ -86,7 +86,7 @@ span{
   list-style: none;
 }
 #panel{
-  margin-top:13%;
+  margin-top:10%;
   background: white;
   height: 380px;
   max-width: 480px;
@@ -117,14 +117,15 @@ span{
   main{
     width: 100vw;
   }
-  #table{
-    width: 30px;
-  }
   .links{
     display: none;
   }
   #main-title{
-    float: inherit;
+    float: right;
+    font-size: 13px;
+  }
+  #panel2{
+    height: 540px;
   }
 }
 
@@ -247,13 +248,12 @@ body{
 .alert-e{
   animation-delay: 0.2s;
   background: #ff3547;
-  height: 54px;
+  height: 39px;
   width: 300px;
   position: fixed;
-  margin: auto;
-  top: 1;
-  right: 0;
-  left:0;
+  margin-top: -35px;
+  margin-right: auto;
+  margin-left: auto;
   text-align: center;
   border: 1px solid #ff3547;
   box-shadow: grey 2px 2px;
@@ -264,6 +264,8 @@ body{
 }
 
 @media only screen and (max-width: 415px) {
+  #main-title{float: right}
+
   #mobile{
     display: inline;
     margin-left: 5px;
@@ -277,10 +279,9 @@ body{
     #panel{
       height: 400px;
     }
-    table{
-      max-width: 288px;
+    tbody{
+    width: 100px;
     }
-
 }
 
 #main-title{
@@ -397,4 +398,22 @@ span:hover {
 
 #ndis{
   color: #283593
+}
+#panel2{
+  margin-top:10%;
+  height: 450px;
+  background: #e9ecef;
+  max-width: 600px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+#pass{
+  font-size: 10px;
+}
+
+table{
+  width: auto;
 }
