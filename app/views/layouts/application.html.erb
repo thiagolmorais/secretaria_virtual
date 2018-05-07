@@ -68,7 +68,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Graduate|Poiret+One|Reenie+Beanie" rel="stylesheet">
     </head>
-
+      <!--Big blue-->
+      <div class="loader"></div>
   <body>
     <% if current_user %>
       <!-- Sidemenu mobile -->
@@ -194,19 +195,20 @@
 =======
 =======
         <!-- Links -->
-  <abbr id ="no-mobile">
-          <!-- Dropdown Fatura -->
-      <abbr class="links">
-        <abbr class="col-2">
-          <a data-toggle="tooltip" data-placement="top" title="Pagamento!" class="btn-group  point fa fa-money">
-             <%= link_to '  Pagamentos', pagamentos_path,class:'alink' %>
-             </a>
-        </abbr>
+        <abbr id ="no-mobile">
+        <!-- Dropdown Fatura -->
+    <abbr class="links">
+      <abbr class="col-2">
+        <span data-toggle="tooltip" data-placement="top" title="Pagamento!" class="btn-group point fa fa-money">
+          <abbr id="ndis">_</abbr> <%= link_to 'Pagamentos', pagamentos_path,class:'alink active' %>
+          </span>
+      </abbr>
 
-        <abbr class="col-2">
-          <a data-toggle="tooltip" data-placement="top" title="Fatura!" class="btn-group point fa fa-credit-card">
-              <%= link_to '  Faturas', faturas_path,class:'alink' %>
-            </abbr>
+      <abbr class="col-2">
+        <span data-toggle="tooltip" data-placement="top" title="Fatura!" class="btn-group point fa fa-credit-card">
+          <abbr id="ndis">_</abbr>  <%= link_to 'Faturas', faturas_path,class:'alink' %>
+          </span>
+          </abbr>
 
 
           <!-- Dropdown Consulta--> 
@@ -246,11 +248,14 @@
 =======
       <p class="alert"><%= alert %></p>
 
+<<<<<<< 44218d3399b3949717117568638bfe4c7daa2b96
 >>>>>>> implementação do pagamento
 
       <!--Big blue-->
       <div class="loader"></div>
 
+=======
+>>>>>>> frontfix
       <%= yield %>
     </div>
   </main>

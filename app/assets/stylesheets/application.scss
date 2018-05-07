@@ -252,7 +252,7 @@ input::-webkit-datetime-edit-fields-wrapper {
 }
 
 body{
-  opacity: 0.2;
+  opacity: 0.4;
   font-family: Roboto,sans-serif;
 }
 .alert-e{
@@ -275,9 +275,10 @@ body{
 }
 
 @media only screen and (max-width: 415px) {
-    #mobile{
-      display:initial;
-    }
+  #mobile{
+    display: inline;
+    margin-left: 5px;
+  }
     #no-mobile{
       display: none;
     }
@@ -286,6 +287,9 @@ body{
     }
     #panel{
       height: 400px;
+    }
+    table{
+      max-width: 288px;
     }
 
 }
@@ -341,7 +345,7 @@ nav{
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px;
+  height: 67px;
   z-index: 4;
   position: relative;
 }
@@ -370,13 +374,10 @@ nav .links{
   width: 75%;
 }
 
-.alink:hover{
-color: grey;
-}
-
 #exit{
 float: right;
 }
+
 .point{
   cursor: default;
 }
@@ -391,4 +392,20 @@ float: right;
 }
 tr i{
   cursor: default;
+}
+ span a:hover {
+   color: white;
+ }
+
+span:hover {
+    font-size: 20px;
+    color: white;
+}
+
+#dropc:hover,#dropp:hover{
+  font-size: 15px;
+}
+
+#ndis{
+  color: #283593
 }
