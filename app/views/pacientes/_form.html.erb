@@ -8,23 +8,23 @@
 
 <%= form_for @paciente do |f| %>
 
-    <div class="md-form">
-    <%= f.text_field :nome,:id=>"inputMDEx" ,:class =>"form-control"%>
-      <%= f.label :nome,:for=>"inputMDEx" %>
+  <div class="md-form">
+      <%= f.text_field :nome,:id=>"inputMDEx1" ,:class =>"form-control"%>
+      <%= f.label :nome,:for=>"inputMDEx1" %>
   </div>
 
   <div class="md-form">
-  <%= f.email_field :email,:id=>"inputMDEx" ,:class =>"form-control"%>
-    <%= f.label :email,:for=>"inputMDEx" %>
-  </div>
+    <%= f.email_field :email,:id=>"inputMDEx2" ,:class =>"form-control"%>
+    <%= f.label :email,:for=>"inputMDEx2" %>
+  </div><br>
 
   <div class="md-form">
-  <%= f.text_field :telefone,:id=>"inputMDEx" ,:class =>"form-control"%>
-    <%= f.label :telefone,:for=>"inputMDEx" %>
+    <%= f.text_field :telefone,:id=>"inputMDEx3" ,:class =>"form-control"%>
+    <%= f.label :telefone,:for=>"inputMDEx3" %>
   </div>
 
   <%= f.label :sexo %>
-  <%= f.select(:sexo, ['Maculino', 'Feminino'],{}, { :class => 'custom-select my-1 mr-sm-2' })%><br><br>
+  <%= f.select(:sexo, ['Masculino', 'Feminino'],{}, { :class => 'custom-select my-1 mr-sm-2' })%><br><br>
 
   <%= f.label :nascimento %>
   <%= f.date_field :nascimento,:id=>"date-picker-example"%>
