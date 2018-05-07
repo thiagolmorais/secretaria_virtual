@@ -16,7 +16,7 @@
   <%= f.date_field :data,:id=>"date-picker-example"%>
 
   <%= f.label :hora %>
-  <%= f.time_field :hora %><br>
+  <%= f.time_field :hora,:id=>"time-picker" %><br>
 
   <%= f.submit 'Gravar',:class=>'btn btn-indigo' %><%= link_to 'Voltar', consultas_path,:class=>'btn btn-unique'%>
 <% end %>

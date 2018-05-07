@@ -1,5 +1,7 @@
 {
   "name": "secretaria_virtual",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "moment": "^2.22.1"
+  }
 }
