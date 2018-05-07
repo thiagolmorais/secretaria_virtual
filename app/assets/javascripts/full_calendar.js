@@ -7,7 +7,7 @@ $('#calendar').each(function  (){
       header: {
         left: 'prev,next today',
         center: 'title',
-        right: 'month,agendaWeek,agendaDay,list'
+        right: 'month,agendaWeek,agendaDay,listWeek'
       },
       selectable: true,
       selectHelper: true,
@@ -38,9 +38,10 @@ $('#calendar').each(function  (){
       },
 
       eventClick: function(event, jsEvent, view) {
-        alert('clicou evento');
-        // $.getScript(event.edit_url, function() {});
-      }
+        //alert(event.edit_url)
+        window.location.href = event.edit_url;
+         //$.getScript(event.edit_url, function() {});
+       }
     });
 });
 
