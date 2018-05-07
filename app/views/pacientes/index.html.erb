@@ -5,9 +5,10 @@
     <input type="text" id="inputLGEx" class="form-control form-control-lg">
     <label for="inputLGEx">Busca</label>
 </div>
-<table class="table table-hover">
+<table id="table-paciente" class="table table-hover">
 
     <!--Table head-->
+
     <thead>
         <tr>
         <th>Nome</th>
@@ -18,8 +19,8 @@
     <tbody>
 <% @pacientes.each do |paciente| %>
     <tr>
-        <td><%= paciente.nome %></td>
-        <td><%= paciente.email %></td>
+        <td class="buscar"><%= paciente.nome %></td>
+        <td class="buscar"><%= paciente.email %></td>
         <td><%= link_to 'Consultar', paciente_path(paciente),:class => 'btn btn-outline-primary waves-effect' %></td>
     <% end %>
     </tbody>
@@ -27,23 +28,31 @@
 </div>
 
 <script>
-const busca = document.querySelector("#inputLGEx");
-busca.addEventListener('input', function () {
-    const pacientes = document.querySelectorAll(".paciente");
-    for (let paciente of pacientes) {
-        var compara = paciente.textContent.substr(0, busca.value.length);
-        if (busca.value.length !== 0) {
-            if (busca.value.toUpperCase() != compara.toUpperCase()) {
-                paciente.parentNode.classList.add('some');
-            } else {
-                paciente.parentNode.classList.remove('some');
+$(document).ready(function() {
+    $('#inputLGEx').keyup(function() {
+        buscaPaciente($(this).val());
+    });
+
+    function buscaPaciente(value) {
+        $('#table-paciente tbody .buscar').each(function() {
+            var found = 'false';
+            $(this).each(function() {
+                if ($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                    {
+                    found = 'true';
+                    }
+            });
+            if (found === 'true')
+            {
+                $(this.parentNode).show();
+            } else
+            {
+                $(this.parentNode).hide();
             }
-        } else {
-            paciente.parentNode.classList.remove('some');
-        }
+        });
     }
 
-})
+});
 </script>
 </div>
 </div>

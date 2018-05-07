@@ -1,49 +1,23 @@
 console.log('full calendar index');
 
 
-$('#calendar').each(function(){
+$('#calendar').each(function  (){
   var calendar = $(this);
     calendar.fullCalendar({
       header: {
         left: 'prev,next today',
         center: 'title',
-        right: 'month,agendaWeek,agendaDay'
+        right: 'month,agendaWeek,agendaDay,list'
       },
       selectable: true,
       selectHelper: true,
       editable: true,
       eventLimit: true,
-      eventSources : [{
-          url: '/consulta/new'
-      }],
-      //events: '/events.json',
-      events: [
-    {
-      title: 'Evento1',
-      start: '2018-04-30',
-      end: '2018-05-01',
-      description: 'This is a cool event'
-    },
-    {
-      title: 'Evento2',
-      start: '2018-04-30',
-      end: '2018-05-01',
-      description: 'This is a cool event'
-    },
-    {
-      title: 'Evento3',
-      start: '2018-05-01',
-      end: '2018-05-01',
-      description: 'This is a cool event'
-    },
-  ],
-
+      events : 'consultas.json',
 
       select: function(start, end) {
-        //alert('clicou');
-        window.location.href = "consultas/new";
 
-        //$.getScript('/consultas/new', function() {});
+        window.location.href = "consultas/new";
 
         calendar.fullCalendar('unselect');
       },
