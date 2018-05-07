@@ -10,9 +10,11 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -71,9 +73,9 @@
     <nav class="scrolling-navbar">
 
       <!-- Navbar brand -->
-      <i class="fa fa-reorder" onclick="openNav()" id="mobile"></i>
+      <button class="icona" id="mobile" onclick="openNav()"><i class="fa acss fa-reorder"></button></i>
       <%= link_to 'Secretaria Virtual',root_path,:class=>"btn btn-outline-primary waves-effect",id:"main-title"%>
-
+      <%= link_to 'Secretária Virtual',root_path,:class=>"btn btn-md btn-outline-primary waves-effect",id:"main-title2"%>
       <!-- Collapsible content -->
 
 
@@ -128,6 +130,9 @@
       <p class="alert"><%= alert %></p>
 
       <%= yield %>
+
+      <header id="header">
+
     </div>
   </main>
 
@@ -274,9 +279,12 @@
 
 if(screen.width < 600 && screen.height < 800){
   $( "table" ).addClass( "table-responsive" );
-  $( "nav" ).addClass( "fixed" );
-}
 
+}
+$(document).scroll(function() {
+  $( "nav" ).addClass( "mysticky" );
+});
+ 
   </script>
   </body>
 </html>
