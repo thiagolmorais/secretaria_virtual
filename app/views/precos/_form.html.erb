@@ -1,23 +1,15 @@
-<% if @preco.errors.any? %>
-  <% @preco.errors.full_messages.each do |msg| %>
-    <li class="alert-e fa fa-warning animated bounceInUp"><%= msg %></li>
-  <% end %>
-<% end %>
-
-<br>
-
 <%= form_for @preco, url: form_url do |f| %>
-  <div class="cash">
+<div class="cash">
 
   <div class="md-form">
-  <%= f.text_field :valor,:id=>"inputMDEx" ,:class =>"form-control"%>
+    <%= f.text_field :valor, :id=>"inputMDEx" ,:class =>"form-control"%>
     <%= f.label :valor, pattern: '[0-9]+(,[0-9]+)*,?', :for=>"inputMDEx" %>
   </div>
 
   <%= f.label :reajuste %>
   <%= f.date_field :reajuste %><br>
 
-  <%= f.submit 'Gravar',:class => 'btn btn-primary' %>  <%= link_to 'Voltar', pacientes_path,:class => 'btn btn-danger'  %>
+  <%= submit_tag 'Gravar',:class => 'btn btn-primary' %>
+  <%= link_to 'Voltar', pacientes_path,:class => 'btn btn-danger' %>
 <% end %>
-
 </div>
