@@ -22,7 +22,7 @@
         <% @competencias.each do |competencia| %>
         <tr>
           <% query_fatura = Fatura.where(consulta_id: Consulta.where(paciente_id: paciente), competencia: competencia.competencia) %>
-          <td><%= paciente.nome %></td>
+          <td class="buscar"><%= paciente.nome %></td>
           <td><%= competencia.competencia %></td>
           <td><%= query_fatura.count %></td>
           <td><%= number_to_currency valor = query_fatura.sum(:valor) %></td>
@@ -47,44 +47,10 @@
 </table>
 </div>
 
-<script>
-const busca = document.querySelector("#inputLGEx");
-busca.addEventListener('input', function () {
-    const pacientes = document.querySelectorAll(".paciente");
-    for (let paciente of pacientes) {
-        var compara = paciente.textContent.substr(0, busca.value.length);
-        if (busca.value.length !== 0) {
-            if (busca.value.toUpperCase() != compara.toUpperCase()) {
-                paciente.parentNode.classList.add('some');
-            } else {
-                paciente.parentNode.classList.remove('some');
-            }
-        } else {
-            paciente.parentNode.classList.remove('some');
-        }
-    }
 
-})
-</script>
 </div>
 </div>
 
-<script>
-const busca = document.querySelector("#inputLGEx");
-busca.addEventListener('input', function () {
-    const pacientes = document.querySelectorAll(".paciente");
-    for (let paciente of pacientes) {
-        var compara = paciente.textContent.substr(0, busca.value.length);
-        if (busca.value.length !== 0) {
-            if (busca.value.toUpperCase() != compara.toUpperCase()) {
-                paciente.parentNode.classList.add('some');
-            } else {
-                paciente.parentNode.classList.remove('some');
-            }
-        } else {
-            paciente.parentNode.classList.remove('some');
-        }
-    }
-})
-</script>
+
 </div>
+<%= javascript_include_tag "busca.js"%>
