@@ -18,7 +18,7 @@
     <tbody>
 <% @pacientes.each do |paciente| %>
     <tr>
-        <td><%= paciente.nome %></td>
+        <td class="buscar"><%= paciente.nome %></td>
         <td><%= number_to_currency Fatura.where(consulta_id: Consulta.where(paciente_id: paciente), status: false).sum(:valor) %></td>
         <td><%= link_to 'Detalhes', paciente_path(paciente),:class => 'btn btn-outline-primary waves-effect' %></td>
     <% end %>
@@ -32,3 +32,4 @@
 
 
 </div>
+<%= javascript_include_tag "busca.js"%>
