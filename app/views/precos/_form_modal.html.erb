@@ -1,0 +1,32 @@
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-backdrop="false" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel2">
+          Cadastrar Preço</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_tag("/pacientes/#{params[:id]}/precos", method: :post) do %>
+        <div class="cash">
+
+          <div class="md-form">
+            <%= text_field_tag :valor, '', :id=>"inputMDEx" ,:class =>"form-control"%>
+            <%= label_tag :valor, 'Valor', pattern: '[0-9]+(,[0-9]+)*,?', :for=>"inputMDEx" %>
+          </div>
+
+          <%= label_tag :reajuste %>
+          <%= date_field_tag :reajuste %><br>
+
+          <%= submit_tag 'Gravar',:class => 'btn btn-primary' %>
+          <%= link_to 'Voltar', pacientes_path,:class => 'btn btn-danger' %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>

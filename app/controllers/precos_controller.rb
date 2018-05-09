@@ -19,6 +19,6 @@ class PrecosController < ApplicationController
   private
 
   def preco_params
-    params.require(:preco).permit(:valor, :reajuste, :paciente_id)
+    params.permit(:valor, :reajuste, :paciente_id)
   end
 end
