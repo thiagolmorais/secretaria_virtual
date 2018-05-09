@@ -22,7 +22,7 @@
         <% @competencias.each do |competencia| %>
         <tr>
           <% query_fatura = Fatura.where(consulta_id: Consulta.where(paciente_id: paciente), competencia: competencia.competencia) %>
-          <td><%= paciente.nome %></td>
+          <td class="buscar"><%= paciente.nome %></td>
           <td><%= competencia.competencia %></td>
           <td><%= query_fatura.count %></td>
           <td><%= number_to_currency valor = query_fatura.sum(:valor) %></td>
@@ -53,3 +53,4 @@
 
 
 </div>
+<%= javascript_include_tag "busca.js"%>
