@@ -47,44 +47,9 @@
 </table>
 </div>
 
-<script>
-const busca = document.querySelector("#inputLGEx");
-busca.addEventListener('input', function () {
-    const pacientes = document.querySelectorAll(".paciente");
-    for (let paciente of pacientes) {
-        var compara = paciente.textContent.substr(0, busca.value.length);
-        if (busca.value.length !== 0) {
-            if (busca.value.toUpperCase() != compara.toUpperCase()) {
-                paciente.parentNode.classList.add('some');
-            } else {
-                paciente.parentNode.classList.remove('some');
-            }
-        } else {
-            paciente.parentNode.classList.remove('some');
-        }
-    }
 
-})
-</script>
 </div>
 </div>
 
-<script>
-const busca = document.querySelector("#inputLGEx");
-busca.addEventListener('input', function () {
-    const pacientes = document.querySelectorAll(".paciente");
-    for (let paciente of pacientes) {
-        var compara = paciente.textContent.substr(0, busca.value.length);
-        if (busca.value.length !== 0) {
-            if (busca.value.toUpperCase() != compara.toUpperCase()) {
-                paciente.parentNode.classList.add('some');
-            } else {
-                paciente.parentNode.classList.remove('some');
-            }
-        } else {
-            paciente.parentNode.classList.remove('some');
-        }
-    }
-})
-</script>
+
 </div>
