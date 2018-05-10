@@ -38,39 +38,7 @@ $('#calendar').each(function  (){
       },
 
       eventClick: function(event, jsEvent, view) {
-        //alert(event.edit_url)
         window.location.href = event.edit_url;
-         //$.getScript(event.edit_url, function() {});
        }
     });
 });
-
-/*  $("#calendar").fullCalendar({
-      eventSources : [{
-          url: '/consulta/new'
-      }],
-      eventLimit: true,
-      eventRender: function(event, element) {
-          if (element && event.description) {
-          element.qtip({
-              content: event.description,
-              hide: {
-                  fixed: true,
-                  delay: 500
-              }
-          });
-      }
-      },
-      eventClick: function(calEvent, jsEvent, view) {
-          // Open in new window
-          url = window.location.href;
-          window.open(url + "/" + calEvent.id);
-      },
-      eventMouseover: function(event, jsEvent, view) {
-          // Todo
-      },
-      eventMouseout: function(event, jsEvent, view) {
-          // Todo
-      },
-  });*/
-console.log($('#calendar'));
