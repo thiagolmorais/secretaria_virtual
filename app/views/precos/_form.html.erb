@@ -1,13 +1,15 @@
-<%= form_for @preco, url: form_url do |f| %>
+<%= form_tag("/pacientes/#{params[:paciente_id]}/precos", method: :post) do %>
 <div class="cash">
 
   <div class="md-form">
-    <%= f.text_field :valor, :id=>"inputMDEx" ,:class =>"form-control"%>
-    <%= f.label :valor, pattern: '[0-9]+(,[0-9]+)*,?', :for=>"inputMDEx" %>
+    <%= text_field_tag :valor, '', :id=>"inputMDEx" ,:class =>"form-control"%>
+    <%= label_tag :valor, 'Valor', pattern: '[0-9]+(,[0-9]+)*,?', :for=>"inputMDEx" %>
   </div>
 
-  <%= f.label :reajuste %>
-  <%= f.date_field :reajuste %><br>
+  <%= label_tag :reajuste %>
+  <%= date_field_tag :reajuste %><br>
+
+  <%= hidden_field_tag :paciente_id, params[:paciente_id] %>
 
   <%= submit_tag 'Gravar',:class => 'btn btn-primary' %>
   <%= link_to 'Voltar', pacientes_path,:class => 'btn btn-danger' %>

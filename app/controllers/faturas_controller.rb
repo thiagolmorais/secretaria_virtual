@@ -2,7 +2,7 @@ class FaturasController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @pacientes = Paciente.all
+    @pacientes = Paciente.all.order(:nome)
     @faturas = Fatura.all
   end
 <<<<<<< c8147b88821393b0e3cfd5166137c67ef31117c9
