@@ -5,6 +5,11 @@ class FaturasController < ApplicationController
     @pacientes = Paciente.all.order(:nome)
     @faturas = Fatura.all
   end
+<<<<<<< HEAD
+=======
+<<<<<<< c8147b88821393b0e3cfd5166137c67ef31117c9
+=======
+>>>>>>> origin/calendario
 
   def show
     @faturas = Fatura.find(params[:id])
@@ -40,4 +45,8 @@ class FaturasController < ApplicationController
   def fatura_params
     params.permit(:consulta_id, :competencia, :vencimento)
   end
+<<<<<<< HEAD
+=======
+>>>>>>> Fix paciente
+>>>>>>> origin/calendario
 end

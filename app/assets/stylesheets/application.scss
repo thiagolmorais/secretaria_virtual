@@ -14,6 +14,7 @@
 @import "bootstrap";
  *= require_tree .
  *= require_self
+ *= require fullcalendar
  */
 main{
     width: 90%;
@@ -63,9 +64,7 @@ main{
   h4,h3,.showp,.cash{
   text-align: center;
   }
-span{
-  color: white;
-}
+
 .notice,.alert{
   text-align: center;
 }
@@ -86,7 +85,11 @@ span{
   list-style: none;
 }
 #panel{
+<<<<<<< HEAD
   margin-top:10%;
+=======
+  margin-top:13%;
+>>>>>>> origin/calendario
   background: white;
   height: 380px;
   max-width: 480px;

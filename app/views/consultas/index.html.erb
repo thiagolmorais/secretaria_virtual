@@ -1,56 +1,10 @@
 <h3>Consultas</h3>
-<div class="busca">
-<div class="md-form form-lg">
-    <input type="text" id="inputLGEx" class="form-control form-control-lg">
-    <label class="fa fa-search" for="inputLGEx">  Busca</label>
-</div>
-<br>
-<table class="table table-hover table-striped">
-    <!--Table head-->
-<thead id="thead" class="indigo darken-3">
-        <tr>
-            <th><i class="fa fa-calendar" aria-hidden="true"></i> Dia</th>
-            <th><i class="fa fa-clock-o" aria-hidden="true"></i>  Hora</th>
-            <th><i class="fa fa-address-card-o" aria-hidden="true"></i>  Paciente</th>
-            <th><i class="fa fa-exclamation-circle" aria-hidden="true"></i>  Status</th>
-            <th><i class="fa fa-pencil" aria-hidden="true"></i>  Atender</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-<% @consultas.each do |consulta| %>
-  <tr>
-    <td><%= link_to I18n.localize(consulta.data), consulta_path(consulta), class: "consulta" %></td>
-    <td><%= consulta.hora.strftime('%R') %></td>
-    <td class="buscar"><%= link_to consulta.paciente.nome, paciente_path(consulta.paciente), class: "consulta" %></td>
-    <td><%= consulta.status_consulta %></td>
-    <td>
-      <% if consulta.status == false %>
-        <%= form_tag(faturas_path, method: :post) do %>
-          <%= hidden_field_tag(:consulta_id, consulta.id) %>
-          <%= hidden_field_tag(:competencia, "#{consulta.data.month}#{consulta.data.year}") %>
-          <%= hidden_field_tag(:vencimento, consulta.data) %>
-        <%= submit_tag('Atender',class:'btn btn-md btn-default') %>
 
-        <% end %>
-      <% end %>
-      <% if consulta.status == true %>
-        <%= form_tag(fatura_path(Fatura.find_by(consulta_id: consulta.id)), method: :delete) do %>
-          <%= hidden_field_tag(:consulta_id, consulta.id) %>
-          <%= submit_tag('Cancelar Fatura',class:'btn btn-md btn-outline-danger waves-effect') %>
-        <% end %>
-      <% end %>
-    </td>
-    <!-- <td><%#= link_to 'Atender', model: consulta.gera_fatura, class: "consulta" %></td> -->
+<div id="calendar"><div>
 
-    <td id="delete"><%= link_to '', consulta_path(consulta), method: :delete, class: "fa fa-close consulta"%></td>
 
-  </tr>
-<% end %>
 
-</div>
-</tbody>
-</table>
 
 <%= link_to 'Cadastrar', new_consulta_path,:class=>'btn btn-md btn-indigo'%>
+<%= javascript_include_tag "full_calendar.js"%>
 <%= javascript_include_tag "busca.js"%>
