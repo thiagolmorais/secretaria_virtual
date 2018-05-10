@@ -2,7 +2,7 @@ class PacientesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @pacientes = Paciente.all
+    @pacientes = Paciente.all.order(:nome)
   end
 
   def show

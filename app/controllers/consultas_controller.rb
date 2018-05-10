@@ -1,7 +1,7 @@
 class ConsultasController < ApplicationController
   before_action :authenticate_user!
   def index
-    @consultas = Consulta.all
+    @consultas = Consulta.all.order(:data)
   end
 
   def show
