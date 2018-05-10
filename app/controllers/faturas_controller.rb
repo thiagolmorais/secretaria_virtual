@@ -6,6 +6,7 @@ class FaturasController < ApplicationController
     @faturas = Fatura.all
   end
 
+
   def show
     @faturas = Fatura.find(params[:id])
   end
@@ -40,4 +41,5 @@ class FaturasController < ApplicationController
   def fatura_params
     params.permit(:consulta_id, :competencia, :vencimento)
   end
+
 end

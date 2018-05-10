@@ -1,0 +1,5 @@
+$('#calendar').fullCalendar(
+  'renderEvent',
+  $.parseJSON("<%=j render(@consulta, format: :json).html_safe %>"),
+  true
+);

@@ -11,7 +11,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
@@ -34,7 +34,7 @@
         <!-- Links -->
         <hr class="sidehr">
           <!-- Dropdown Fatura -->
-            <a class="downcolf fa fa-money" onclick="openColf()"> Pagamento <i class="fa animated flipInX fa-sort-down"></i></a> 
+            <a class="downcolf fa fa-money" onclick="openColf()"> Pagamento <i class="fa animated flipInX fa-sort-down"></i></a>
             <a class="upcolf fa fa-money" onclick="closeColf()"> Pagamento <i class="fa animated flipInX fa-sort-up"></i></a>
               <div class="colls-f">
               <p class="smallnav"><%= link_to 'Pagamentos', pagamentos_path%>
@@ -96,7 +96,7 @@
           </abbr>
 
 
-          <!-- Dropdown Consulta--> 
+          <!-- Dropdown Consulta-->
           <abbr class="col-2">
               <button id="dropc" class="btn btn-md btn-deep-purple"><i class="fa fa-book" aria-hidden="true"></i>  Consulta  <i class="fa fa-sort-down"></i></button>
               <div id="no-mobile" class="drop-menuc border border-info">
@@ -104,7 +104,7 @@
               <%= link_to 'Cadastrar Consulta', new_consulta_path,class:"dropdown-item"%>
               </div>
           </div>
-          
+
           <!--Dropdown Paciente -->
 
           <abbr class="col-2">
@@ -265,7 +265,7 @@
         $('.alert-s').fadeOut(2000);
     }, 4000);
   }
-  
+
   if (document.querySelector(".alert").innerHTML !== '') {
     document.querySelector(".alert-e").style.display = "block";
     setTimeout(function() {
@@ -284,7 +284,7 @@ if(screen.width < 600 && screen.height < 800){
 $(document).scroll(function() {
   $( "nav" ).addClass( "mysticky" );
 });
- 
+
   </script>
   </body>
 </html>
