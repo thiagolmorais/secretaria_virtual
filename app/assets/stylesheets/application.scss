@@ -85,7 +85,7 @@ main{
   list-style: none;
 }
 #panel{
-  margin-top:10%;
+  margin-top:13%;
   background: white;
   height: 380px;
   max-width: 480px;
@@ -108,49 +108,22 @@ main{
 #mobile{
   display:none;
 }
-#main-title2{
-  display: none;
-}
-@media only screen and (max-width: 961px){
+
+@media only screen and (max-width: 991px) and (max-height: 658px) {
   #mobile{
     display:block;
   }
   main{
     width: 100vw;
   }
-  .links{
-    display: none;
-  }
-  #main-title{
-    display: none;
-  }
-  #main-title2{
-    display: none;
-  }
-  #panel2{
-    height: 540px;
-  }
-}
-@media only screen and (max-width: 855px){
-  #mobile{
-    display:block;
-  }
-  main{
-    width: 100vw;
+  #table{
+    width: 30px;
   }
   .links{
     display: none;
   }
   #main-title{
-    display: none;
-  }
-  #main-title2{
-    display: initial;
-    text-align: center;
-    margin-left: 15px;
-  }
-  #panel2{
-    height: 540px;
+    float: inherit;
   }
 }
 
@@ -280,17 +253,18 @@ input::-webkit-datetime-edit-fields-wrapper {
 
 body{
   opacity: 0.4;
-     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+  font-family: Roboto,sans-serif;
 }
 .alert-e{
   animation-delay: 0.2s;
   background: #ff3547;
-  height: 39px;
+  height: 54px;
   width: 300px;
   position: fixed;
-  margin-top: -35px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: auto;
+  top: 1;
+  right: 0;
+  left:0;
   text-align: center;
   border: 1px solid #ff3547;
   box-shadow: grey 2px 2px;
@@ -300,12 +274,7 @@ body{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
-@media only screen and (max-width: 650px) {
-  #main-title{
-    float: right;
-    font-size: 13px;
-  }
-
+@media only screen and (max-width: 415px) {
   #mobile{
     display: inline;
     margin-left: 5px;
@@ -319,9 +288,10 @@ body{
     #panel{
       height: 400px;
     }
-    tbody{
-    width: 100px;
+    table{
+      max-width: 288px;
     }
+
 }
 
 #main-title{
@@ -438,38 +408,4 @@ span:hover {
 
 #ndis{
   color: #283593;
-}
-#panel2{
-  margin-top:10%;
-  height: 450px;
-  background: #e9ecef;
-  max-width: 600px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
-  box-shadow: 0 1px 1px rgba(0,0,0,0.05);
-}
-#pass{
-  font-size: 10px;
-}
-table{
-  width: auto;
-}
-.mysticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 4;
-}
-.icona{
-  width: 50px;
-  height: 50px;
-  background: #283593;
-  margin-top: 8px;
-  border: 1px solid #283593;
-  border-radius: 50%;
-}
-ul{
-  list-style: none;
 }

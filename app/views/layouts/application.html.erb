@@ -9,99 +9,130 @@
     <title>SecretariaVirtual</title>
     <%= csrf_meta_tags %>
 
-
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
 
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- Bootstrap core CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-<!-- Material Design Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
-  </head>
-
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Graduate|Poiret+One|Reenie+Beanie" rel="stylesheet">
+    </head>
+      <!--Big blue-->
+      <div class="loader"></div>
   <body>
-  <% if current_user %>
-  <!-- Sidemenu mobile -->
-  <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <!-- Links -->
-  <ul class="navbar-nav mr-auto">
+    <% if current_user %>
+      <!-- Sidemenu mobile -->
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <!-- Links -->
+        <hr class="sidehr">
+          <!-- Dropdown Fatura -->
+            <a class="downcolf fa fa-money" onclick="openColf()"> Pagamento <i class="fa animated flipInX fa-sort-down"></i></a>
+            <a class="upcolf fa fa-money" onclick="closeColf()"> Pagamento <i class="fa animated flipInX fa-sort-up"></i></a>
+              <div class="colls-f">
+              <p class="smallnav"><%= link_to 'Pagamentos', pagamentos_path%>
+              </div>
+              <hr class="sidehr">
 
-  <!-- Dropdown Consulta -->
-  <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulta</a>
-      <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-      <%= link_to 'Exibir Consultas', consultas_path,:id=>'drop' %>
-      <%= link_to 'Cadastrar Consulta', new_consulta_path,:id=>'drop'%>
+            <a class="downcol fa fa-credit-card" onclick="openCol()"> Fatura <i class="fa animated flipInX fa-sort-down"></i></a>
+            <a class="upcol fa fa-credit-card" onclick="closeCol()"> Fatura <i class="fa animated flipInX fa-sort-up"></i></a>
+              <div class="colls">
+              <p class="smallnav"><%= link_to 'Faturas', faturas_path%>
+              </div>
+              <hr class="sidehr">
 
-      <!-- Dropdown Paciente -->
-      <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paciente</a>
-          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-          <%= link_to 'Consultar Paciente',pacientes_path,:id=>'drop' %>
-            <%= link_to 'Cadastrar Paciente', new_paciente_path,:id=>'drop' %>
-          </div>
-      </li>
-      </ul>
-      <%= link_to 'Sair', destroy_user_session_path, method: :delete,:class=>"btn btn-outline-white btn-md my-2 my-sm-0 ml-3" %></a>
-</div>
 
-  <!--Navbar-->
-  <nav class="navbar navbar-expand-lg navbar-dark indigo darken-3">
+            <a class="downcolc fa fa-calendar-check-o" onclick="openColc()"> Consulta <i class="fa animated flipInX fa-sort-down"></i></a>
+            <a class="upcolc fa fa-calendar-check-o" onclick="closeColc()"> Consulta  <i class="fa animated flipInX  fa-sort-up"></i></a>
+              <div class="colls-c">
+              <%= link_to 'Exibir Consultas', consultas_path,class:'smallnav'%>
+              <%= link_to 'Cadastrar Consulta', new_consulta_path,class:'smallnav'%>
+            </div>
+            <hr class="sidehr">
 
-    <!-- Navbar brand -->
-    <i class="fa fa-reorder" onclick="openNav()" id="mobile" aria-hidden="true"></i>
-    <%= link_to 'Secretaria Virtual',root_path,:class=>"btn btn-outline-primary waves-effect"%>
+          <!-- Dropdown Paciente -->
+          <a class="downcolp fa fa-address-book-o" onclick="openColp()"> Paciente <i class="fa animated flipInX fa-sort-down"></i></a>
+          <a class="upcolp fa fa-address-book-o" onclick="closeColp()"> Paciente  <i class="fa animated flipInX fa-sort-up"></i></a>
+            <div class="colls-p">
+              <%= link_to 'Consultar Paciente',pacientes_path,class:'smallnav'%>
+              <%= link_to 'Cadastrar Paciente', new_paciente_path,class:'smallnav'%>
+            </div>
+          <hr class="sidehr">
+        <%= link_to 'Sair', destroy_user_session_path, method: :delete, :class=>"btn btn-outline-white btn-sm" %>
+    </div>
 
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="basicExampleNav">
+    <!--Navbar-->
+
+    <nav class="scrolling-navbar">
+
+      <!-- Navbar brand -->
+      <button class="icona" id="mobile" onclick="openNav()"><i class="fa acss fa-reorder"></button></i>
+      <%= link_to 'Secretaria Virtual',root_path,:class=>"btn btn-outline-primary waves-effect",id:"main-title"%>
+      <%= link_to 'Secretária Virtual',root_path,:class=>"btn btn-md btn-outline-primary waves-effect",id:"main-title2"%>
+      <!-- Collapsible content -->
+
 
         <!-- Links -->
-        <ul class="navbar-nav mr-auto">
+        <abbr id ="no-mobile">
+        <!-- Dropdown Fatura -->
+    <abbr class="links">
+      <abbr class="col-2">
+        <span data-toggle="tooltip" data-placement="top" title="Pagamento!" class="btn-group point fa fa-money">
+          <abbr id="ndis">_</abbr> <%= link_to 'Pagamentos', pagamentos_path,class:'alink active' %>
+          </span>
+      </abbr>
 
-        <!-- Dropdown Consulta -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fatura</a>
-          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to 'Faturas', faturas_path if current_user %>
-          </div>
-        </li>
+      <abbr class="col-2">
+        <span data-toggle="tooltip" data-placement="top" title="Fatura!" class="btn-group point fa fa-credit-card">
+          <abbr id="ndis">_</abbr>  <%= link_to 'Faturas', faturas_path,class:'alink' %>
+          </span>
+          </abbr>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consulta</a>
-          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to 'Consultas', consultas_path if current_user %>
-            <%= link_to 'Cadastrar Consulta', new_consulta_path%>
+
+          <!-- Dropdown Consulta-->
+          <abbr class="col-2">
+              <button id="dropc" class="btn btn-md btn-deep-purple"><i class="fa fa-book" aria-hidden="true"></i>  Consulta  <i class="fa fa-sort-down"></i></button>
+              <div id="no-mobile" class="drop-menuc border border-info">
+              <%= link_to 'Exibir Consultas', consultas_path,class:"dropdown-item" %>
+              <%= link_to 'Cadastrar Consulta', new_consulta_path,class:"dropdown-item"%>
+              </div>
           </div>
-        </li>
-            <!-- Dropdown Paciente -->
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paciente</a>
-            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to 'Consultar Paciente',pacientes_path,:id=>'drop' %>
-              <%= link_to 'Cadastrar Paciente', new_paciente_path,:id=>'drop' %>
+
+          <!--Dropdown Paciente -->
+
+          <abbr class="col-2">
+              <button id="dropp" class="btn btn-md btn-deep-purple"><i class="fa fa-address-book-o"></i>  Paciente  <i class="fa fa-sort-down"></i></button>
+              <div id="no-mobile" class="drop-menup border border-info">
+              <%= link_to 'Consultar Paciente',pacientes_path,class:"dropdown-item" %>
+              <%= link_to 'Cadastrar Paciente', new_paciente_path,class:"dropdown-item" %>
             </div>
-        </li>
-            </ul>
-    <li id="no-list">
-         <%= link_to 'Sair', destroy_user_session_path, method: :delete,:class=>"btn btn-outline-white btn-md my-2 my-sm-0 ml-3" %>
-    </li>
-    </div>
-    <!-- Collapsible content -->
-</nav>
+          </abbr>
 
-   <% end %>
-  <main id="main" class="animated fadeInDown ">
-    <div>
-      <div id="notice">
-      <p class="notice"><%= notice %></p>
-    </div>
+          <%= link_to 'Sair', destroy_user_session_path, method: :delete, id:"exit" ,:class=>"btn btn-outline-white btn-md" %>
+      </div>
+      </abbr>
+    </nav>
+  <% end %>
+
+  <main id="main">
+    <div class="animated fadeInDown">
+    <div class="notice alert-s animated fadeInRightBig">
+    <i class="fa fa-check" aria-hidden="true"></i>
+      <span id="notice"><%= notice %></span>
+      </div>
       <p class="alert"><%= alert %></p>
 
       <%= yield %>
+
+      <header id="header">
+
     </div>
   </main>
 
@@ -111,10 +142,10 @@
     <br>
     <footer>
       <a href="#">
-        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+        <i data-toggle="tooltip" data-placement="top" title="Facebook!" class="fa fa-facebook-official" aria-hidden="true"></i>
       </a>
       <a href="#">
-        <i class="fa fa-github" aria-hidden="true"></i>
+        <i data-toggle="tooltip" data-placement="top" title="Github!" class="fa fa-github" aria-hidden="true"></i>
       </a>
     </footer>
   <% end %>
@@ -128,19 +159,115 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
   <script>
+  $('.upcol').hide();
+  $('.upcolc').hide();
+  $('.upcolp').hide();
+  $('.upcolf').hide();
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
       document.getElementById("main").style.marginLeft = "250px";
       document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
     }
-
     function closeNav() {
       document.getElementById("mySidenav").style.width = "0";
       document.getElementById("main").style.marginLeft = "0";
       document.body.style.backgroundColor = "white";
     }
+    /Fatura/
+    function openCol(){
+      $('.colls').slideDown();
+      $('.downcol').hide();
+      $('.upcol').show();
+    }
+    function closeCol(){
+      $('.colls').slideUp();
+      $('.downcol').show();
+      $('.upcol').hide();
+    }
+    /Consulta/
+    function openColc(){
+      $('.colls-c').slideDown();
+      $('.downcolc').hide();
+      $('.upcolc').show();
+    }
+    function closeColc(){
+      $('.colls-c').slideUp();
+      $('.downcolc').show();
+      $('.upcolc').hide();
+    }
+    /Paciente/
+    function openColp(){
+      $('.colls-p').slideDown();
+      $('.downcolp').hide();
+      $('.upcolp').show();
+    }
+    function closeColp(){
+      $('.colls-p').slideUp();
+      $('.downcolp').show();
+      $('.upcolp').hide();
+    }
+    /Pagamento/
+    function openColf(){
+      $('.colls-f').slideDown();
+      $('.downcolf').hide();
+      $('.upcolf').show();
+    }
+    function closeColf(){
+      $('.colls-f').slideUp();
+      $('.downcolf').show();
+      $('.upcolf').hide();
+    }
+  $("#dropp").click(function(){
+    var drop = document.querySelector(".drop-menup").style.display;
+      if (drop != 'block'){
+        if (document.querySelector(".drop-menuc").style.display == 'block'){
+          $('.drop-menuc').slideUp();
+        }
+        $('.drop-menup').slideDown();
+      }
+      else{
+        $('.drop-menup').slideUp();
+      }
+  });
+  $("#dropc").click(function(){
+    var dropc = document.querySelector(".drop-menuc").style.display;
+      if (dropc != 'block'){
+        if (document.querySelector(".drop-menup").style.display == 'block'){
+          $('.drop-menup').slideUp();
+        }
+        $('.drop-menuc').slideDown();
+      }
+      else{
+        $('.drop-menuc').slideUp();
+      }
+  });
+    $(document).ready(function(){
+        $('.loader').fadeOut();
+      document.body.style.opacity ="1";
+    });
+  if (document.querySelector("#notice").innerHTML !== '') {
+    document.querySelector(".alert-s").style.display = "block";
+    setTimeout(function() {
+        $('.alert-s').fadeOut(2000);
+    }, 4000);
+  }
 
-    // document.getElementById("notice").style.display = "block";
+  if (document.querySelector(".alert").innerHTML !== '') {
+    document.querySelector(".alert-e").style.display = "block";
+    setTimeout(function() {
+        $('.alert-e').fadeOut(2000);
+    }, 4000);
+  }
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+if(screen.width < 600 && screen.height < 800){
+  $( "table" ).addClass( "table-responsive" );
+}
+$(document).scroll(function() {
+  $( "nav" ).addClass( "mysticky" );
+});
+
   </script>
   </body>
 </html>
