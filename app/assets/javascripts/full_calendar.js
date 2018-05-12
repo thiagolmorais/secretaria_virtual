@@ -1,9 +1,16 @@
-console.log('full calendar index');
 
+  console.log('full calendar index');
 
-$('#calendar').each(function  (){
-  var calendar = $(this);
+  $('#calendar').each(function  (){
+    console.log($(this))
+    console.log($('#calendar'))
+    console.log($(this) === $('#calendar'));
+  var calendar = $('#calendar');
     calendar.fullCalendar({
+   //    if $(window).width() < 514){
+   //   defaultView: 'basicDay'
+   // },
+
       header: {
         left: 'prev,next today',
         center: 'title',
