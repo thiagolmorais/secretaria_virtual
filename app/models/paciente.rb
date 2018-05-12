@@ -13,7 +13,7 @@ class Paciente < ApplicationRecord
 
   def preco_vigente
     preco_valido = []
-    precos = self.preco.order(:reajuste)
+    precos = preco.order(:reajuste)
     precos.each do |preco|
       preco_valido << preco if preco.reajuste < Time.now
     end

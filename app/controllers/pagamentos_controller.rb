@@ -9,7 +9,7 @@ class PagamentosController < ApplicationController
     @pagamento = Pagamento.new(pagamento_params)
     @pagamento.data = Time.now
     @pagamento.save
-    @faturas = Fatura.where(competencia: @pagamento.competencia, consulta_id: (Consulta.where(paciente_id: @pagamento.paciente_id)))
+    @faturas = Fatura.where(competencia: @pagamento.competencia, consulta_id: Consulta.where(paciente_id: @pagamento.paciente_id))
     @faturas.update(status: true)
     @faturas = Fatura.all
     @pacientes = Paciente.all
@@ -18,7 +18,7 @@ class PagamentosController < ApplicationController
 
   def destroy
     @pagamentos = Pagamento.find(params[:id])
-    @faturas = Fatura.where(competencia: @pagamentos.competencia, consulta_id: (Consulta.where(paciente_id: @pagamentos.paciente_id)))
+    @faturas = Fatura.where(competencia: @pagamentos.competencia, consulta_id: Consulta.where(paciente_id: @pagamentos.paciente_id))
     @faturas.update(status: false)
     @pagamentos.destroy
     @faturas = Fatura.all
