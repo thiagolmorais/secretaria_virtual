@@ -7,22 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>SecretariaVirtual</title>
-    <%= csrf_meta_tags %>
+    <%= csrf_meta_tags %>   
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "bootstrap-clockpicker.min.js"%>
+    <%= javascript_include_tag "bootstrap-material-datetimepicker.js"%>
+    <%= javascript_include_tag "jquery-clockpicker.min.js"%>
+    <%= javascript_include_tag "clockpicker.js"%>
+    <!-- Bootstrap tooltips -->
+    <%= javascript_include_tag "popper.min.js"%>
+    <!-- Bootstrap core JavaScript -->
+    <%= javascript_include_tag "bootstrap.min.js"%>
+    <!-- MDB core JavaScript -->
+    <%= javascript_include_tag "mdb.min.js"%>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <%= stylesheet_link_tag 'bootstrap-clockpicker.min.css'%>
+
+    <%= stylesheet_link_tag 'bootstrap-clockpicker.min.css'%>
+    <%= stylesheet_link_tag 'jquery-clockpicker.min.css'%>
+    <%= stylesheet_link_tag 'standalone.css'%>
+    <%= stylesheet_link_tag 'clockpicker.css'%>
+    <%= stylesheet_link_tag 'bootstrap.min'%>
+    <%= stylesheet_link_tag 'mdb.min'%>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
-
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Graduate|Poiret+One|Reenie+Beanie" rel="stylesheet">
     </head>
       <!--Big blue-->
       <div class="loader"></div>
@@ -149,140 +160,6 @@
       </a>
     </footer>
   <% end %>
-
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
-  <script>
-  $('.upcol').hide();
-  $('.upcolc').hide();
-  $('.upcolp').hide();
-  $('.upcolf').hide();
-
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px";
-      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-    }
-
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("main").style.marginLeft = "0";
-      document.body.style.backgroundColor = "white";
-    }
-
-    /Fatura/
-    function openCol(){
-      $('.colls').slideDown();
-      $('.downcol').hide();
-      $('.upcol').show();
-    }
-
-    function closeCol(){
-      $('.colls').slideUp();
-      $('.downcol').show();
-      $('.upcol').hide();
-    }
-
-    /Consulta/
-    function openColc(){
-      $('.colls-c').slideDown();
-      $('.downcolc').hide();
-      $('.upcolc').show();
-    }
-
-    function closeColc(){
-      $('.colls-c').slideUp();
-      $('.downcolc').show();
-      $('.upcolc').hide();
-    }
-
-    /Paciente/
-    function openColp(){
-      $('.colls-p').slideDown();
-      $('.downcolp').hide();
-      $('.upcolp').show();
-    }
-
-    function closeColp(){
-      $('.colls-p').slideUp();
-      $('.downcolp').show();
-      $('.upcolp').hide();
-    }
-
-    /Pagamento/
-    function openColf(){
-      $('.colls-f').slideDown();
-      $('.downcolf').hide();
-      $('.upcolf').show();
-    }
-
-    function closeColf(){
-      $('.colls-f').slideUp();
-      $('.downcolf').show();
-      $('.upcolf').hide();
-    }
-
-  $("#dropp").click(function(){
-    var drop = document.querySelector(".drop-menup").style.display;
-      if (drop != 'block'){
-        if (document.querySelector(".drop-menuc").style.display == 'block'){
-          $('.drop-menuc').slideUp();
-        }
-        $('.drop-menup').slideDown();
-      }
-      else{
-        $('.drop-menup').slideUp();
-      }
-  });
-
-  $("#dropc").click(function(){
-    var dropc = document.querySelector(".drop-menuc").style.display;
-      if (dropc != 'block'){
-        if (document.querySelector(".drop-menup").style.display == 'block'){
-          $('.drop-menup').slideUp();
-        }
-        $('.drop-menuc').slideDown();
-      }
-      else{
-        $('.drop-menuc').slideUp();
-      }
-  });
-
-    $(document).ready(function(){
-        $('.loader').fadeOut();
-      document.body.style.opacity ="1";
-    });
-
-  if (document.querySelector("#notice").innerHTML !== '') {
-    document.querySelector(".alert-s").style.display = "block";
-    setTimeout(function() {
-        $('.alert-s').fadeOut(2000);
-    }, 4000);
-  }
-
-  if (document.querySelector(".alert").innerHTML !== '') {
-    document.querySelector(".alert-e").style.display = "block";
-    setTimeout(function() {
-        $('.alert-e').fadeOut(2000);
-    }, 4000);
-  }
-
-  $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-
-if(screen.width < 600 && screen.height < 800){
-  $( "table" ).addClass( "table-responsive" );
-
-}
-$(document).scroll(function() {
-  $( "nav" ).addClass( "mysticky" );
-});
-
-  </script>
   </body>
+  <%= javascript_include_tag "main.js"%>
 </html>

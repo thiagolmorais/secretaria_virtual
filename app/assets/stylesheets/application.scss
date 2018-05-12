@@ -21,7 +21,7 @@ main{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    font-family: 'Arial Narrow Bold', sans-serif
 }
 #listap{
     width: 99%;
@@ -206,38 +206,13 @@ main{
   background: #00c851;
   height: 54px;
   width: 300px;
-  position: fixed;
+  position: relative;
   right: 0;
   border: 1px solid #00c851;
   border-radius: 10px;
   display: none;
   color: white;
   font-family: 'Courier New', Courier, monospace;
-}
-
-input[type="date"] {
-  color: navy;
-  -webkit-align-items: center;
-  display: -webkit-inline-flex;
-  font-family: monospace;
-  overflow: hidden;
-  padding: 0;
-  -webkit-padding-start: 1px;
-}
-
-input::-webkit-datetime-edit {
- -webkit-flex: 1;
- -webkit-user-modify: read-only !important;
- display: inline-block;
- min-width: 0;
- overflow: hidden;
-}
-
-input::-webkit-datetime-edit-fields-wrapper {
- -webkit-user-modify: read-only !important;
- display: inline-block;
- padding: 1px 0;
- white-space: pre;
 }
 .loader {
   top: 0;
@@ -269,7 +244,7 @@ input::-webkit-datetime-edit-fields-wrapper {
 
 body{
   opacity: 0.4;
-     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+     font-family:'Arial Narrow Bold', sans-serif
 }
 .alert-e{
   animation-delay: 0.2s;
@@ -290,6 +265,10 @@ body{
 }
 
 @media only screen and (max-width: 650px) {
+  input[type="date"]{
+    width: 50%;
+    height: 7vh;
+  }
   #main-title{
     float: right;
     font-size: 13px;
@@ -461,4 +440,17 @@ table{
 }
 ul{
   list-style: none;
+  vertical-align: middle;
+}
+.picker{
+font-size: 16px;
+text-align: center;
+line-height: 1.2;
+color: #000;
+position: absolute;
+z-index: 10000;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
