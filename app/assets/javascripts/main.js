@@ -132,5 +132,12 @@ $('input[type="time"]').clockpicker({
 }
 
 if(screen.width>660){
-  $('input[type="date"]').bootstrapMaterialDatePicker({ time: false }); 
+  $('input[type="date"]').bootstrapMaterialDatePicker({ 
+    time: false ,
+    lang : 'pt-br',
+    nowButton : true,
+    year: true,
+    okText:'',
+    cancelText:'',
+  }); 
 }

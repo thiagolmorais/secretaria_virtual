@@ -6,37 +6,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>SecretariaVirtual</title>
-    <%= csrf_meta_tags %>   
+    <title>SecretariaVirtual</title>    
+
+    <%= csrf_meta_tags %>  
+    <%= stylesheet_link_tag 'bootstrap.min'%>
+    <%= stylesheet_link_tag 'mdb.min'%> 
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag "bootstrap-clockpicker.min.js"%>
     <%= javascript_include_tag "bootstrap-material-datetimepicker.js"%>
     <%= javascript_include_tag "jquery-clockpicker.min.js"%>
     <%= javascript_include_tag "clockpicker.js"%>
-    <!-- Bootstrap tooltips -->
-    <%= javascript_include_tag "popper.min.js"%>
-    <!-- Bootstrap core JavaScript -->
-    <%= javascript_include_tag "bootstrap.min.js"%>
-    <!-- MDB core JavaScript -->
-    <%= javascript_include_tag "mdb.min.js"%>
+
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= stylesheet_link_tag 'bootstrap-clockpicker.min.css'%>
-
-    <%= stylesheet_link_tag 'bootstrap-clockpicker.min.css'%>
     <%= stylesheet_link_tag 'jquery-clockpicker.min.css'%>
-    <%= stylesheet_link_tag 'standalone.css'%>
     <%= stylesheet_link_tag 'clockpicker.css'%>
-    <%= stylesheet_link_tag 'bootstrap.min'%>
-    <%= stylesheet_link_tag 'mdb.min'%>
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/locale/br.js"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-      <!--Big blue-->
-      <div class="loader"></div>
   <body>
     <% if current_user %>
       <!-- Sidemenu mobile -->
@@ -145,6 +139,8 @@
       <header id="header">
 
     </div>
+    <!--Big blue-->
+    <div class="loader"></div>
   </main>
 
   <% if current_user %>
@@ -161,5 +157,11 @@
     </footer>
   <% end %>
   </body>
+  <!-- Bootstrap tooltips -->
+  <%= javascript_include_tag "popper.min.js"%>
+  <!-- Bootstrap core JavaScript -->
+  <%= javascript_include_tag "bootstrap.min.js"%>
+  <!-- MDB core JavaScript -->
+  <%= javascript_include_tag "mdb.min.js"%>
   <%= javascript_include_tag "main.js"%>
 </html>

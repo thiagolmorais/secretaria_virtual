@@ -1,6 +1,6 @@
 <% if @paciente.errors.any? %>
   <% @paciente.errors.full_messages.each do |msg| %>
-    <li class="fa fa-warning alert-e  animated bounceInUp"><%=  msg %></li>
+    <p class="fa fa-warning alert-e  animated bounceInUp"><%=  msg %></p>
   <% end %>
 <% end %>
 
@@ -23,7 +23,7 @@
     <%= f.label :telefone,:for=>"inputMDEx3" %>
   </div>
 
-  <%= f.label :sexo %>
+  <%= f.label :sexo%>
   <%= f.select(:sexo, ['Masculino', 'Feminino'],{}, { :class => 'custom-select my-1 mr-sm-2' })%><br><br>
   
 

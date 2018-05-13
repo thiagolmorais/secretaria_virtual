@@ -16,12 +16,20 @@
  *= require_self
  *= require fullcalendar
  */
+  $color-black: "0,0,0";
+  $select-background-color: transparent;
+  $select-border-color: unquote("rgba(#{$color-black}, 0.12)") !default;
+  $select-font-size: 16px;
+  $select-color: unquote("rgba(#{$color-black}, 0.26)") !default;
+  $select-padding: 4px;
+  $select-font-w: "bold";
+
 main{
     width: 90%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    font-family: 'Arial Narrow Bold', sans-serif
+    font-family: 'Roboto', sans-serif;
 }
 #listap{
     width: 99%;
@@ -244,17 +252,16 @@ main{
 
 body{
   opacity: 0.4;
-     font-family:'Arial Narrow Bold', sans-serif
+  font-family: 'Roboto', sans-serif;
 }
 .alert-e{
   animation-delay: 0.2s;
   background: #ff3547;
   height: 39px;
   width: 300px;
-  position: fixed;
   margin-top: -35px;
   margin-right: auto;
-  margin-left: auto;
+  margin-left: 5px;
   text-align: center;
   border: 1px solid #ff3547;
   box-shadow: grey 2px 2px;
@@ -270,6 +277,7 @@ body{
     height: 7vh;
   }
   #main-title{
+    font-family: 'Courier New', Courier, monospace;
     float: right;
     font-size: 13px;
   }
@@ -284,6 +292,9 @@ body{
     .alert-s{
     height: 40px;
     }
+    .alert-e{
+      margin-right: 50%;
+      }
     #panel{
       height: 400px;
     }
@@ -454,3 +465,27 @@ z-index: 10000;
 -ms-user-select: none;
 user-select: none;
 }
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  src: url(https://fonts.googleapis.com/css?family=Roboto);
+}
+input[type=date],input[type=time]{
+  background: #283593;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  border: 1px solid navy;
+  box-shadow: 2px 2px 2px 2px grey;
+  border-radius: 5px;
+}
+.custom-select {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: transparent;
+  width: 100%;
+  padding: $select-padding;
+  font-size: $select-font-size;
+  color: #7b7b7b;
+  border: none;
+  border-bottom: 1px solid $select-border-color;
+}
+.custom-select:focus {
+  outline: none}

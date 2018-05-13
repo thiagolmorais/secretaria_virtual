@@ -18,7 +18,7 @@
       this.$element = $(element);
 
 
-      this.params = {date: true, time: true, format: 'YYYY-MM-DD', minDate: null, maxDate: null, currentDate: null, lang: 'en', weekStart: 0, disabledDays: [], shortTime: false, clearButton: false, nowButton: false, cancelText: 'Cancelar', okText: 'Escolher', clearText: 'Clear', nowText: 'Now', switchOnClick: false, triggerEvent: 'focus', monthPicker: false, year:true};
+      this.params = {date: true, time: true, format: 'YYYY-MM-DD', minDate: null, maxDate: null, currentDate: null, lang: 'en', weekStart: 0, disabledDays: [], shortTime: false, clearButton: false, nowButton: false, cancelText: 'Sair', okText: 'Ok', clearText: 'Limpar', nowText: 'Hoje', switchOnClick: false, triggerEvent: 'focus', monthPicker: false, year:true};
       this.params = $.fn.extend(this.params, options);
 
       this.name = "dtp_" + this.setName();
@@ -208,9 +208,9 @@
                   this.midYear=y;
                   var yearHtml =
                       '<div class="dtp-picker-year hidden" >' +
-                      '<div><a href="javascript:void(0);" class="btn btn-default dtp-select-year-range before" style="margin: 0;"><i class="material-icons">keyboard_arrow_up</i></a></div>' +
+                      '<div><a href="javascript:void(0);" class="btn btn-primary dtp-select-year-range before" style="margin: 0;"><i class="material-icons">keyboard_arrow_up</i></a></div>' +
                       yearPicker +
-                      '<div><a href="javascript:void(0);" class="btn btn-default dtp-select-year-range after" style="margin: 0;"><i class="material-icons">keyboard_arrow_down</i></a></div>' +
+                      '<div><a href="javascript:void(0);" class="btn btn-primary dtp-select-year-range after" style="margin: 0;"><i class="material-icons">keyboard_arrow_down</i></a></div>' +
                       '</div>';
 
                  this.template = '<div class="dtp hidden" id="' + this.name + '">' +
@@ -266,10 +266,10 @@
                          '</div>' +
                          '</div>' +
                          '<div class="dtp-buttons">' +
-                         '<button class="dtp-btn-now btn-primary hidden">' + this.params.nowText + '</button>' +
-                         '<button class="dtp-btn-clear btn-primary hidden">' + this.params.clearText + '</button>' +
-                         '<button class="dtp-btn-cancel btn-primary ">' + this.params.cancelText + '</button>' +
-                         '<button class="dtp-btn-ok btn-primary">' + this.params.okText + '</button>' +
+                         '<button class="dtp-btn-now btn-sm btn btn-primary hidden"><i class="fa fa-calendar" aria-hidden="true"></i> ' + this.params.nowText + '</button>' +
+                         '<button class="dtp-btn-clear btn btn-sm btn-indigo hidden">' + this.params.clearText + '</button>' +
+                         '<button class="dtp-btn-cancel btn-sm btn btn-danger"><i class="fa fa-close" aria-hidden="true"></i>' + this.params.cancelText + '</button>' +
+                         '<button class="dtp-btn-ok btn btn-sm btn-indigo "><i class="fa fa-check" aria-hidden="true"></i> ' + this.params.okText + '</button>' +
                          '<div class="clearfix"></div>' +
                          '</div>' +
                          '</div>' +
