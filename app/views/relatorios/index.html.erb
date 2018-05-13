@@ -9,10 +9,8 @@
 <thead id="thead" class="indigo darken-3">
         <tr>
           <th><i class="fa fa-book" aria-hidden="true"></i>  Competência</th>
-          <th><i class="fa fa-address-book-o" aria-hidden="true"></i> Agendados</th>
-          <th><i class="fa fa-dollar" aria-hidden="true"></i>  Atendidos</th>
-          <th><i class="fa fa-exclamation-circle" aria-hidden="true"></i>  pagos</th>
-          <th><i class="fa fa-exclamation-circle" aria-hidden="true"></i>  Total</th>
+          <th><i class="fa fa-address-book-o" aria-hidden="true"></i> Previsto</th>
+          <th><i class="fa fa-dollar" aria-hidden="true"></i>  Realizado</th>
         </tr>
     </thead>
     <tbody>
@@ -26,10 +24,11 @@
           <%#= binding.pry %>
           <% saldo_agendado = valor.valor_consulta.valor + saldo_agendado %>
         <% end %>
-        <td><%= number_to_currency valor = agendados = saldo_agendado %></td>
-        <td><%= number_to_currency valor = atendidos = Fatura.where(status: false, competencia: competencia.competencia).sum(:valor) %></td>
-        <td><%= number_to_currency valor = pagos = Pagamento.where(competencia: competencia.competencia, status: true).sum(:valor) %></td>
+        <% number_to_currency valor = agendados = saldo_agendado %>
+        <% number_to_currency valor = atendidos = Fatura.where(status: false, competencia: competencia.competencia).sum(:valor) %>
+        <% number_to_currency valor = pagos = Pagamento.where(competencia: competencia.competencia, status: true).sum(:valor) %>
         <td><%= number_to_currency valor = agendados + atendidos + pagos %></td>
+        <td><%= number_to_currency valor = pagos %></td>
       </tr>
       <% end %>
     </tbody>
