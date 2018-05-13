@@ -2,6 +2,7 @@
   $('.upcolc').hide();
   $('.upcolp').hide();
   $('.upcolf').hide();
+  $('.upcolr').hide();
 
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
@@ -67,11 +68,25 @@
       $('.upcolf').hide();
     }
 
+    /Relatórios/
+    function openColr(){
+      $('.colls-r').slideDown();
+      $('.downcolr').hide();
+      $('.upcolr').show();
+    }
+
+    function closeColr(){
+      $('.colls-r').slideUp();
+      $('.downcolr').show();
+      $('.upcolr').hide();
+    }
+
   $("#dropp").click(function(){
     var drop = document.querySelector(".drop-menup").style.display;
       if (drop != 'block'){
-        if (document.querySelector(".drop-menuc").style.display == 'block'){
+        if (document.querySelector(".drop-menuc").style.display == 'block' || document.querySelector(".drop-menupr").style.display == 'block'){
           $('.drop-menuc').slideUp();
+          $('.drop-menupr').slideUp();
         }
         $('.drop-menup').slideDown();
       }
@@ -84,8 +99,9 @@
   $("#dropc").click(function(){
     var dropc = document.querySelector(".drop-menuc").style.display;
       if (dropc != 'block'){
-        if (document.querySelector(".drop-menup").style.display == 'block'){
+        if (document.querySelector(".drop-menup").style.display == 'block' || document.querySelector(".drop-menupr").style.display == 'block'){
           $('.drop-menup').slideUp();
+          $('.drop-menupr').slideUp();
         }
         $('.drop-menuc').slideDown();
       }
@@ -94,24 +110,38 @@
       }
   });
 
+  $("#dropr").click(function(){
+    var dropr = document.querySelector(".drop-menupr").style.display;
+      if (dropr != 'block'){
+        if (document.querySelector(".drop-menup").style.display == 'block' || document.querySelector(".drop-menuc").style.display == 'block'){
+          $('.drop-menup').slideUp();
+          $('.drop-menuc').slideUp();
+        }
+        $('.drop-menupr').slideDown();
+      }
+      else{
+        $('.drop-menupr').slideUp();
+      }
+  });
+
     $(document).ready(function(){
         $('.loader').fadeOut();
       document.body.style.opacity ="1";
     });
 
-  if (document.querySelector("#notice").innerHTML !== '') {
-    document.querySelector(".alert-s").style.display = "block";
-    setTimeout(function() {
-        $('.alert-s').fadeOut(2000);
-    }, 4000);
-  }
+   if (document.querySelector("#notice").innerHTML !== '') {
+     document.querySelector(".alert-s").style.display = "block";
+     setTimeout(function() {
+         $('.alert-s').fadeOut(2000);
+     }, 4000);
+   }
 
-  if (document.querySelector(".alert").innerHTML !== '') {
-    document.querySelector(".alert-e").style.display = "block";
-    setTimeout(function() {
-        $('.alert-e').fadeOut(2000);
-    }, 4000);
-  }
+   if (document.querySelector(".alert").innerHTML !== '') {
+     document.querySelector(".alert-e").style.display = "block";
+     setTimeout(function() {
+         $('.alert-e').fadeOut(2000);
+     }, 4000);
+   }
 
   $(function () {
   $('[data-toggle="tooltip"]').tooltip()
@@ -132,13 +162,13 @@ $('input[type="time"]').clockpicker({
 );
 }
 
-if(screen.width>660){
-  $('input[type="date"]').bootstrapMaterialDatePicker({ 
-    time: false ,
-    lang : 'pt-br',
-    nowButton : true,
-    year: true,
-    okText:'',
-    cancelText:'',
-  }); 
-}
+ if(screen.width>660){
+   $('input[type="date"]').bootstrapMaterialDatePicker({ 
+     time: false ,
+     lang : 'pt-br',
+     nowButton : true,
+     year: true,
+     okText:'',
+     cancelText:'',
+   }); 
+ }

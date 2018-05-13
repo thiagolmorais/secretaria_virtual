@@ -7,28 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>SecretariaVirtual</title>    
+
+    <%= csrf_meta_tags %>    
+    <!-- Framework-->       
+    <%= javascript_include_tag "jquery-3.3.1.min"%>       
+   <%= javascript_include_tag 'application'%>    
+   <%= javascript_include_tag "mdb.min.js"%>    
+    <%= stylesheet_link_tag 'mdb.min'%>      
+    <%= javascript_include_tag "popper.min.js"%>   
+    <%= javascript_include_tag "bootstrap.min.js"%>    
+    <%= stylesheet_link_tag 'bootstrap.min'%>
+
+
+    <%= stylesheet_link_tag "bootstrap-material-datetimepicker"%>    
+    <%= stylesheet_link_tag "jquery-clockpicker.min"%>    
+    <%= stylesheet_link_tag "clockpicker"%>   
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "jquery-clockpicker.min.js"%>  
+    <%= javascript_include_tag "clockpicker.js"%>  
+    <%= javascript_include_tag "bootstrap-material-datetimepicker.js"%>  
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <!-- CDN-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <%= csrf_meta_tags %>    
-    <!-- Framework-->       
-    <%= javascript_include_tag "jquery-3.3.1.min.js"%>      
-    <%= javascript_include_tag 'application'%>    
-    <%= javascript_include_tag "bootstrap.min.js"%>
-    <%= javascript_include_tag "mdb.min.js"%>    
-    <%= javascript_include_tag "popper.min.js"%> 
-    <%= javascript_include_tag "jquery-clockpicker.min.js"%>  
-    <%= javascript_include_tag "clockpicker.js"%>  
-    <%= javascript_include_tag "bootstrap-material-datetimepicker.js"%>
-    <!-- Css --> 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>    
-    <%= stylesheet_link_tag 'bootstrap.min'%>
-    <%= stylesheet_link_tag 'mdb.min'%> 
-    <%= stylesheet_link_tag 'jquery-clockpicker.min'%>
-    <%= stylesheet_link_tag 'clockpicker'%>
-
     </head>
   <body>
     <% if current_user %>
@@ -71,9 +73,9 @@
           <hr class="sidehr">
 
           <!-- Dropdown Relatórios Finaceiros -->
-          <a class="downcolp fa fa-address-book-o" onclick="openColp()"> Relatórios <i class="fa animated flipInX fa-sort-down"></i></a>
-          <a class="upcolp fa fa-address-book-o" onclick="closeColp()"> Relatórios  <i class="fa animated flipInX fa-sort-up"></i></a>
-            <div class="colls-p">
+          <a class="downcolr fa fa-bar-chart" onclick="openColr()"> Relatórios <i class="fa animated flipInX fa-sort-down"></i></a>
+          <a class="upcolr fa fa-bar-chart" onclick="closeColr()"> Relatórios  <i class="fa animated flipInX fa-sort-up"></i></a>
+            <div class="colls-r">
               <%= link_to 'Financeiro Competência', relatorios_path,class:'smallnav'%>
             </div>
           <hr class="sidehr">
@@ -131,8 +133,8 @@
           <!--Dropdown Relatórios -->
 
           <abbr class="col-2">
-              <button id="dropr" class="btn btn-md btn-deep-purple"><i class="fa fa-address-book-o"></i>  Relatórios  <i class="fa fa-sort-down"></i></button>
-              <div id="no-mobile" class="drop-menup border border-info">
+              <button id="dropr" class="btn btn-md btn-deep-purple"><i class="fa fa-bar-chart"></i>  Relatórios  <i class="fa fa-sort-down"></i></button>
+              <div id="no-mobile" class="drop-menupr border border-info">
               <%= link_to 'Financeiro Competência',relatorios_path,class:"dropdown-item" %>
             </div>
           </abbr>
@@ -147,15 +149,13 @@
     <div class="animated fadeInDown">
     <div class="notice alert-s animated fadeInRightBig">
     <i class="fa fa-check" aria-hidden="true"></i>
-      <span id="notice"><%= notice %></span>
+      <p id="notice"><%= notice %></p>
       </div>
       <p class="alert"><%= alert %></p>
-
       <%= yield %>
-
       <header id="header">
-
     </div>
+    
     <!--Big blue-->
     <div class="loader"></div>
   </main>
@@ -174,5 +174,6 @@
     </footer>
   <% end %>
   </body>  
+
   <%= javascript_include_tag "main.js"%>
 </html>
