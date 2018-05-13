@@ -1,6 +1,6 @@
 <% if @paciente.errors.any? %>
   <% @paciente.errors.full_messages.each do |msg| %>
-    <li class="fa fa-warning alert-e  animated bounceInUp"><%=  msg %></li>
+    <p class="fa fa-warning alert-e  animated bounceInUp"><%=  msg %></p>
   <% end %>
 <% end %>
 
@@ -23,14 +23,18 @@
     <%= f.label :telefone,:for=>"inputMDEx3" %>
   </div>
 
-  <%= f.label :sexo %>
+  <%= f.label :sexo%>
   <%= f.select(:sexo, ['Masculino', 'Feminino'],{}, { :class => 'custom-select my-1 mr-sm-2' })%><br><br>
+  
 
-  <%= f.label :nascimento %>
-  <%= f.date_field :nascimento,:id=>"date-picker-example"%>
+  <%= f.label :nascimento,:for=>"date-picker-example" %>
+  <%= f.date_field :nascimento,:id=>"date-picker-example"%><br><br>
 
-  <%= f.label :paciente_desde %>
-  <%= f.date_field :paciente_desde,:id=>"date-picker-example" %><br><br>
+
+
+  <%= f.label :paciente_desde,:for=>"date-picker-example1" %>
+  <%= f.date_field :paciente_desde,:id=>"date-picker-example1" %><br><br>
+
 
   <%= f.label :status %>
   <%= f.select(:status, [['Ativo', true], ['Inativo', false]],{}, { :class => 'custom-select my-1 mr-sm-2' })%><br><br>
