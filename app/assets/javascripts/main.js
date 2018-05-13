@@ -80,6 +80,7 @@
       }
   });
 
+
   $("#dropc").click(function(){
     var dropc = document.querySelector(".drop-menuc").style.display;
       if (dropc != 'block'){

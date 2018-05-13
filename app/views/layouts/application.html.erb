@@ -7,29 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>SecretariaVirtual</title>    
-
-    <%= csrf_meta_tags %>  
-    <%= stylesheet_link_tag 'bootstrap.min'%>
-    <%= stylesheet_link_tag 'mdb.min'%> 
-
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag "bootstrap-clockpicker.min.js"%>
-    <%= javascript_include_tag "bootstrap-material-datetimepicker.js"%>
-    <%= javascript_include_tag "jquery-clockpicker.min.js"%>
-    <%= javascript_include_tag "clockpicker.js"%>
-
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-    <%= stylesheet_link_tag 'bootstrap-clockpicker.min.css'%>
-    <%= stylesheet_link_tag 'jquery-clockpicker.min.css'%>
-    <%= stylesheet_link_tag 'clockpicker.css'%>
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/locale/br.js"> 
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <!-- CDN-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <%= csrf_meta_tags %>    
+    <!-- Framework-->       
+    <%= javascript_include_tag "jquery-3.3.1.min.js"%>      
+    <%= javascript_include_tag 'application'%>    
+    <%= javascript_include_tag "bootstrap.min.js"%>
+    <%= javascript_include_tag "mdb.min.js"%>    
+    <%= javascript_include_tag "popper.min.js"%> 
+    <%= javascript_include_tag "jquery-clockpicker.min.js"%>  
+    <%= javascript_include_tag "clockpicker.js"%>  
+    <%= javascript_include_tag "bootstrap-material-datetimepicker.js"%>
+    <!-- Css --> 
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>    
+    <%= stylesheet_link_tag 'bootstrap.min'%>
+    <%= stylesheet_link_tag 'mdb.min'%> 
+    <%= stylesheet_link_tag 'jquery-clockpicker.min'%>
+    <%= stylesheet_link_tag 'clockpicker'%>
+
     </head>
   <body>
     <% if current_user %>
@@ -156,12 +155,6 @@
       </a>
     </footer>
   <% end %>
-  </body>
-  <!-- Bootstrap tooltips -->
-  <%= javascript_include_tag "popper.min.js"%>
-  <!-- Bootstrap core JavaScript -->
-  <%= javascript_include_tag "bootstrap.min.js"%>
-  <!-- MDB core JavaScript -->
-  <%= javascript_include_tag "mdb.min.js"%>
+  </body>  
   <%= javascript_include_tag "main.js"%>
 </html>

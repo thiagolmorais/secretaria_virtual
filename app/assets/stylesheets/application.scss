@@ -16,6 +16,7 @@
  *= require_self
  *= require fullcalendar
  */
+
   $color-black: "0,0,0";
   $select-background-color: transparent;
   $select-border-color: unquote("rgba(#{$color-black}, 0.12)") !default;
@@ -29,7 +30,7 @@ main{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
 }
 #listap{
     width: 99%;
@@ -252,7 +253,6 @@ main{
 
 body{
   opacity: 0.4;
-  font-family: 'Roboto', sans-serif;
 }
 .alert-e{
   animation-delay: 0.2s;
@@ -464,10 +464,6 @@ z-index: 10000;
 -moz-user-select: none;
 -ms-user-select: none;
 user-select: none;
-}
-@font-face {
-  font-family: 'Roboto', sans-serif;
-  src: url(https://fonts.googleapis.com/css?family=Roboto);
 }
 input[type=date],input[type=time]{
   background: #283593;

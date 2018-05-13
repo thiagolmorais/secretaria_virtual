@@ -22,4 +22,3 @@
 //= require fullcalendar/gcal
 //= require fullcalendar/locale/pt
 
-console.log('application')
