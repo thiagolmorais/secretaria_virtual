@@ -69,6 +69,15 @@
               <%= link_to 'Cadastrar Paciente', new_paciente_path,class:'smallnav'%>
             </div>
           <hr class="sidehr">
+
+          <!-- Dropdown Relatórios Finaceiros -->
+          <a class="downcolp fa fa-address-book-o" onclick="openColp()"> Relatórios <i class="fa animated flipInX fa-sort-down"></i></a>
+          <a class="upcolp fa fa-address-book-o" onclick="closeColp()"> Relatórios  <i class="fa animated flipInX fa-sort-up"></i></a>
+            <div class="colls-p">
+              <%= link_to 'Financeiro Competência', relatorios_path,class:'smallnav'%>
+            </div>
+          <hr class="sidehr">
+
         <%= link_to 'Sair', destroy_user_session_path, method: :delete, :class=>"btn btn-outline-white btn-sm" %>
     </div>
 
@@ -116,6 +125,15 @@
               <div id="no-mobile" class="drop-menup border border-info">
               <%= link_to 'Consultar Paciente',pacientes_path,class:"dropdown-item" %>
               <%= link_to 'Cadastrar Paciente', new_paciente_path,class:"dropdown-item" %>
+            </div>
+          </abbr>
+
+          <!--Dropdown Relatórios -->
+
+          <abbr class="col-2">
+              <button id="dropr" class="btn btn-md btn-deep-purple"><i class="fa fa-address-book-o"></i>  Relatórios  <i class="fa fa-sort-down"></i></button>
+              <div id="no-mobile" class="drop-menup border border-info">
+              <%= link_to 'Financeiro Competência',relatorios_path,class:"dropdown-item" %>
             </div>
           </abbr>
 
