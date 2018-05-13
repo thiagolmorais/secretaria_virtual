@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery3
-
 //= require popper
 //= require bootstrap
 //= require rails-ujs
@@ -21,4 +20,4 @@
 //= require fullcalendar
 //= require fullcalendar/gcal
 //= require fullcalendar/locale/pt
-
+console.log('application');
