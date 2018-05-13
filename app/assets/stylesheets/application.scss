@@ -323,7 +323,7 @@ body{
   color:red;
   background: white;
 }
-.colls,.colls-c,.colls-p,.colls-f{
+.colls,.colls-c,.colls-p,.colls-f,.colls-r{
   display: none;
 }
 
@@ -358,7 +358,7 @@ nav{
   z-index: 4;
   position: relative;
 }
-.drop-menup,.drop-menuc{
+.drop-menup,.drop-menuc,.drop-menupr{
   position: absolute;
   top: 142.7%;
   left: 0;
@@ -399,6 +399,10 @@ float: right;
   background: #4285F4;
   color: white;
 }
+.drop-menupr a:hover{
+  background: #4285F4;
+  color: white;
+}
 tr i{
   cursor: default;
 }
@@ -411,7 +415,7 @@ span:hover {
     color: white;
 }
 
-#dropc:hover,#dropp:hover{
+#dropc:hover,#dropp:hover,#dropr:hover{
   font-size: 15px;
 }
 
