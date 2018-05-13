@@ -16,6 +16,7 @@ class ConsultasController < ApplicationController
 
   def create
     @consulta = Consulta.new(consulta_params)
+    @consulta.competencia = "#{@consulta.data.month}#{@consulta.data.year}"
     if @consulta.save
       redirect_to consultas_path
     else
