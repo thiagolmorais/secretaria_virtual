@@ -4,8 +4,6 @@ window.mobilecheck = function() {
   return check;
 };
 $(document).ready(function() {
-console.log('full calendar index');
-
 
 $('#calendar').each(function  (){
   var calendar = $(this);
