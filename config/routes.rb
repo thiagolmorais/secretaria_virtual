@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :consultas
   resources :faturas, only:[:index, :create, :destroy]
   resources :pagamentos, only:[:index, :create, :destroy]
+  resources :relatorios, only:[:index]
 end

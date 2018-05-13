@@ -8,6 +8,7 @@ class PagamentosController < ApplicationController
   def create
     @pagamento = Pagamento.new(pagamento_params)
     @pagamento.data = Time.now
+    @pagamento.status = true
     @pagamento.save
     @faturas = Fatura.where(competencia: @pagamento.competencia, consulta_id: Consulta.where(paciente_id: @pagamento.paciente_id))
     @faturas.update(status: true)
