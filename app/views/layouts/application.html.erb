@@ -10,14 +10,20 @@
 
     <%= csrf_meta_tags %>    
     <!-- Framework-->       
-    <%= javascript_include_tag "jquery-3.3.1.min"%>       
-   <%= javascript_include_tag 'application'%>    
-   <%= javascript_include_tag "mdb.min.js"%>    
-    <%= stylesheet_link_tag 'mdb.min'%>      
-    <%= javascript_include_tag "popper.min.js"%>   
-    <%= javascript_include_tag "bootstrap.min.js"%>    
-    <%= stylesheet_link_tag 'bootstrap.min'%>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>      
+   <%= javascript_include_tag 'application'%>  
 
+   <!-- Bootstrap core CSS -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Material Design Bootstrap -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
 
     <%= stylesheet_link_tag "bootstrap-material-datetimepicker"%>    
     <%= stylesheet_link_tag "jquery-clockpicker.min"%>    
@@ -25,7 +31,6 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag "jquery-clockpicker.min.js"%>  
     <%= javascript_include_tag "clockpicker.js"%>  
-    <%= javascript_include_tag "bootstrap-material-datetimepicker.js"%>  
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <!-- CDN-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -147,15 +152,15 @@
 
   <main id="main">
     <div class="animated fadeInDown">
-    <div class="notice alert-s animated fadeInRightBig">
-    <i class="fa fa-check" aria-hidden="true"></i>
+    <p class="notice animated fadeInRightBig">
       <p id="notice"><%= notice %></p>
-      </div>
+  </p>
       <p class="alert"><%= alert %></p>
+      </p>
       <%= yield %>
       <header id="header">
     </div>
-    
+
     <!--Big blue-->
     <div class="loader"></div>
   </main>
@@ -173,7 +178,8 @@
       </a>
     </footer>
   <% end %>
-  </body>  
-
+  </body> 
+   
+  <%= javascript_include_tag "bootstrap-material-datetimepicker.js"%>  
   <%= javascript_include_tag "main.js"%>
 </html>
