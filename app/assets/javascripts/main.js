@@ -129,23 +129,16 @@
       document.body.style.opacity ="1";
     });
 
-   if (document.querySelector("#notice").innerHTML !== '') {
-     document.querySelector(".alert-s").style.display = "block";
-     setTimeout(function() {
-         $('.alert-s').fadeOut(2000);
-     }, 4000);
-   }
+  //  if (document.querySelector("#notice").innerHTML != '') {
+  //    document.querySelector(".alert-s").style.display = "block";
+    //  setTimeout(function() {
+    //      $('.alert-s').fadeOut(2000);
+    //  }, 4000);
+  //  }
 
-   if (document.querySelector(".alert").innerHTML !== '') {
-     document.querySelector(".alert-e").style.display = "block";
-     setTimeout(function() {
-         $('.alert-e').fadeOut(2000);
-     }, 4000);
-   }
-
-  $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+  setTimeout(function() {
+    $('.alert-e').fadeOut(2000);
+}, 4000);
 
 if(screen.width < 600 && screen.height < 800){
   $( "table" ).addClass( "table-responsive" );
