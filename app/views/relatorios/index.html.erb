@@ -26,10 +26,11 @@
           <%#= binding.pry %>
           <% saldo_agendado = valor.valor_consulta.valor + saldo_agendado %>
         <% end %>
-        <td><%= number_to_currency valor = agendados = saldo_agendado %></td>
-        <td><%= number_to_currency valor = atendidos = Fatura.where(status: false, competencia: competencia.competencia).sum(:valor) %></td>
-        <td><%= number_to_currency valor = pagos = Pagamento.where(competencia: competencia.competencia, status: true).sum(:valor) %></td>
+        <% number_to_currency valor = agendados = saldo_agendado %>
+        <% number_to_currency valor = atendidos = Fatura.where(status: false, competencia: competencia.competencia).sum(:valor) %>
+        <% number_to_currency valor = pagos = Pagamento.where(competencia: competencia.competencia, status: true).sum(:valor) %>
         <td><%= number_to_currency valor = agendados + atendidos + pagos %></td>
+        <td><%= number_to_currency valor = pagos %></td>
       </tr>
       <% end %>
     </tbody>
