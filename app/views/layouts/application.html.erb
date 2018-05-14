@@ -8,29 +8,29 @@
 
     <title>SecretariaVirtual</title>
 
-    <%= csrf_meta_tags %>
-    <!-- Framework-->
+    <%= csrf_meta_tags %> 
+    <!-- Js e Css Principal     javascript_include_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'-->  
+    <%= stylesheet_link_tag 'application'%>
     <!-- JQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
-   <%= javascript_include_tag 'application'%>
-
-
-    <%= stylesheet_link_tag "bootstrap-material-datetimepicker"%>
-    <%= stylesheet_link_tag "jquery-clockpicker.min"%>
-    <%= stylesheet_link_tag "clockpicker"%>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "jquery-3.3.1.min.js"%>
+    <!-- Js do Framework-->
+    <%= javascript_include_tag "popper.min.js"%>
+    <%= javascript_include_tag "bootstrap.min.js"%>
+    <%= javascript_include_tag "mdb.min.js"%>
+    <!-- Js do Date e Time picker-->
+      <%= javascript_include_tag "moment.js"%>
+    <%= javascript_include_tag "bootstrap-material-datetimepicker.js"%>
     <%= javascript_include_tag "jquery-clockpicker.min.js"%>
     <%= javascript_include_tag "clockpicker.js"%>
-    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <!-- Css Framework e Picker-->    
+    <%= stylesheet_link_tag 'bootstrap.min'%>
+    <%= stylesheet_link_tag 'mdb.min'%>
+    <%= stylesheet_link_tag "bootstrap-material-datetimepicker"%>
+    <%= stylesheet_link_tag "jquery-clockpicker.min"%>
+    <%= stylesheet_link_tag "clockpicker"%>    
     <!-- CDN-->
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>    
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
   <body>
@@ -175,7 +175,5 @@
     </footer>
   <% end %>
   </body>
-
-  <%= javascript_include_tag "bootstrap-material-datetimepicker.js"%>
   <%= javascript_include_tag "main.js"%>
 </html>
