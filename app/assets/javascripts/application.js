@@ -11,13 +11,14 @@
 // about supported directives.
 //
 //= require jquery3
-//= require popper
-//= require bootstrap
-//= require rails-ujs
-//= require turbolinks
-//= require_tree .
 //= require moment
+//= require_tree .
 //= require fullcalendar
 //= require fullcalendar/gcal
 //= require fullcalendar/locale/pt
+//= require bootstrap
+//= require popper
+//= require rails-ujs
+//= require turbolinks
+
 console.log('application');
