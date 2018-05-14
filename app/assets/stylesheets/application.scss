@@ -16,6 +16,62 @@
  *= require_self
  *= require fullcalendar
  */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
   $color-black: "0,0,0";
   $select-background-color: transparent;
@@ -25,12 +81,11 @@
   $select-padding: 4px;
   $select-font-w: "bold";
 
-main{
+#main{
     width: 90%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    font-family: 'Roboto';
 }
 #listap{
     width: 99%;
@@ -209,7 +264,6 @@ main{
 .sidenav a {font-size: 18px;}
 }
 
-
 .alert-s{
   animation-delay: 0.2s;
   background: #00c851;
@@ -219,7 +273,18 @@ main{
   right: 0;
   border: 1px solid #00c851;
   border-radius: 10px;
-  display: none;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+}
+.alert-e{
+  animation-delay: 0.2s;
+  background: #283593;
+  height: 54px;
+  width: 300px;
+  position: relative;
+  right: 0;
+  border: 1px solid #283593;
+  border-radius: 10px;
   color: white;
   font-family: 'Courier New', Courier, monospace;
 }
@@ -253,25 +318,25 @@ main{
 
 body{
   opacity: 0.4;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 22px;
 }
 .alert-e{
   animation-delay: 0.2s;
   background: #ff3547;
-  height: 39px;
-  width: 300px;
-  margin-top: -35px;
+  height: auto;
+  width: auto;
   margin-right: auto;
-  margin-left: 5px;
+  margin-left: auto;
   text-align: center;
   border: 1px solid #ff3547;
   box-shadow: grey 2px 2px;
   border-radius: 3px;
   display: none;
   color: white;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 650px){
   input[type="date"]{
     width: 50%;
     height: 7vh;
@@ -281,26 +346,27 @@ body{
     float: right;
     font-size: 13px;
   }
-
   #mobile{
     display: inline;
     margin-left: 5px;
   }
-    #no-mobile{
-      display: none;
-    }
-    .alert-s{
-    height: 40px;
-    }
-    .alert-e{
-      margin-right: 50%;
-      }
-    #panel{
-      height: 400px;
-    }
-    tbody{
+  #no-mobile{
+    display: none;
+  }
+  .alert-s{
+    height: auto;
+  }
+  .alert-e{
+    //background: white;
+    width: auto;
+    height: auto;
+  }
+  #panel{
+    height: 400px;
+  }
+  tbody{
     width: 100px;
-    }
+  }
 }
 
 #main-title{
@@ -488,4 +554,16 @@ input[type=date],input[type=time]{
   border-bottom: 1px solid $select-border-color;
 }
 .custom-select:focus {
-  outline: none}
+  outline: none
+}
+#icon{
+  text-shadow: rgb(28, 37, 103) 0px 0px 0px, rgb(28, 38, 105) 1px 1px 0px, rgb(29, 38, 106) 2px 2px 0px, rgb(29, 39, 108) 3px 3px 0px, rgb(30, 40, 110) 4px 4px 0px, rgb(30, 40, 111) 5px 5px 0px, rgb(31, 41, 113) 6px 6px 0px, rgb(31, 41, 115) 7px 7px 0px, rgb(32, 42, 116) 8px 8px 0px, rgb(32, 43, 118) 9px 9px 0px, rgb(33, 43, 120) 10px 10px 0px, rgb(33, 44, 122) 11px 11px 0px, rgb(34, 44, 123) 12px 12px 0px, rgb(34, 45, 125) 13px 13px 0px, rgb(34, 46, 127) 14px 14px 0px, rgb(35, 46, 128) 15px 15px 0px, rgb(35, 47, 130) 16px 16px 0px, rgb(36, 47, 132) 17px 17px 0px, rgb(36, 48, 133) 18px 18px 0px, rgb(37, 49, 135) 19px 19px 0px, rgb(37, 49, 137) 20px 20px 0px, rgb(38, 50, 139) 21px 21px 0px, rgb(38, 51, 140) 22px 22px 0px, rgb(39, 51, 142) 23px 23px 0px, rgb(39, 52, 144) 24px 24px 0px, rgb(40, 52, 145) 25px 25px 0px; 
+  font-size: 106px; 
+  color: rgb(255, 255, 255); 
+  height: 96px; 
+  width: 69px; 
+  line-height: 157px; 
+  text-align: center; 
+  margin-left: auto;
+  margin-right: 75px;
+}
