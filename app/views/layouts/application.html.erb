@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,27 +9,26 @@
     <title>SecretariaVirtual</title>
 
     <%= csrf_meta_tags %> 
-    <!-- Js e Css Principal     javascript_include_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'-->  
-    <%= stylesheet_link_tag 'application'%>
+    <!-- Js e Css Principal     javascript_include_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'-->
+    <%=%>  
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'%>
     <!-- JQuery -->
-    <%= javascript_include_tag "jquery-3.3.1.min.js"%>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Js do Framework-->
     <%= javascript_include_tag "popper.min.js"%>
     <%= javascript_include_tag "bootstrap.min.js"%>
-    <%= javascript_include_tag "mdb.min.js"%>
     <!-- Js do Date e Time picker-->
-      <%= javascript_include_tag "moment.js"%>
+    <%= javascript_include_tag "moment.js"%>
     <%= javascript_include_tag "bootstrap-material-datetimepicker.js"%>
     <%= javascript_include_tag "jquery-clockpicker.min.js"%>
     <%= javascript_include_tag "clockpicker.js"%>
     <!-- Css Framework e Picker-->    
     <%= stylesheet_link_tag 'bootstrap.min'%>
-    <%= stylesheet_link_tag 'mdb.min'%>
+    <%= stylesheet_link_tag 'mdb'%>
     <%= stylesheet_link_tag "bootstrap-material-datetimepicker"%>
     <%= stylesheet_link_tag "jquery-clockpicker.min"%>
     <%= stylesheet_link_tag "clockpicker"%>    
-    <!-- CDN-->
-    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>    
+    <!-- CDN-->   
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
@@ -90,7 +89,7 @@
 
       <!-- Navbar brand -->
       <button class="icona" id="mobile" onclick="openNav()"><i class="fa acss fa-reorder"></button></i>
-      <%= link_to 'Secretaria Virtual',root_path,:class=>"btn btn-outline-primary waves-effect",id:"main-title"%>
+      <%= link_to 'Secretaria Virtual',root_path,:class=>"btn btn-outline-primary waves-effect",id:"main-title"%> 
       <%= link_to 'Secretária Virtual',root_path,:class=>"btn btn-md btn-outline-primary waves-effect",id:"main-title2"%>
       <!-- Collapsible content -->
 
@@ -145,17 +144,17 @@
       </abbr>
     </nav>
   <% end %>
-
-  <main id="main">
-    <div class="animated fadeInDown">
-    <p class="notice animated fadeInRightBig">
-      <p id="notice"><%= notice %></p>
-  </p>
-      <p class="alert"><%= alert %></p>
-      </p>
+<br>
+  <main class="animated fadeInDown">
+  <div id="main">
+    <% if notice %>
+      <p class="notice alert-s animated bounceInUp"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-e animated bounceInUp"><%= alert %></p>
+    <% end %>
       <%= yield %>
-      <header id="header">
-    </div>
+  </div>
 
     <!--Big blue-->
     <div class="loader"></div>
@@ -175,5 +174,6 @@
     </footer>
   <% end %>
   </body>
+  <%= javascript_include_tag "mdb.min.js"%>       
   <%= javascript_include_tag "main.js"%>
 </html>
