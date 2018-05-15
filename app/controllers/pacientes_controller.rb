@@ -16,7 +16,8 @@ class PacientesController < ApplicationController
   def create
     @paciente = Paciente.new(paciente_params)
     if @paciente.save
-      redirect_to pacientes_path
+      flash[:notice] = 'Paciente cadastrado com sucesso!'
+      redirect_to @paciente
     else
       render :new
     end
@@ -29,7 +30,8 @@ class PacientesController < ApplicationController
   def update
     @paciente = Paciente.find(params[:id])
     if @paciente.update(paciente_params)
-      redirect_to pacientes_path
+      flash[:notice] = 'Paciente editado com sucesso!'
+      redirect_to @paciente
     else
       render :edit
     end

@@ -13,6 +13,7 @@
         <tr>
         <th><i class="fa fa-address-card-o" aria-hidden="true"></i>  Nome</th>
         <th><i class="fa fa-envelope" aria-hidden="true"></i>  Email</th>
+        <th><i class="fa fa-envelope" aria-hidden="true"></i>  Status</th>
         <th><i class="fa fa-gear" aria-hidden="true"></i>  Ações</th>
         </tr>
     </thead>
@@ -21,6 +22,7 @@
     <tr>
         <td class="buscar"><%= paciente.nome %></td>
         <td class="buscar"><%= paciente.email %></td>
+        <td class="buscar"><%= paciente.status_paciente %></td>
         <td><%= link_to 'Consultar', paciente_path(paciente),:class => 'btn btn-md btn-outline-primary waves-effect' %></td>
     <% end %>
     </tbody>

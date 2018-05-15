@@ -7,7 +7,8 @@ class Consulta < ApplicationRecord
   end
 
   def gera_fatura
-    fatura = Fatura.create(consulta_id: id, valor: valor_consulta.valor, status: true, competencia: data, vencimento: data)
+    Fatura.create(consulta_id: id, valor: valor_consulta.valor, status: true,
+                  competencia: data, vencimento: data)
   end
 
   def valor_consulta

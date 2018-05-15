@@ -16,9 +16,10 @@ class ConsultasController < ApplicationController
 
   def create
     @consulta = Consulta.new(consulta_params)
-    @consulta.competencia = "#{@consulta.data.month}#{@consulta.data.year}"
+    @consulta.competencia = "#{@consulta.data.month}#{@consulta.data.year}" if @consulta.data
     if @consulta.save
-      redirect_to consultas_path
+      flash[:notice] = 'Consulta cadastrada com sucesso!'
+      redirect_to consulta_path(@consulta)
     else
       @pacientes = Paciente.all
       render :new
@@ -34,7 +35,8 @@ class ConsultasController < ApplicationController
     @pacientes = Paciente.all
     @consulta = Consulta.find(params[:id])
     if @consulta.update(consulta_params)
-      redirect_to consultas_path
+      flash[:notice] = 'Consulta editada com sucesso!'
+      redirect_to consulta_path(@consulta)
     else
       @pacientes = Paciente.all
       render :edit
