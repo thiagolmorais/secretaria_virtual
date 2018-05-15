@@ -8,9 +8,9 @@
 
     <title>SecretariaVirtual</title>
 
-    <%= csrf_meta_tags %> 
-    <!-- Js e Css Principal     javascript_include_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'-->
-    <%=%>  
+    <%= csrf_meta_tags %>
+    <!-- Js e Css Principal     -->
+    <%= javascript_include_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'%>  
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'%>
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -22,13 +22,13 @@
     <%= javascript_include_tag "bootstrap-material-datetimepicker.js"%>
     <%= javascript_include_tag "jquery-clockpicker.min.js"%>
     <%= javascript_include_tag "clockpicker.js"%>
-    <!-- Css Framework e Picker-->    
+    <!-- Css Framework e Picker-->
     <%= stylesheet_link_tag 'bootstrap.min'%>
     <%= stylesheet_link_tag 'mdb'%>
     <%= stylesheet_link_tag "bootstrap-material-datetimepicker"%>
     <%= stylesheet_link_tag "jquery-clockpicker.min"%>
-    <%= stylesheet_link_tag "clockpicker"%>    
-    <!-- CDN-->   
+    <%= stylesheet_link_tag "clockpicker"%>
+    <!-- CDN-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
@@ -89,7 +89,7 @@
 
       <!-- Navbar brand -->
       <button class="icona" id="mobile" onclick="openNav()"><i class="fa acss fa-reorder"></button></i>
-      <%= link_to 'Secretaria Virtual',root_path,:class=>"btn btn-outline-primary waves-effect",id:"main-title"%> 
+      <%= link_to 'Secretaria Virtual',root_path,:class=>"btn btn-outline-primary waves-effect",id:"main-title"%>
       <%= link_to 'Secretária Virtual',root_path,:class=>"btn btn-md btn-outline-primary waves-effect",id:"main-title2"%>
       <!-- Collapsible content -->
 
@@ -174,6 +174,6 @@
     </footer>
   <% end %>
   </body>
-  <%= javascript_include_tag "mdb.min.js"%>       
+  <%= javascript_include_tag "mdb.min.js"%>
   <%= javascript_include_tag "main.js"%>
 </html>
