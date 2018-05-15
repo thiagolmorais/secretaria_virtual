@@ -1,3 +1,9 @@
+<% if @preco.errors.any? %>
+  <% @preco.errors.full_messages.each do |msg| %>
+    <p class="fa fa-warning alert-e  animated bounceInUp"><%=  msg %></p>
+  <% end %>
+<% end %>
+
 <%= form_tag("/pacientes/#{params[:paciente_id]}/precos", method: :post) do %>
 <div class="cash">
 

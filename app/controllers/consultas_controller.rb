@@ -9,6 +9,10 @@ class ConsultasController < ApplicationController
     @consulta = Consulta.find(params[:id])
   end
 
+  def agenda
+    @consultas = Consulta.all.order(:data)
+  end
+
   def new
     @pacientes = Paciente.all
     @consulta = Consulta.new
