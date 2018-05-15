@@ -110,6 +110,9 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.0)
       mini_mime (>= 0.1.1)
+    materialize-sass (1.0.0.rc1)
+      autoprefixer-rails (>= 6.0.3)
+      sass (>= 3.5.2)
     method_source (0.9.0)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
@@ -265,6 +268,7 @@ DEPENDENCIES
   jquery-qtip2-wrapper-rails
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  materialize-sass (~> 1.0.0.rc1)
   momentjs-rails
   pg (= 1.0.0)
   pry

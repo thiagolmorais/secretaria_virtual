@@ -9,6 +9,13 @@
         </button>
       </div>
       <div class="modal-body">
+
+        <% if @preco.errors.any? %>
+          <% @preco.errors.full_messages.each do |msg| %>
+            <p class="fa fa-warning alert-e  animated bounceInUp"><%=  msg %></p>
+          <% end %>
+        <% end %>
+
         <%= form_tag("/pacientes/#{params[:id]}/precos", method: :post) do %>
         <div class="cash">
 

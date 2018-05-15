@@ -13,7 +13,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'%>
     <!-- Js do Framework-->
     <%= javascript_include_tag "popper.min.js"%>
-    <%= javascript_include_tag "bootstrap.min.js"%> 
+    <%= javascript_include_tag "bootstrap.min.js"%>
     <!-- Js do Date e Time picker-->
     <%= javascript_include_tag "moment.js"%>
     <%= javascript_include_tag "bootstrap-material-datetimepicker.js"%>
@@ -23,7 +23,7 @@
     <%= stylesheet_link_tag 'bootstrap.min'%>
     <%= stylesheet_link_tag 'mdb'%>
     <%= stylesheet_link_tag "jquery-clockpicker.min"%>
-    <%= stylesheet_link_tag "clockpicker"%>    
+    <%= stylesheet_link_tag "clockpicker"%>
     <%= stylesheet_link_tag "bootstrap-material-datetimepicker"%>
     <!-- CDN-->
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400' rel='stylesheet' type='text/css'>
@@ -56,7 +56,8 @@
             <a class="downcolc fa fa-calendar-check-o" onclick="openColc()"> Consulta <i class="fa animated flipInX fa-sort-down"></i></a>
             <a class="upcolc fa fa-calendar-check-o" onclick="closeColc()"> Consulta  <i class="fa animated flipInX  fa-sort-up"></i></a>
               <div class="colls-c">
-              <%= link_to 'Exibir Consultas', consultas_path,class:'smallnav'%>
+              <%= link_to 'Calendário', consultas_path,class:'smallnav'%>
+              <%= link_to 'Exibir Consultas', consultas_agenda_path,class:'smallnav'%>
               <%= link_to 'Cadastrar Consulta', new_consulta_path,class:'smallnav'%>
             </div>
             <hr class="sidehr">
@@ -113,7 +114,8 @@
           <abbr class="col-2">
               <button id="dropc" class="btn btn-md btn-deep-purple"><i class="fa fa-book" aria-hidden="true"></i>  Consulta  <i class="fa fa-sort-down"></i></button>
               <div id="no-mobile" class="drop-menuc border border-info">
-              <%= link_to 'Exibir Consultas', consultas_path,class:"dropdown-item" %>
+              <%= link_to 'Calendário', consultas_path,class:"dropdown-item" %>
+              <%= link_to 'Exibir Consultas', consultas_agenda_path,class:"dropdown-item" %>
               <%= link_to 'Cadastrar Consulta', new_consulta_path,class:"dropdown-item"%>
               </div>
           </div>
@@ -171,7 +173,7 @@
       </a>
     </footer>
   <% end %>
-  </body>  
+  </body>
   <%= javascript_include_tag "mdb.min.js"%>
   <%= javascript_include_tag "main.js"%>
 </html>

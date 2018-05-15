@@ -2,9 +2,8 @@ FactoryBot.define do
   factory :fatura do
     vencimento '2018-05-06'
     status false
-    valor '9.99'
-    competencia 1
-    consulta_id 1
-    consulta nil
+    valor '120,75'
+    competencia 52018
+    consulta_id consulta
   end
 end

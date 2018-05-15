@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :precos, only:[:new, :create]
   end
   resources :consultas
+  get '/consultas/agenda'
   resources :faturas, only:[:index, :create, :destroy]
   resources :pagamentos, only:[:index, :create, :destroy]
   resources :relatorios, only:[:index]
