@@ -49,6 +49,7 @@ group :development, :test do
   gem 'simplecov', require: false
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'materialize-sass', '~> 1.0.0.rc1'
 
 end
 

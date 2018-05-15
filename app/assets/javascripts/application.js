@@ -15,10 +15,11 @@
 //= require fullcalendar
 //= require fullcalendar/gcal
 //= require fullcalendar/locale/pt
-//= require_tree .
 //= require bootstrap
+//= require materialize
 //= require popper
 //= require rails-ujs
 //= require turbolinks
+//= require_tree .
 
 console.log('application');
