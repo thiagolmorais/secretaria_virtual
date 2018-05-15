@@ -129,15 +129,13 @@
       document.body.style.opacity ="1";
     });
 
-  //  if (document.querySelector("#notice").innerHTML != '') {
-  //    document.querySelector(".alert-s").style.display = "block";
-    //  setTimeout(function() {
-    //      $('.alert-s').fadeOut(2000);
-    //  }, 4000);
-  //  }
 
-  setTimeout(function() {
-    $('.alert-e').fadeOut(2000);
+setTimeout(function() {
+  $('.alert-s').fadeOut(2000);
+}, 4000);
+
+setTimeout(function() {
+  $('.alert-e').fadeOut(2000);
 }, 4000);
 
 if(screen.width < 600 && screen.height < 800){
@@ -155,13 +153,12 @@ $('input[type="time"]').clockpicker({
 );
 }
 
- // if(screen.width>660){
- //   $('input[type="date"]').bootstrapMaterialDatePicker({
- //     time: false ,
- //     lang : 'pt-br',
- //     nowButton : true,
- //     year: true,
- //     okText:'',
- //     cancelText:'',
- //   });
- // }
+if(screen.width>660){
+   $('input[type="date"]').bootstrapMaterialDatePicker({
+     time: false ,
+     nowButton : true,
+     year: true,
+     okText:'',
+     cancelText:'',
+   });
+ }
