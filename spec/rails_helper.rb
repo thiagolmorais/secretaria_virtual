@@ -4,6 +4,13 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'simplecov'
 SimpleCov.start 'rails' do
+  add_filter 'app/channels/application_cable'
+  add_filter 'app/jobs/application_job.rb'
+  add_filter 'app/mailers/application_mailer.rb'
+  add_filter 'app/models/application_record.rb'
+  add_filter 'app/models/user.rb'
+  add_filter 'app/controllers/application_controller.rb'
+  add_filter 'app/controllers/events_controler.rb'
 end
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?

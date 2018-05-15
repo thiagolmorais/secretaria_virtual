@@ -19,7 +19,7 @@ class FaturasController < ApplicationController
     else
       @fatura = Fatura.new(fatura_params)
       @fatura.valor = @consulta.valor_consulta.valor
-      @fatura.vencimento = Time.now
+      @fatura.vencimento = Time.zone.now
       @consulta.status = true
       @fatura.save
       @consulta.save
