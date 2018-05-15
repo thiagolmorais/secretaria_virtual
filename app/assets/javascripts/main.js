@@ -146,14 +146,18 @@ $(document).scroll(function() {
   $( "nav" ).addClass( "mysticky" );
 });
 
-if(screen.width>660){
+if (navigator.userAgent.indexOf('Edge') >= 0){
+  exit;
+}else if(screen.width>660){
 $('input[type="time"]').clockpicker({
   donetext:'Escolher'
 }
 );
 }
 
-if(screen.width>660){
+if (navigator.userAgent.indexOf('Edge') >= 0){
+  exit;
+}else if(screen.width>660 ){
    $('input[type="date"]').bootstrapMaterialDatePicker({
      time: false ,
      nowButton : true,
