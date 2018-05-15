@@ -153,7 +153,9 @@ $('input[type="time"]').clockpicker({
 );
 }
 
-if(screen.width>660){
+if (navigator.userAgent.indexOf('Edge') >= 0){
+  exit;
+}else if(screen.width>660 ){
    $('input[type="date"]').bootstrapMaterialDatePicker({
      time: false ,
      nowButton : true,
