@@ -12,10 +12,10 @@
 //
 //= require jquery3
 //= require moment
-//= require_tree .
 //= require fullcalendar
 //= require fullcalendar/gcal
 //= require fullcalendar/locale/pt
+//= require_tree .
 //= require bootstrap
 //= require popper
 //= require rails-ujs
