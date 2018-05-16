@@ -71,3 +71,132 @@ Para acessar a aplicação cadastre seu email e senha clicando em **sign_up** ou
 > **Email:** user@email.com
 <br>
   **Senha:** 123456
+
+## API
+
+### Pacientes
+<br>
+#### Consultar todos os pacientes
+
+###### URI
+/api/pacientes
+
+###### Resposta
+```as_json
+{  
+   "pacientes":[  
+      {  
+         "id":1,
+         "nome":"Paciente A",
+         "telefone":"999999999",
+         "observacao":"Paciente blablabla",
+         "email":"paciente.a@email.com",
+         "nascimento":"2000-01-01",
+         "sexo":"Feminino",
+         "paciente_desde":"2017-01-15",
+         "created_at":"2018-05-16T11:46:24.350Z",
+         "updated_at":"2018-05-16T11:46:24.350Z",
+         "status":true,
+         "dia_vencimento":15
+      }
+   ]
+}
+```
+<br>
+### Preços
+<br>
+#### Consultar todos os preços
+
+###### URI
+/api/precos
+
+###### Resposta
+```as_json
+{  
+   "precos":[  
+      {  
+         "id":1,
+         "valor":"150.0",
+         "reajuste":"2018-04-01",
+         "paciente_id":1,
+         "created_at":"2018-05-16T11:46:24.400Z",
+         "updated_at":"2018-05-16T11:46:24.400Z"
+      }
+   ]
+}
+```
+<br>
+### Consultas
+<br>
+#### Consultar todos os consultas
+
+###### URI
+/api/consultas
+
+###### Resposta
+```as_json
+{  
+   "consultas":[  
+      {  
+         "id":4,
+         "data":"2018-05-22",
+         "hora":"2000-01-01T00:00:00.000Z",
+         "status":true,
+         "paciente_id":1,
+         "created_at":"2018-05-16T12:09:54.139Z",
+         "updated_at":"2018-05-16T12:57:38.177Z",
+         "competencia":52018
+      }
+   ]
+}
+```
+<br>
+### Faturas
+<br>
+#### Consultar todas as faturas
+
+###### URI
+/api/faturas
+
+###### Resposta
+```as_json
+{  
+   "faturas":[  
+      {  
+         "id":2,
+         "vencimento":"2018-05-06",
+         "status":false,
+         "valor":"130.0",
+         "competencia":42018,
+         "consulta_id":2,
+         "created_at":"2018-05-16T11:46:24.440Z",
+         "updated_at":"2018-05-16T11:46:24.440Z"
+      }
+   ]
+}
+```
+<br>
+### Pagamentos
+<br>
+#### Consultar todos os pagamentos
+
+###### URI
+/api/pagamentos
+
+###### Resposta
+```as_json
+{  
+   "pagamentos":[  
+      {  
+         "id":5,
+         "valor":"180.0",
+         "data":"2018-05-16",
+         "competencia":52018,
+         "paciente_id":1,
+         "created_at":"2018-05-16T14:24:38.837Z",
+         "updated_at":"2018-05-16T14:24:38.837Z",
+         "status":true
+      }
+   ]
+}
+```
