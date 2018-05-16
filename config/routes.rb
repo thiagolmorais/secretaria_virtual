@@ -9,4 +9,12 @@ Rails.application.routes.draw do
   resources :faturas, only:[:index, :create, :destroy]
   resources :pagamentos, only:[:index, :create, :destroy]
   resources :relatorios, only:[:index]
+
+  namespace :api do
+    resources :pacientes, only:[:index]
+    resources :precos, only:[:index]
+    resources :consultas, only:[:index]
+    resources :faturas, only:[:index]
+    resources :pagamentos, only:[:index]
+  end
 end
