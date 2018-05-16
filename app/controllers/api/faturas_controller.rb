@@ -5,5 +5,13 @@ module Api
       json = faturas.as_json
       render json: { faturas: json }
     end
+
+    def show
+      fatura = Fatura.find(params[:id])
+      json = fatura.as_json
+      render json: { plans: json }, status: 200
+    rescue ActiveRecord::RecordNotFound
+      render json: { message: 'Nenhum fatura encontrado' }, status: 404
+    end
   end
 end
