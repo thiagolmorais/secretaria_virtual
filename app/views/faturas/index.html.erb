@@ -12,7 +12,6 @@
         <tr>
         <th><i class="fa fa-address-card-o" aria-hidden="true"></i>  Nome</th>
         <th><i class="fa fa-dollar" aria-hidden="true"></i>  Valor em aberto</th>
-        <th><i class="fa fa-gear" aria-hidden="true"></i>  Ações</th>
         </tr>
     </thead>
     <tbody>
@@ -20,7 +19,6 @@
     <tr>
         <td class="buscar"><%= paciente.nome %></td>
         <td><%= number_to_currency Fatura.where(consulta_id: Consulta.where(paciente_id: paciente), status: false).sum(:valor) %></td>
-        <td><%= link_to 'Detalhes', paciente_path(paciente),:class => 'btn btn-outline-primary waves-effect' %></td>
     <% end %>
     </tbody>
 </table>
