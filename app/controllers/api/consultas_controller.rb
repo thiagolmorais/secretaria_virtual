@@ -1,5 +1,5 @@
 module Api
-  class ConsultasController < ApplicationController
+  class ConsultasController < ActionController::API
     def index
       consultas = Consulta.all
       json = consultas.as_json
