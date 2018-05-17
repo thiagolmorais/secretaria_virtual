@@ -9,9 +9,9 @@ module Api
     def show
       preco = Preco.find(params[:id])
       json = preco.as_json
-      render json: { plans: json }, status: 200
+      render json: { plans: json }, status: :ok
     rescue ActiveRecord::RecordNotFound
-      render json: { message: 'Nenhum preço encontrado' }, status: 404
+      render json: { message: 'Nenhum preço encontrado' }, status: :not_found
     end
   end
 end
