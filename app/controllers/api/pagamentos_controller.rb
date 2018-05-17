@@ -9,9 +9,9 @@ module Api
     def show
       pagamento = Pagamento.find(params[:id])
       json = pagamento.as_json
-      render json: { plans: json }, status: 200
+      render json: { plans: json }, status: :ok
     rescue ActiveRecord::RecordNotFound
-      render json: { message: 'Nenhum pagamento encontrado' }, status: 404
+      render json: { message: 'Nenhum pagamento encontrado' }, status: :not_found
     end
   end
 end

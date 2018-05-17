@@ -2,7 +2,7 @@ module Api
   class PacientesController < ApplicationController
     skip_before_action :verify_authenticity_token
     def index
-      pacientes = Paciente.all
+      pacientes = Paciente.all<<<<<<< api
       json = pacientes.as_json
       render json: { pacientes: json }
     end
@@ -10,9 +10,9 @@ module Api
     def show
       paciente = Paciente.find(params[:id])
       json = paciente.as_json
-      render json: { pacientes: json }, status: 200
+      render json: { plans: json }, status: :ok
     rescue ActiveRecord::RecordNotFound
-      render json: { message: 'Nenhum paciente encontrado' }, status: 404
+      render json: { message: 'Nenhum paciente encontrado' }, status: :not_found
     end
 
     def create
