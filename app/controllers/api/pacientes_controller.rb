@@ -2,7 +2,7 @@ module Api
   class PacientesController < ApplicationController
     skip_before_action :verify_authenticity_token
     def index
-      pacientes = Paciente.all<<<<<<< api
+      pacientes = Paciente.all
       json = pacientes.as_json
       render json: { pacientes: json }
     end
