@@ -21,7 +21,6 @@
         <td><%= competencia.competencia %></td>
         <% consultas_competencia = Consulta.where(competencia: competencia.competencia, status:false) %>
         <% consultas_competencia.each do |valor| %>
-          <%#= binding.pry %>
           <% saldo_agendado = valor.valor_consulta.valor + saldo_agendado %>
         <% end %>
         <% number_to_currency valor = agendados = saldo_agendado %>

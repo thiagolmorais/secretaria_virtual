@@ -10,7 +10,7 @@ module Api
     def show
       paciente = Paciente.find(params[:id])
       json = paciente.as_json
-      render json: { plans: json }, status: :ok
+      render json: { paciente: json }, status: :ok
     rescue ActiveRecord::RecordNotFound
       render json: { message: 'Nenhum paciente encontrado' }, status: :not_found
     end
@@ -26,7 +26,6 @@ module Api
 
     def update
       @paciente = Paciente.find(params[:id])
-      binding.pry
       if @paciente.update(paciente_params)
         render json: @paciente, status: :created, location: @paciente
       else
@@ -36,7 +35,10 @@ module Api
 
     private
     def paciente_params
-      params.require(:paciente).permit(:nome, :telefone, :observacao, :email, :nascimento, :sexo, :paciente_desde, :paciente_desde, :paciente_desde, :dia_vencimento)
+      params.require(:paciente).permit(:nome, :telefone, :observacao, :email,
+                                       :nascimento, :sexo, :paciente_desde,
+                                       :paciente_desde, :paciente_desde,
+                                       :dia_vencimento)
     end
   end
 end

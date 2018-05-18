@@ -11,10 +11,11 @@ Rails.application.routes.draw do
   resources :relatorios, only:[:index]
 
   namespace :api do
-    resources :pacientes, only:[:index, :show, :create, :update]
-    resources :precos, only:[:index, :show]
-    resources :consultas, only:[:index, :show]
-    resources :faturas, only:[:index, :show]
-    resources :pagamentos, only:[:index, :show]
+    resources :pacientes, only:[:index, :show, :create, :update] do
+      resources :precos, only:[:index, :create]
+    end
+    resources :consultas, only:[:index, :show, :create, :update, :destroy]
+    resources :faturas, only:[:index, :show, :create, :destroy]
+    resources :pagamentos, only:[:index, :show, :create, :destroy]
   end
 end

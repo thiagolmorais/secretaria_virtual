@@ -10,7 +10,9 @@ feature 'Usuario deleta consulta' do
 
     login_as(user)
     visit consultas_agenda_path
-    click_on 'X'
+    within('td#delete') do
+      click_on ''
+    end
 
     expect(page).not_to have_content('29/04/2018')
     expect(page).not_to have_content('19:00')
