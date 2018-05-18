@@ -10,7 +10,7 @@ feature 'Usuario deleta consulta' do
 
     login_as(user)
     visit consultas_agenda_path
-    within('class.fa fa-close consulta') do
+    within('td#delete') do
       click_on ''
     end
 
