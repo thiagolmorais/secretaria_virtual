@@ -7,8 +7,7 @@ feature 'Usuario edita consulta' do
     consulta = create(:consulta, paciente_id: paciente.id)
 
     login_as(user)
-    visit consulta_path(consulta)
-    click_on 'Editar'
+    visit edit_consulta_path(consulta)
     select paciente.nome, from: 'Paciente'
     fill_in 'Data', with: '2018-04-30'
     fill_in 'Hora', with: '2018-04-29 18:00:00'
@@ -25,8 +24,7 @@ feature 'Usuario edita consulta' do
     consulta = create(:consulta, paciente_id: paciente.id)
 
     login_as(user)
-    visit consulta_path(consulta)
-    click_on 'Editar'
+    visit edit_consulta_path(consulta)
     select paciente.nome, from: 'Paciente'
     fill_in 'Data', with: ''
     fill_in 'Hora', with: ''
