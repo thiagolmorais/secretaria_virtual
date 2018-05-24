@@ -15,6 +15,7 @@
             <th><i class="fa fa-exclamation-circle" aria-hidden="true"></i>  Status</th>
             <th><i class="fa fa-pencil" aria-hidden="true"></i>  Atender</th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -41,7 +42,7 @@
         <% end %>
       <% end %>
     </td>
-
+    <td><%= link_to '', edit_consulta_path(consulta), class: "consulta fa fa-pencil" %></td>
     <td id="delete"><%= link_to '', consulta_path(consulta), method: :delete, class: "fa fa-close consulta"%></td>
 
   </tr>
