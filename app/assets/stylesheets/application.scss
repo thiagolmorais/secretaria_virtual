@@ -124,27 +124,8 @@ $secondary-color: color("yellow", "base") !default;
 #main-title2{
   display: none;
 }
-@media only screen and (max-width: 961px){
-  #mobile{
-    display:block;
-  }
-  main{
-    width: 100vw;
-  }
-  .links{
-    display: none;
-  }
-  #main-title{
-    display: none;
-  }
-  #main-title2{
-    display: none;
-  }
-  #panel2{
-    height: 540px;
-  }
-}
-@media only screen and (max-width: 855px){
+
+@media only screen and (max-width: 1020px){
   #mobile{
     display:block;
   }
