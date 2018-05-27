@@ -1,6 +1,0 @@
-<h1>Consulta</h1>
-<p>Paciente: <%= @consulta.paciente.nome %></p>
-<p>Data: <%= I18n.localize @consulta.data %></p>
-<p>Hora: <%= @consulta.hora.strftime('%R') %></p>
-
-<%= link_to 'Editar', edit_consulta_path %>
