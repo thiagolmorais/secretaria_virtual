@@ -18,6 +18,7 @@ $secondary-color: color("yellow", "base") !default;
 @import 'materialize';
  *= require_tree .
  *= require_self
+ *= require bootstrap
  *= require fullcalendar
  */
 
@@ -122,29 +123,15 @@ $secondary-color: color("yellow", "base") !default;
   display:none;
 }
 #main-title2{
+  align-self: center;
   display: none;
 }
-@media only screen and (max-width: 961px){
-  #mobile{
-    display:block;
-  }
-  main{
-    width: 100vw;
-  }
-  .links{
-    display: none;
-  }
-  #main-title{
-    display: none;
-  }
-  #main-title2{
-    display: none;
-  }
-  #panel2{
-    height: 540px;
-  }
+
+.nav-item{
+  color: white;
 }
-@media only screen and (max-width: 855px){
+
+@media only screen and (max-width: 1020px){
   #mobile{
     display:block;
   }
@@ -364,14 +351,8 @@ hr.sidehr{
 }
 
 nav{
-  color: white;
   background: #283593;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 67px;
-  z-index: 4;
-  position: relative;
+
 }
 .drop-menup,.drop-menuc,.drop-menupr{
   position: absolute;
@@ -393,10 +374,7 @@ nav{
   border-radius: .25rem;
 }
 
-nav .links{
-  position: absolute;
-  width: 75%;
-}
+
 
 #exit{
 float: right;

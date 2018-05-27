@@ -32,143 +32,170 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <!-- Links -->
         <hr class="sidehr">
-          <!-- Dropdown Fatura -->
-            <a class="downcolf fa fa-money" onclick="openColf()"> Pagamento <i class="fa animated flipInX fa-sort-down"></i></a>
-            <a class="upcolf fa fa-money" onclick="closeColf()"> Pagamento <i class="fa animated flipInX fa-sort-up"></i></a>
-              <div class="colls-f">
-              <p class="smallnav"><%= link_to 'Pagamentos', pagamentos_path%>
-              </div>
-              <hr class="sidehr">
+        <!-- Dropdown Fatura -->
+        <a class="downcolf fa fa-money" onclick="openColf()">
+          Pagamento
+          <i class="fa animated flipInX fa-sort-down"></i>
+        </a>
+        <a class="upcolf fa fa-money" onclick="closeColf()">
+          Pagamento
+          <i class="fa animated flipInX fa-sort-up"></i>
+        </a>
+        <div class="colls-f">
+          <p class="smallnav"><%= link_to 'Pagamentos', pagamentos_path%>
+          </div>
+          <hr class="sidehr">
 
-            <a class="downcol fa fa-credit-card" onclick="openCol()"> Fatura <i class="fa animated flipInX fa-sort-down"></i></a>
-            <a class="upcol fa fa-credit-card" onclick="closeCol()"> Fatura <i class="fa animated flipInX fa-sort-up"></i></a>
-              <div class="colls">
-              <p class="smallnav"><%= link_to 'Faturas', faturas_path%>
-              </div>
-              <hr class="sidehr">
+          <a class="downcol fa fa-credit-card" onclick="openCol()">
+            Fatura
+            <i class="fa animated flipInX fa-sort-down"></i>
+          </a>
+          <a class="upcol fa fa-credit-card" onclick="closeCol()">
+            Fatura
+            <i class="fa animated flipInX fa-sort-up"></i>
+          </a>
+          <div class="colls">
+            <p class="smallnav"><%= link_to 'Faturas', faturas_path%>
+            </div>
+            <hr class="sidehr">
 
-
-            <a class="downcolc fa fa-calendar-check-o" onclick="openColc()"> Consulta <i class="fa animated flipInX fa-sort-down"></i></a>
-            <a class="upcolc fa fa-calendar-check-o" onclick="closeColc()"> Consulta  <i class="fa animated flipInX  fa-sort-up"></i></a>
-              <div class="colls-c">
+            <a class="downcolc fa fa-calendar-check-o" onclick="openColc()">
+              Consulta
+              <i class="fa animated flipInX fa-sort-down"></i>
+            </a>
+            <a class="upcolc fa fa-calendar-check-o" onclick="closeColc()">
+              Consulta
+              <i class="fa animated flipInX  fa-sort-up"></i>
+            </a>
+            <div class="colls-c">
               <%= link_to 'Calendário', consultas_path,class:'smallnav'%>
               <%= link_to 'Exibir Consultas', consultas_agenda_path, method: :get ,class:'smallnav'%>
               <%= link_to 'Cadastrar Consulta', new_consulta_path,class:'smallnav'%>
             </div>
             <hr class="sidehr">
 
-          <!-- Dropdown Paciente -->
-          <a class="downcolp fa fa-address-book-o" onclick="openColp()"> Paciente <i class="fa animated flipInX fa-sort-down"></i></a>
-          <a class="upcolp fa fa-address-book-o" onclick="closeColp()"> Paciente  <i class="fa animated flipInX fa-sort-up"></i></a>
+            <!-- Dropdown Paciente -->
+            <a class="downcolp fa fa-address-book-o" onclick="openColp()">
+              Paciente
+              <i class="fa animated flipInX fa-sort-down"></i>
+            </a>
+            <a class="upcolp fa fa-address-book-o" onclick="closeColp()">
+              Paciente
+              <i class="fa animated flipInX fa-sort-up"></i>
+            </a>
             <div class="colls-p">
               <%= link_to 'Consultar Paciente',pacientes_path,class:'smallnav'%>
               <%= link_to 'Cadastrar Paciente', new_paciente_path,class:'smallnav'%>
             </div>
-          <hr class="sidehr">
+            <hr class="sidehr">
 
-          <!-- Dropdown Relatórios Finaceiros -->
-          <a class="downcolr fa fa-bar-chart" onclick="openColr()"> Relatórios <i class="fa animated flipInX fa-sort-down"></i></a>
-          <a class="upcolr fa fa-bar-chart" onclick="closeColr()"> Relatórios  <i class="fa animated flipInX fa-sort-up"></i></a>
+            <!-- Dropdown Relatórios Finaceiros -->
+            <a class="downcolr fa fa-bar-chart" onclick="openColr()">
+              Relatórios
+              <i class="fa animated flipInX fa-sort-down"></i>
+            </a>
+            <a class="upcolr fa fa-bar-chart" onclick="closeColr()">
+              Relatórios
+              <i class="fa animated flipInX fa-sort-up"></i>
+            </a>
             <div class="colls-r">
               <%= link_to 'Financeiro Competência', relatorios_path,class:'smallnav'%>
             </div>
-          <hr class="sidehr">
+            <hr class="sidehr">
 
-        <%= link_to 'Sair', destroy_user_session_path, method: :delete, :class=>"btn btn-outline-white btn-sm" %>
-    </div>
-
-    <!--Navbar-->
-
-    <nav class="scrolling-navbar">
-
-      <!-- Navbar brand -->
-      <button class="icona" id="mobile" onclick="openNav()"><i class="fa acss fa-reorder"></button></i>
-      <%= link_to 'Secretaria Virtual',root_path,:class=>"btn btn-outline-primary waves-effect",id:"main-title"%>
-      <%= link_to 'Secretária Virtual',root_path,:class=>"btn btn-md btn-outline-primary waves-effect",id:"main-title2"%>
-      <!-- Collapsible content -->
-
-
-        <!-- Links -->
-        <abbr id ="no-mobile">
-        <!-- Dropdown Fatura -->
-    <abbr class="links">
-      <abbr class="col-2">
-        <span data-toggle="tooltip" data-placement="top" title="Pagamento!" class="btn-group point fa fa-money">
-          <abbr id="ndis">_</abbr> <%= link_to 'Pagamentos', pagamentos_path,class:'alink active' %>
-          </span>
-      </abbr>
-
-      <abbr class="col-2">
-        <span data-toggle="tooltip" data-placement="top" title="Fatura!" class="btn-group point fa fa-credit-card">
-          <abbr id="ndis">_</abbr>  <%= link_to 'Faturas', faturas_path,class:'alink' %>
-          </span>
-          </abbr>
-
-
-          <!-- Dropdown Consulta-->
-          <abbr class="col-2">
-              <button id="dropc" class="btn btn-md btn-deep-purple"><i class="fa fa-book" aria-hidden="true"></i>  Consulta  <i class="fa fa-sort-down"></i></button>
-              <div id="no-mobile" class="drop-menuc border border-info">
-              <%= link_to 'Calendário', consultas_path,class:"dropdown-item" %>
-              <%= link_to 'Exibir Consultas', consultas_agenda_path, method: :get, class:"dropdown-item" %>
-              <%= link_to 'Cadastrar Consulta', new_consulta_path,class:"dropdown-item"%>
-              </div>
+            <%= link_to 'Sair', destroy_user_session_path, method: :delete, :class=>"btn btn-outline-white btn-sm" %>
           </div>
 
-          <!--Dropdown Paciente -->
+          <!--Navbar-->
 
-          <abbr class="col-2">
-              <button id="dropp" class="btn btn-md btn-deep-purple"><i class="fa fa-address-book-o"></i>  Paciente  <i class="fa fa-sort-down"></i></button>
-              <div id="no-mobile" class="drop-menup border border-info">
-              <%= link_to 'Consultar Paciente',pacientes_path,class:"dropdown-item" %>
-              <%= link_to 'Cadastrar Paciente', new_paciente_path,class:"dropdown-item" %>
+          <nav id="menu" class="navbar navbar-expand-lg transparent">
+            <%= link_to 'Secretaria Virtual',root_path,:class=>"navbar-brand btn btn-outline-primary ",id:"main-title"%>
+            <button class="navbar-toggler " onclick="openNav()" type="button" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon "><i class="fa fa-bars"></i></span>
+            </button>
+
+              <%= link_to 'Secretaria Virtual',root_path,:class=>"navbar-toggler navbar-brand btn btn-outline-primary mr-auto  ",id:"main-title2"%>
+
+            <div class="collapse navbar-collapse" id="navbar">
+              <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active">
+                  <%= link_to 'Pagamentos', pagamentos_path,class:'nav-link active' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to 'Faturas', faturas_path,class:'nav-link' %>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Consulta
+                  </a>
+
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <%= link_to 'Calendário', consultas_path,class:"dropdown-item" %>
+                    <%= link_to 'Exibir Consultas', consultas_agenda_path, method: :get, class:"dropdown-item" %>
+                    <%= link_to 'Cadastrar Consulta', new_consulta_path,class:"dropdown-item"%>
+
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Paciente
+                  </a>
+
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <%= link_to 'Consultar Paciente',pacientes_path,class:"dropdown-item" %>
+                    <%= link_to 'Cadastrar Paciente', new_paciente_path,class:"dropdown-item" %>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Relatórios
+                  </a>
+
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <%= link_to 'Financeiro Competência',relatorios_path,class:"dropdown-item" %>
+                  </div>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0 d-flex justify-content-end">
+                <%= link_to 'Sair', destroy_user_session_path, method: :delete, id:"" ,:class=>"btn btn-outline-white btn-md" %>
+              </form>
             </div>
-          </abbr>
+          </nav>
+        </div>
 
-          <!--Dropdown Relatórios -->
+      <%end%>
+      <br>
+      <main class="animated fadeInDown">
+        <div id="main">
+          <% if notice %>
+            <p class="notice alert-s animated bounceInUp"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+            <p class="alert alert-e animated bounceInUp"><%= alert %></p>
+          <% end %>
+          <%= yield %>
+        </div>
 
-          <abbr class="col-2">
-              <button id="dropr" class="btn btn-md btn-deep-purple"><i class="fa fa-bar-chart"></i>  Relatórios  <i class="fa fa-sort-down"></i></button>
-              <div id="no-mobile" class="drop-menupr border border-info">
-              <%= link_to 'Financeiro Competência',relatorios_path,class:"dropdown-item" %>
-            </div>
-          </abbr>
+        <!--Big blue-->
+        <div class="loader"></div>
+      </main>
 
-          <%= link_to 'Sair', destroy_user_session_path, method: :delete, id:"exit" ,:class=>"btn btn-outline-white btn-md" %>
-      </div>
-      </abbr>
-    </nav>
-  <% end %>
-<br>
-  <main class="animated fadeInDown">
-  <div id="main">
-    <% if notice %>
-      <p class="notice alert-s animated bounceInUp"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-e animated bounceInUp"><%= alert %></p>
-    <% end %>
-      <%= yield %>
-  </div>
-
-    <!--Big blue-->
-    <div class="loader"></div>
-  </main>
-
-  <% if current_user %>
-    <div id="footer"></div>
-    <br>
-    <br>
-    <footer>
-      <a href="#">
-        <i data-toggle="tooltip" data-placement="top" title="Facebook!" class="fa fa-facebook-official" aria-hidden="true"></i>
-      </a>
-      <a href="#">
-        <i data-toggle="tooltip" data-placement="top" title="Github!" class="fa fa-github" aria-hidden="true"></i>
-      </a>
-    </footer>
-  <% end %>
-  </body>
-  <%= javascript_include_tag "mdb.min.js"%>
-  <%= javascript_include_tag "main.js"%>
-</html>
+      <% if current_user %>
+        <div id="footer"></div>
+        <br>
+        <br>
+        <footer>
+          <a href="#">
+            <i data-toggle="tooltip" data-placement="top" title="Facebook!" class="fa fa-facebook-official" aria-hidden="true"></i>
+          </a>
+          <a href="#">
+            <i data-toggle="tooltip" data-placement="top" title="Github!" class="fa fa-github" aria-hidden="true"></i>
+          </a>
+        </footer>
+      <% end %>
+    </body>
+    <%= javascript_include_tag "mdb.min.js"%>
+    <%= javascript_include_tag "main.js"%>
+  </html>
