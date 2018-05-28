@@ -19,7 +19,7 @@
 //= require popper
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
+//= require_tree 
 
 console.log('application');
 //= require materialize
