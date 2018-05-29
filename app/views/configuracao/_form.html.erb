@@ -1,13 +1,19 @@
 <%= form_for @configuracao, url: form_url, method: :patch do |f| %>
 
-  <div class="md-form">
-    <%= f.text_field :duracao_consulta, value: @configuracao_last.duracao_consulta,:id=>"inputMDEx1" ,:class =>"form-control"%>
-    <%= f.label :duracao_consulta,:for=>"inputMDEx1" %>
-  </div>
-  <div class="md-form">
-    <%= f.text_field :periodo_reajuste, value: @configuracao_last.periodo_reajuste, :id=>"inputMDEx2" ,:class =>"form-control"%>
-    <%= f.label :periodo_reajuste,:for=>"inputMDEx2" %>
-  </div>
-  <%= f.submit 'Gravar', :class => 'btn btn-primary btn-md'%>   <%= link_to 'Voltar', pacientes_path, :class => 'btn btn-danger btn-md' %>
+  <div class="row">
+    <div class="offset-md-4 col-md-4 offset-md-4">
 
-<% end %>
+      <div class="md-form">
+        <%= f.text_field :duracao_consulta, value: @configuracao_last.duracao_consulta,:id=>"inputMDEx1" ,:class =>"form-control"%>
+        <%= f.label :duracao_consulta,:for=>"inputMDEx1" %>
+      </div>
+      <div class="md-form">
+        <%= f.text_field :periodo_reajuste, value: @configuracao_last.periodo_reajuste, :id=>"inputMDEx2" ,:class =>"form-control"%>
+        <%= f.label :periodo_reajuste,:for=>"inputMDEx2" %>
+      </div>
+    </div>
+    <div class="offset-md-4 col-md-4 offset-md-4">
+      <%= f.submit 'Gravar', :class => 'btn btn-primary btn-md'%>   <%= link_to 'Voltar', pacientes_path, :class => 'btn btn-danger btn-md' %>
+    </div>
+      <% end %>
+  </div>

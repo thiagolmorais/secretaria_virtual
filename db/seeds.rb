@@ -17,11 +17,11 @@ paciente_b = Paciente.create(nome: 'Paciente B', telefone: '999999999',
                              email: 'paciente.b@email.com',
                              nascimento: '01/01/1980', sexo:'Masculino',
                              paciente_desde: '15/01/2017', dia_vencimento: 15)
-consulta_1 = Consulta.create(data: '2018-04-09', hora_inicial: '2018-04-29 19:18:29',
+consulta_1 = Consulta.create(data: '2018-04-09', hora_inicial: '2018-04-29 19:18:29', hora_final:'2018-04-29 20:18:29',
                              status: true, paciente_id: paciente_a.id, competencia: 42018)
-consulta_2 = Consulta.create(data: '2018-04-29', hora_inicial: '2018-04-29 20:18:29',
+consulta_2 = Consulta.create(data: '2018-04-29', hora_inicial: '2018-04-29 20:18:29', hora_final:'2018-04-29 21:18:29',
                              status: true, paciente_id: paciente_b.id, competencia: 42018)
-consulta_3 = Consulta.create(data: '2018-04-30', hora_inicial: '2018-04-29 19:18:29',
+consulta_3 = Consulta.create(data: '2018-04-30', hora_inicial: '2018-04-29 19:18:29', hora_final:'2018-04-29 20:18:29',
                             status: false, paciente_id: paciente_a.id, competencia: 42018)
 preco_1 = Preco.create(valor: '150.00', reajuste: '2018-04-01',
                        paciente_id: paciente_a.id)
