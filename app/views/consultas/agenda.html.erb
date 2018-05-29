@@ -21,7 +21,7 @@
     <tbody>
 <% @consultas.each do |consulta| %>
   <tr>
-    <td><%= link_to I18n.localize(consulta.data), consulta_path(consulta), class: "consulta" %></td>
+    <td><%= link_to I18n.localize(consulta.data), edit_consulta_path(consulta), class: "consulta" %></td>
     <td><%= consulta.hora_inicial.strftime('%R') %></td>
     <td class="buscar"><%= link_to consulta.paciente.nome, paciente_path(consulta.paciente), class: "consulta" %></td>
     <td><%= consulta.status_consulta %></td>
