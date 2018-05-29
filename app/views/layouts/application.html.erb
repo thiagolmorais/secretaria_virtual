@@ -34,6 +34,21 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <!-- Links -->
         <hr class="sidehr">
+
+        <!-- Dropdown Fatura -->
+        <a class="downcolf fa fa-money" onclick="openColf()">
+          Configuracao
+          <i class="fa animated flipInX fa-sort-down"></i>
+        </a>
+        <a class="upcolf fa fa-money" onclick="closeColf()">
+          Configuracao
+          <i class="fa animated flipInX fa-sort-up"></i>
+        </a>
+        <div class="colls-f">
+          <p class="smallnav"><%= link_to 'Configuracões', configuracao_index_path%>
+          </div>
+          <hr class="sidehr">
+
         <!-- Dropdown Fatura -->
         <a class="downcolf fa fa-money" onclick="openColf()">
           Pagamento
@@ -120,6 +135,10 @@
 
             <div class="collapse navbar-collapse" id="navbar">
               <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active">
+                  <%= link_to 'Configuracões', configuracao_index_path,class:'nav-link active' %>
+                </li>
 
                 <li class="nav-item active">
                   <%= link_to 'Pagamentos', pagamentos_path,class:'nav-link active' %>

@@ -19,9 +19,10 @@ class ConsultasController < ApplicationController
   end
 
   def create
+    @configuracao = Configuracao.last
     @consulta = Consulta.new(consulta_params)
     @consulta.competencia = "#{@consulta.data.month}#{@consulta.data.year}" if @consulta.data
-    @consulta.hora_final = @consulta.hora_inicial + 3600
+    @consulta.hora_final = @consulta.hora_inicial + @configuracao.duracao_consulta
     consulta_marcada = @consulta.horario_disponivel
     if consulta_marcada.empty?
       @consulta.save

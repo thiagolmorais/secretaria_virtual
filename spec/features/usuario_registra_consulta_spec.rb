@@ -4,6 +4,7 @@ feature 'Usuario registra consulta' do
   scenario 'Sucesso' do
     user = create(:user)
     paciente = create(:paciente)
+    create(:configuracao)
 
     login_as(user)
     visit root_path
