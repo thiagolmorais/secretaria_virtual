@@ -2,7 +2,7 @@
   <h3>Bem vindo a Secretária Virtual</h3>
   <div class="row">
     <div class="col-md-6">
-      <div id="calendar-home"></div>
+      <div id="calendar-home" class="shadow-lg p-3 mb-5 bg-white rounded"></div>
     </div>
     <div class="col-md-6">
       <style>
@@ -120,14 +120,19 @@
         <small class="text-muted">Jan 2018 - Dez 2018</small>
       </h2>
 
-      <div class="card shadow">
+      <div class="card shadow ">
         <h4 class="card-header">Relat'orios</h4>
         <div class="card-block">
           <div id="orders-spline-chart"></div>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+  </div>
+    <div class="row">
+    <div class="col-md-12">
+      <h2 >
+
+      </h2>
     <div class="card shadow">
       <h4 class="card-header">Relat'orios</h4>
       <div class="card-block">
@@ -136,6 +141,7 @@
     </div>
 
   </div>
+</div>
 
 
 <script>
@@ -223,4 +229,34 @@
 
   });
 </script>
+<div class="row" style="padding: 5vh">
+<div class="col-md-6">
+<div class="card shadow ">
+<i class="icon mdi mdi-chevron-right"></i>
+    <h4 class="card-header" style="cursor: pointer" type="button" data-toggle="collapse" data-target="#collapseOne"
+    aria-expanded="false" aria-controls="collapseOne">  Pacientes   <i class="fa fa-chevron-down"></i></span>
+  </h4>
+
+  <div class="card-body" >
+    <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+    <ul class="list-group list-group-flush">
+      <table class="table table-hover "  style="max-height:10px">
+      <% @pacientes.each do |paciente| %>
+      <tr>
+        <td><h5><%= paciente.nome%></h5></td>
+        <td><h6><%= paciente.status_paciente%></h6></td>
+      </tr>
+    <% end %>
+  </table>
+  </ul>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
 <%= javascript_include_tag "full_calendar_home.js"%>
