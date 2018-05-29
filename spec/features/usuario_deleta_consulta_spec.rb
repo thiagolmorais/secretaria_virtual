@@ -6,7 +6,7 @@ feature 'Usuario deleta consulta' do
     paciente = create(:paciente, nome: 'Paciente A',
                                  email: 'paciente.a@email.com', status: true)
     create(:consulta, paciente_id: paciente.id, data: '2018-04-29 19:00:00',
-                      hora: '2018-04-29 19:00:00', status: false)
+                      hora_inicial: '2018-04-29 19:00:00', status: false)
 
     login_as(user)
     visit consultas_agenda_path

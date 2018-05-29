@@ -1,5 +1,5 @@
 class Consulta < ApplicationRecord
-  validates :data, :hora, presence: true
+  validates :data, :hora_inicial, presence: true
   belongs_to :paciente
 
   def status_consulta
@@ -18,5 +18,9 @@ class Consulta < ApplicationRecord
       preco_valido << preco if preco.reajuste < data
     end
     preco_valido.last
+  end
+
+  def horario_disponivel
+    Consulta.where("hora_inicial <= ? AND hora_final >= ? AND data = ?", self.hora_final, self.hora_inicial, self.data)
   end
 end
