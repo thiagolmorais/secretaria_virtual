@@ -9,10 +9,10 @@ feature 'Usuario visualiza lista de consultas' do
                                    email: 'paciente.b@email.com', status: false)
     consulta_p_a = create(:consulta, paciente_id: paciente_a.id,
                                      data: '2018-04-29 19:00:00',
-                                     hora: '2018-04-29 19:00:00', status: false)
+                                     hora_inicial: '2018-04-29 19:00:00', status: false)
     consulta_p_b = create(:consulta, paciente_id: paciente_b.id,
                                      data: '2018-04-30 21:00:00',
-                                     hora: '2018-04-30 21:00:00', status: false)
+                                     hora_inicial: '2018-04-30 21:00:00', status: false)
 
     login_as(user)
     visit consultas_agenda_path

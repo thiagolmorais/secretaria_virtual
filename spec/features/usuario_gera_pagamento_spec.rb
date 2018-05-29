@@ -8,7 +8,7 @@ feature 'Usuario gera pagamento' do
     create(:preco, paciente_id: paciente.id, valor: '120.75')
     consulta = create(:consulta, paciente_id: paciente.id,
                                  data: '2018-04-29 19:00:00',
-                                 hora: '2018-04-29 19:00:00', status: false)
+                                 hora_inicial: '2018-04-29 19:00:00', status: false)
 
     login_as(user)
     visit consultas_agenda_path

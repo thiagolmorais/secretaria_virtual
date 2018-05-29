@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180513022902) do
+ActiveRecord::Schema.define(version: 20180529024915) do
 
   create_table "consulta", force: :cascade do |t|
     t.date "data"
-    t.time "hora"
     t.boolean "status", default: false
     t.integer "paciente_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "competencia"
+    t.time "hora_inicial"
+    t.time "hora_final"
     t.index ["paciente_id"], name: "index_consulta_on_paciente_id"
   end
 

@@ -31,6 +31,6 @@ feature 'Usuario edita consulta' do
     click_on 'Gravar'
 
     expect(page).to have_content('Data não pode ficar em branco')
-    expect(page).to have_content('Hora não pode ficar em branco')
+    expect(page).to have_content('Hora inicial não pode ficar em branco')
   end
 end
