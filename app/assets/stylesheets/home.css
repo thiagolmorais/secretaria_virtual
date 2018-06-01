@@ -1,0 +1,42 @@
+
+
+/* CSS CANVAS */
+  #header {
+    border-bottom: 5px solid #37474F;
+    color: #37474F;
+    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+  }
+
+  #revenue-tag {
+    font-weight: inherit !important;
+    border-radius: 0 !important;
+  }
+
+  .card {
+    border: 0;
+    border-radius: 0;
+  }
+
+  .card-header {
+    background-color: #37474F;
+    border-radius: 0 !important;
+    color: white;
+    margin-bottom: 0;
+    padding: 1rem;
+  }
+
+  .card-block {
+    border: 1px solid #cccccc;
+  }
+
+  .shadow {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+  }
+
+  #orders-spline-chart,
+  #products-revenue-pie-chart,
+  #revenue-column-chart {
+    height: 300px;
+    width: 100%;
+  }
