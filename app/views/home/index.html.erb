@@ -4,116 +4,12 @@
     <div class="col-md-6">
       <div id="calendar-home" class="shadow-lg p-3 mb-5 bg-white rounded"></div>
     </div>
+
     <div class="col-md-6">
-      <style>
-        body {
-          background-color: #fafafa;
-          font-size: 16px;
-          line-height: 1.5;
-        }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-          font-weight: 400;
-        }
 
-        #header {
-          border-bottom: 5px solid #37474F;
-          color: #37474F;
-          margin-bottom: 1.5rem;
-          padding: 1rem 0;
-        }
 
-        #revenue-tag {
-          font-weight: inherit !important;
-          border-radius: 0 !important;
-        }
 
-        .card {
-          border: 0;
-          border-radius: 0;
-        }
-
-        .card-header {
-          background-color: #37474F;
-          border-radius: 0 !important;
-          color: white;
-          margin-bottom: 0;
-          padding: 1rem;
-        }
-
-        .card-block {
-          border: 1px solid #cccccc;
-        }
-
-        .shadow {
-          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-        }
-
-        #orders-spline-chart,
-        #products-revenue-pie-chart,
-        #revenue-column-chart {
-          height: 300px;
-          width: 100%;
-        }
-      </style>
-
-      <script>
-        $(function () {
-          var ordersSplineChart = new CanvasJS.Chart("orders-spline-chart", {
-            animationEnabled: true,
-            backgroundColor: "transparent",
-            theme: "theme2",
-            toolTip: {
-              borderThickness: 0,
-              cornerRadius: 0
-            },
-            axisX: {
-              labelFontSize: 14,
-              maximum: new Date("31 Dec 2018"),
-              valueFormatString: "MMM YYYY"
-            },
-            axisY: {
-              gridThickness: 0,
-              labelFontSize: 14,
-              lineThickness: 2
-            },
-            data: [
-              {
-                type: "spline",
-                dataPoints: [
-                  {
-                    x: new Date("1 Jan 2018"),
-                    y: 2000
-                  }, {
-                    x: new Date("1 Feb 2018"),
-                    y: 3000
-                  }, {
-                    x: new Date("1 Mar 2018"),
-                    y: 3300
-                  }, {
-                    x: new Date("1 Apr 2018"),
-                    y: 1000
-                  }, {
-                    x: new Date("1 May 2018"),
-                    y: 500
-                  }, {
-                    x: new Date("1 Jun 2018"),
-                    y: 4000
-                  }
-                ]
-              }
-            ]
-          });
-
-          ordersSplineChart.render();
-
-        });
-      </script>
 
       <h2 id="header">
         <strong>Relat'orio</strong>
@@ -128,135 +24,40 @@
       </div>
     </div>
   </div>
-    <div class="row">
-    <div class="col-md-12">
-      <h2 >
 
-      </h2>
-    <div class="card shadow">
-      <h4 class="card-header">Relat'orios</h4>
-      <div class="card-block">
-        <div id="revenue-spline-area-chart" style="height: 370px; width: 100%;"></div><br><br>
+  <div class="row" style="padding: 5vh">
+    <div class="col-md-6">
+      <div class="card shadow ">
+        <i class="icon mdi mdi-chevron-right"></i>
+        <h4 class="card-header" style="cursor: pointer" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          Pacientes
+          <i class="fa fa-chevron-down"></i>
+        </span>
+      </h4>
+
+      <div class="card-body">
+        <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <ul class="list-group list-group-flush">
+              <table class="table table-hover " style="max-height:10px">
+                <% @pacientes.each do |paciente| %>
+                  <tr>
+                    <td>
+                      <h5><%= paciente.nome%></h5>
+                    </td>
+                    <td>
+                      <h6><%= paciente.status_paciente%></h6>
+                    </td>
+                  </tr>
+                <% end %>
+              </table>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
   </div>
 </div>
-
-
-<script>
-  $(function () {
-
-    // CanvasJS spline area chart to show revenue from Jan 2018 - Dec 2018
-    var revenueSplineAreaChart = new CanvasJS.Chart("revenue-spline-area-chart", {
-      animationEnabled: true,
-      backgroundColor: "transparent",
-      axisX: {
-        interval: 2,
-        intervalType: "month",
-        labelFontColor: "#717171",
-        labelFontSize: 16,
-        lineColor: "#a2a2a2",
-        minimum: new Date("1 Jan 2018"),
-        tickColor: "#a2a2a2",
-        valueFormatString: "MMM YYYY"
-      },
-      axisY: {
-        gridThickness: 0,
-        includeZero: false,
-        labelFontColor: "#717171",
-        labelFontSize: 16,
-        lineColor: "#a2a2a2",
-        prefix: "R$",
-        tickColor: "#a2a2a2"
-      },
-      toolTip: {
-        borderThickness: 0,
-        cornerRadius: 0,
-        fontStyle: "normal"
-      },
-      data: [
-        {
-          color: "#393f63",
-          markerSize: 0,
-          type: "splineArea",
-          yValueFormatString: "$####.##",
-          dataPoints: [
-            {
-              x: new Date("1 Jan 2018"),
-              y: 173250
-            }, {
-              x: new Date("1 Feb 2018"),
-              y: 195300
-            }, {
-              x: new Date("1 Mar 2018"),
-              y: 214200
-            }, {
-              x: new Date("1 Apr 2018"),
-              y: 207900
-            }, {
-              x: new Date("1 May 2018"),
-              y: 226800
-            }, {
-              x: new Date("1 Jun 2018"),
-              y: 220500
-            }, {
-              x: new Date("1 Jul 2018"),
-              y: 239400
-            }, {
-              x: new Date("1 Aug 2018"),
-              y: 258300
-            }, {
-              x: new Date("1 Sep 2018"),
-              y: 252000
-            }, {
-              x: new Date("1 Oct 2018"),
-              y: 264600
-            }, {
-              x: new Date("1 Nov 2018"),
-              y: 258300
-            }, {
-              x: new Date("1 Dec 2018"),
-              y: 270900
-            }
-          ]
-        }
-      ]
-    });
-
-    revenueSplineAreaChart.render();
-
-
-  });
-</script>
-<div class="row" style="padding: 5vh">
-<div class="col-md-6">
-<div class="card shadow ">
-<i class="icon mdi mdi-chevron-right"></i>
-    <h4 class="card-header" style="cursor: pointer" type="button" data-toggle="collapse" data-target="#collapseOne"
-    aria-expanded="false" aria-controls="collapseOne">  Pacientes   <i class="fa fa-chevron-down"></i></span>
-  </h4>
-
-  <div class="card-body" >
-    <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
-    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-    <ul class="list-group list-group-flush">
-      <table class="table table-hover "  style="max-height:10px">
-      <% @pacientes.each do |paciente| %>
-      <tr>
-        <td><h5><%= paciente.nome%></h5></td>
-        <td><h6><%= paciente.status_paciente%></h6></td>
-      </tr>
-    <% end %>
-  </table>
-  </ul>
-  </div>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-
-<%= javascript_include_tag "full_calendar_home.js"%>
+<%= javascript_include_tag "full_calendar.js"%>
+<%= javascript_include_tag "home.js"%>
