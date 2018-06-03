@@ -51,6 +51,7 @@
 </div>
 </tbody>
 </table>
+<%= will_paginate @consultas, previous_label:"&#8592; Anterior", next_label:"Proximo &#8594;"%>
 
  <%= link_to 'Cadastrar', new_consulta_path,:class=>'btn btn-md btn-indigo'%>
  <%= javascript_include_tag "busca.js"%>

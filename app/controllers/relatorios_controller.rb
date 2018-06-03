@@ -4,6 +4,6 @@ class RelatoriosController < ApplicationController
     @faturas = Fatura.all
     @pacientes = Paciente.all
     @pagamentos = Pagamento.all
-    @consultas = Consulta.all
+    @consultas = Consulta.all    
   end
 end

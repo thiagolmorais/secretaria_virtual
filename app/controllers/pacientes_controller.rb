@@ -3,6 +3,7 @@ class PacientesController < ApplicationController
 
   def index
     @pacientes = Paciente.all.order(:nome)
+    @pacientes = Paciente.all.paginate(page: params[:page], per_page: 1)
   end
 
   def show
