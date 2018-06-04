@@ -1,6 +1,14 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-6">
+
+      <% @periodo_grafico.each do |k| %>
+        <p><%= k %></p>
+      <% end %>
+
+      <% @pagamento_grafico.each do |v| %>
+        <p><%= v %></p>
+      <% end %>
       <div id="calendar-home" class="shadow-lg p-3 mb-5 bg-white rounded"></div>
     </div>
 

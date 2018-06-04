@@ -29,7 +29,7 @@
       <% if consulta.status == false %>
         <%= form_tag(faturas_path, method: :post) do %>
           <%= hidden_field_tag(:consulta_id, consulta.id) %>
-          <%= hidden_field_tag(:competencia, "#{consulta.data.month}#{consulta.data.year}") %>
+          <%= hidden_field_tag(:competencia, "#{consulta.data.year}#{consulta.data.month}") %>
           <%= hidden_field_tag(:vencimento, consulta.data) %>
         <%= submit_tag('Atender',class:'btn btn-md btn-default') %>
 
