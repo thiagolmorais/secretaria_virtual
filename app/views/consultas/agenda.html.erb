@@ -1,9 +1,14 @@
 <h3>Consultas</h3>
 <div class="busca">
-<div class="md-form form-lg">
-    <input type="text" id="inputLGEx" class="form-control form-control-lg">
-    <label class="fa fa-search" for="inputLGEx">  Busca</label>
-</div>
+  <div class="md-form form-lg">
+      <!--<input type="text" id="inputLGEx" class="form-control form-control-lg">
+      <label class="fa fa-search" for="inputLGEx">  Busca</label>-->
+      <%= form_tag consultas_agenda_path, method: :get do %>
+      <%= text_field_tag :search, ""  %>
+      <%= submit_tag 'Buscar por nome', :class=>"btn btn-md btn-light-blue"%>
+      <% end%>
+
+  </div>
 <br>
 <table class="table table-hover table-striped">
     <!--Table head-->
