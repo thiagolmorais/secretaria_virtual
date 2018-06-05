@@ -5,6 +5,9 @@ module Api
       faturas = Fatura.all
       json = faturas.as_json
       render json: { faturas: json }
+      respond_to do |format|
+    format.json { render json: faturas }
+  end
     end
 
     def show
