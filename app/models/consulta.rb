@@ -5,7 +5,11 @@ class Consulta < ApplicationRecord
   def status_consulta
     status ? 'Atendido' : 'Agendado'
   end
-
+  def self.search(params)
+      consultas = all
+      consultas = Consulta.joins(:paciente).where("pacientes.nome like ?", "%#{params[:search]}%").order(:data) if params[:search]
+      consultas
+    end
   def gera_fatura
     Fatura.create(consulta_id: id, valor: valor_consulta.valor, status: true,
                   competencia: data, vencimento: data)
