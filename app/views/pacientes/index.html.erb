@@ -25,8 +25,11 @@
         <td class="buscar"><%= paciente.status_paciente %></td>
         <td><%= link_to 'Consultar', paciente_path(paciente),:class => 'btn btn-md btn-outline-primary waves-effect' %></td>
     <% end %>
+
     </tbody>
+
 </table>
+<%= will_paginate @pacientes, previous_label:"&#8592; Anterior", next_label:"Proximo &#8594;"%>
 </div>
 
 
