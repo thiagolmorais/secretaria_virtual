@@ -1,42 +1,108 @@
-
-
 /* CSS CANVAS */
-  #header {
-    border-bottom: 5px solid #37474F;
-    color: #37474F;
-    margin-bottom: 1.5rem;
-    padding: 1rem 0;
+
+#header {
+  border-bottom: 5px solid #37474F;
+  color: #37474F;
+  margin-bottom: 1.5rem;
+  padding: 1rem 0;
+}
+
+#revenue-tag {
+  font-weight: inherit !important;
+  border-radius: 0 !important;
+}
+
+.card {
+  border: 0;
+  border-radius: 0;
+}
+
+.card-header {
+  background-color: #37474F;
+  border-radius: 0 !important;
+  color: white;
+  margin-bottom: 0;
+  padding: 1rem;
+}
+
+.card-block {
+  border: 1px solid #cccccc;
+}
+
+.shadow {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+#orders-spline-chart, #products-revenue-pie-chart, #revenue-column-chart {
+  height: 300px;
+  width: 100%;
+}
+
+#home-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+  h1 {
+    font-size: 1.5rem;
   }
 
-  #revenue-tag {
-    font-weight: inherit !important;
-    border-radius: 0 !important;
+  #main {
+    height: 100%;
+  }
+  #home {
+    display: none;
+  }
+  #home-mobile {
+    display: block;
+  }
+  .icon {
+    padding-top: 2%;
+    font-size: 2.5em;
+  }
+  .label{
+    font-size: 1.2rem;
+    color: #000;
   }
 
   .card {
-    border: 0;
-    border-radius: 0;
+    background: #0b2bb4b3;
+    width: 37vw;
+    height: 37vh;
+    margin-top: 8%;
+    margin-left: 4%;
+    margin-right: 4%;
   }
 
-  .card-header {
-    background-color: #37474F;
-    border-radius: 0 !important;
-    color: white;
-    margin-bottom: 0;
-    padding: 1rem;
-  }
+  @media only screen and (max-width: 400px) {
+    .label{
+      display:none;
+    }
 
-  .card-block {
-    border: 1px solid #cccccc;
+    h1 {
+      font-size: 1.5rem;
+    }
+    #main {
+      height: 100%;
+    }
+    #home {
+      display: none;
+    }
+    #home-mobile {
+      display: block;
+    }
+    .icon {
+      padding-top: 3%;
+      font-size: 3em;
+    }
+    .card {
+      background: #0b2bb4b3;
+      width: 37.5vw;
+      height: 19vh;
+      margin-top: 8%;
+      margin-left: 4%;
+      margin-right: 4%;
+    }
   }
-
-  .shadow {
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-  }
-
-  #orders-spline-chart,
-  #products-revenue-pie-chart,
-  #revenue-column-chart {
-    height: 300px;
-    width: 100%;
   }
