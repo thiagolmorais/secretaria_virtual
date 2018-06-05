@@ -8,7 +8,7 @@ class Paciente < ApplicationRecord
   end
   def self.search(params)
     pacientes = all
-    pacientes = pacientes.where("nome.downcase like ?", "%#{params[:search].downcase}%").order(:nome) if params[:search]
+    pacientes = pacientes.where("nome like ?", "%#{params[:search]}%").order(:nome) if params[:search]
     pacientes = all
   end
   def ultimo_preco

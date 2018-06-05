@@ -7,7 +7,7 @@ class Consulta < ApplicationRecord
   end
   def self.search(params)
       consultas = all
-      consultas = Consulta.joins(:paciente).where("pacientes.nome.downcase like ?", "%#{params[:search].downcase}%").order(:data) if params[:search]
+      consultas = Consulta.joins(:paciente).where("pacientes.nome like ?", "%#{params[:search]}%").order(:data) if params[:search]
       consultas
     end
   def gera_fatura

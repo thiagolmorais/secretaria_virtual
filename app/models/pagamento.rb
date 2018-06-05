@@ -3,6 +3,6 @@ class Pagamento < ApplicationRecord
 end
 def self.search(params)
   pagamentos = all
-  pagamentos = Fatura.joins(:consulta).joins(:paciente).where("pacientes.nome.downcase like ?", "%#{params[:search].downcase}%").order(:nome) if params[:search]
+  pagamentos = Fatura.joins(:consulta).joins(:paciente).where("pacientes.nome like ?", "%#{params[:search]}%").order(:nome) if params[:search]
   pagamentos
 end
