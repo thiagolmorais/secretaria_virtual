@@ -11,6 +11,7 @@ class ConsultasController < ApplicationController
 
   def agenda
     @consultas = Consulta.all.order(:data)
+    @consultas = Consulta.all.paginate(page: params[:page], per_page: 10)
   end
 
   def new
