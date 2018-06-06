@@ -1,5 +1,5 @@
 class Consulta < ApplicationRecord
-  validates :data, :hora_inicial, presence: true
+  validates :data, :hora_inicial, :hora_final, presence: true
   belongs_to :paciente
 
   def status_consulta

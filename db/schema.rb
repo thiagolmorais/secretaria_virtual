@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180529145903) do
+ActiveRecord::Schema.define(version: 20180606124605) do
 
   create_table "configuracaos", force: :cascade do |t|
     t.integer "duracao_consulta"
@@ -28,7 +28,10 @@ ActiveRecord::Schema.define(version: 20180529145903) do
     t.integer "competencia"
     t.time "hora_inicial"
     t.time "hora_final"
+    t.decimal "valor"
+    t.integer "precos_id"
     t.index ["paciente_id"], name: "index_consulta_on_paciente_id"
+    t.index ["precos_id"], name: "index_consulta_on_precos_id"
   end
 
   create_table "faturas", force: :cascade do |t|
