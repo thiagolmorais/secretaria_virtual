@@ -2,8 +2,7 @@ class FaturasController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @pacientes = Paciente.all.order(:nome)
-    @pacientes = Paciente.all.paginate(page: params[:page], per_page: 10)
+    @pacientes = Paciente.search(params).order(:nome).paginate(page: params[:page], per_page: 10)
     @faturas = Fatura.all
   end
 

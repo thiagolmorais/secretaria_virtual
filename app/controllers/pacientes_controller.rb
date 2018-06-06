@@ -2,9 +2,8 @@ class PacientesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @pacientes = Paciente.all.order(:nome)
-    @pacientes = Paciente.all.paginate(page: params[:page], per_page: 10)
-  end
+  @pacientes = Paciente.search(params).order(:nome).paginate(page: params[:page], per_page: 10)
+end
 
   def show
     @paciente = Paciente.find(params[:id])

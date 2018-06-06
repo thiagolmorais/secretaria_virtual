@@ -3,10 +3,10 @@
   <div class="row">
     <div class="offset-md-5 col-md-2 offset-md-5">
 
-      <div class="input-group mb-3">
+      <div class="input-group mb-1">
         <%= f.label :duracao_consulta,:for=>"inputMDEx1" %>
-        <%= f.text_field :duracao_consulta, value: @configuracao_last.duracao_consulta,:id=>"inputMDEx1" ,:class =>"form-control"%>
         <div class="input-group-append">
+        <%= f.text_field :duracao_consulta, value: @configuracao_last.duracao_consulta,:id=>"inputMDEx1" ,:class =>"form-control"%>
           <% if @configuracao_last.duracao_consulta == 1 %>
             <span class="input-group-text">hora</span>
           <% else %>
@@ -15,10 +15,10 @@
         </div>
       </div>
 
-      <div class="input-group mb-3">
+      <div class="input-group mb-1">
         <%= f.label :periodo_reajuste,:for=>"inputMDEx2" %>
-        <%= f.text_field :periodo_reajuste, value: @configuracao_last.periodo_reajuste, :id=>"inputMDEx2" ,:class =>"form-control"%>
         <div class="input-group-append">
+        <%= f.text_field :periodo_reajuste, value: @configuracao_last.periodo_reajuste, :id=>"inputMDEx2" ,:class =>"form-control"%>
           <% if @configuracao_last.periodo_reajuste == 1 %>
             <span class="input-group-text">mês</span>
           <% else %>

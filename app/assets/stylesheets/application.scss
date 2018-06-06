@@ -325,7 +325,7 @@ body{
   color:red;
   background: white;
 }
-.colls,.colls-c,.colls-p,.colls-f,.colls-r{
+.colls,.colls-c,.colls-p,.colls-f,.colls-r,.colls-cf{
   display: none;
 }
 
@@ -496,4 +496,36 @@ input[type=date],input[type=time]{
 }
 #edit{
   color:black;
+}
+.pagination a:hover, .pagination em{
+border: 1px solid #2b66a5;
+color: #000;
+background-color: #FFFF80;
+}
+.pagination em.current{
+background-color: #2e6ab1;
+color: #FFF !important;
+border-color: #2b66a5;
+font-weight: bold;
+cursor: default;
+}
+.pagination a, .pagination a:visited{
+padding: 0 5px;
+border: 1px solid #9aafe5;
+text-decoration: none;
+color: #2e6ab1;
+}
+.pagination{
+padding: 2px;
+font-size: 12px;
+}
+.pagination span{
+background-color: white;
+cursor: default;
+color: #929292;
+border: 1px solid #9aafe5;
+font-weight: normal !important;
+}
+.pagination a.next_page, a.previous_page{
+font-weight: bold;
 }

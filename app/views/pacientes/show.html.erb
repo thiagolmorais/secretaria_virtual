@@ -12,10 +12,7 @@
 
 
 <!-- Button trigger modal -->
-<button type="button" id="no-mobile" class="btn btn-info animated fadeInLeft" data-toggle="modal" data-target="#exampleModal">
-    Exibir Preços
-</button>
-<button type="button" id="mobile" class="btn btn-sm btn-info animated fadeInLeft" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-info animated fadeInLeft" data-toggle="modal" data-target="#exampleModal">
     Exibir Preços
 </button>
 
@@ -60,17 +57,12 @@
             </div>
         </div>
     </div>
-    <abbr id="no-mobile">
-        <button type="button" id="no-mobile" class="btn btn-primary animated fadeInUp" data-toggle="modal" data-target="#exampleModal2">
+    <abbr>
+        <button type="button" class="btn btn-primary animated fadeInUp" data-toggle="modal" data-target="#exampleModal2">
             Cadastrar Preços
         </button>
     <%= link_to 'Editar', edit_paciente_path,:class => "btn btn-default animated fadeInRight" %>
     </div>
 </abbr>
-<div id="mobile">
-  <button type="button" id="mobile" class="btn btn-sm btn-default animated fadeInRight" data-toggle="modal" data-target="#exampleModal2">
-      Cadastrar Preços
-  </button>
-    <%= link_to 'Editar', edit_paciente_path,:class => "btn btn-sm btn-primary animated fadeInRight" %>
-</div>
+
 <%= render 'precos/form_modal' %>
