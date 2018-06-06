@@ -3,6 +3,7 @@
   $('.upcolp').hide();
   $('.upcolf').hide();
   $('.upcolr').hide();
+  $('.upcolcf').hide();
 
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
@@ -66,6 +67,18 @@
       $('.colls-f').slideUp();
       $('.downcolf').show();
       $('.upcolf').hide();
+    }
+    /Pagamento/
+    function openColcf(){
+      $('.colls-cf').slideDown();
+      $('.downcolcf').hide();
+      $('.upcolcf').show();
+    }
+
+    function closeColcf(){
+      $('.colls-cf').slideUp();
+      $('.downcolcf').show();
+      $('.upcolcf').hide();
     }
 
     /Relatórios/

@@ -2,7 +2,7 @@ class PagamentosController < ApplicationController
   before_action :authenticate_user!
   def index
     @faturas = Fatura.all
-    @pacientes = Paciente.all
+    @pacientes = Paciente.search(params).paginate(page: params[:page], per_page: 10)
   end
 
   def create

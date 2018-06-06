@@ -1,10 +1,14 @@
 <h3>Pacientes</h3>
 
 <div class="busca">
-<div class="md-form form-lg">
-    <input type="text" id="inputLGEx" class="form-control form-control-lg">
-    <label class="fa fa-search" for="inputLGEx">  Busca </label>
-</div>
+  <div class="md-form form-lg">
+    <!--  <input type="text" id="inputLGEx" class="form-control form-control-lg">-->
+      <!--<label class="fa fa-search" for="inputLGEx">  Busca </label>-->
+      <%= form_tag pacientes_path, method: :get do %>
+      <%= text_field_tag :search, ""  %>
+      <%= submit_tag 'Buscar por nome', :class=>"btn btn-md btn-light-blue"%>
+      <% end%>
+  </div>
 <br>
 <table class="table table-hover table-striped">
     <!--Table head-->
@@ -25,8 +29,11 @@
         <td class="buscar"><%= paciente.status_paciente %></td>
         <td><%= link_to 'Consultar', paciente_path(paciente),:class => 'btn btn-md btn-outline-primary waves-effect' %></td>
     <% end %>
+
     </tbody>
+
 </table>
+<%= will_paginate @pacientes, previous_label:"&#8592; Anterior", next_label:"Proximo &#8594;"%>
 </div>
 
 

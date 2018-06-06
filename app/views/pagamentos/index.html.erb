@@ -1,9 +1,13 @@
 <h3>Pagamentos</h3>
 <div class="busca">
-<div class="md-form form-lg">
-    <input type="text" id="inputLGEx" class="form-control form-control-lg">
-    <label class="fa fa-search" for="inputLGEx">  Busca</label><br>
-</div>
+  <div class="md-form form-lg">
+    <!--  <input type="text" id="inputLGEx" class="form-control form-control-lg">
+      <label class="fa fa-search" for="inputLGEx">  Busca</label><br>-->
+      <%= form_tag pagamentos_path, method: :get do %>
+      <%= text_field_tag :search, ""  %>
+      <%= submit_tag 'Buscar por nome', :class=>"btn btn-md btn-light-blue"%>
+      <% end%>
+  </div>
 <table class="table table-hover table-striped">
     <!--Table head-->
 <thead id="thead" class="indigo darken-3">
@@ -45,12 +49,11 @@
       <% end %>
     </tbody>
 </table>
+<%#= will_paginate @pacientes, previous_label:"&#8592; Anterior", next_label:"Proximo &#8594;"%>
 </div>
 
-
 </div>
 </div>
-
 
 </div>
 <%= javascript_include_tag "busca.js"%>

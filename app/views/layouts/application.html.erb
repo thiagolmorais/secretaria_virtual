@@ -35,16 +35,16 @@
         <!-- Links -->
         <hr class="sidehr">
 
-        <!-- Dropdown Fatura -->
-        <a class="downcolf fa fa-money" onclick="openColf()">
+        <!-- Dropdown Configuracao -->
+        <a class="downcolcf fa fa-cog" onclick="openColcf()">
           Configuracao
           <i class="fa animated flipInX fa-sort-down"></i>
         </a>
-        <a class="upcolf fa fa-money" onclick="closeColf()">
+        <a class="upcolcf fa fa-cog" onclick="closeColcf()">
           Configuracao
           <i class="fa animated flipInX fa-sort-up"></i>
         </a>
-        <div class="colls-f">
+        <div class="colls-cf">
           <p class="smallnav"><%= link_to 'Configuracões', configuracao_index_path%>
           </div>
           <hr class="sidehr">
@@ -137,11 +137,11 @@
               <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item active">
-                  <%= link_to 'Configuracões', configuracao_index_path,class:'nav-link active' %>
+                  <%= link_to 'Configurações', configuracao_index_path,class:'nav-link active' %>
                 </li>
 
                 <li class="nav-item active">
-                  <%= link_to 'Pagamentos', pagamentos_path,class:'nav-link active' %>
+                  <%= link_to 'Pagamentos', pagamentos_path,class:'nav-link' %>
                 </li>
                 <li class="nav-item">
                   <%= link_to 'Faturas', faturas_path,class:'nav-link' %>
