@@ -17,7 +17,7 @@ module Api
 
     def create
       @consulta = Consulta.new(consulta_params)
-      @consulta.competencia = "#{@consulta.data.month}#{@consulta.data.year}" if @consulta.data
+      @consulta.competencia = "#{@consulta.data.year}#{@consulta.data.month}" if @consulta.data
       if @consulta.save
         render json: @consulta, status: :created, location: consulta_path(@consulta)
       else
