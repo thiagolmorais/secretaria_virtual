@@ -27,7 +27,7 @@ class ConsultasController < ApplicationController
     if consulta_marcada.empty?
       @consulta.save
       flash[:notice] = 'Consulta cadastrada com sucesso!'
-      redirect_to consultas_agenda_path
+      redirect_to consultas_path
     else
       @pacientes = Paciente.all
       flash.now[:notice] = "Já há consulta marcada das #{consulta_marcada.first.hora_inicial.strftime('%R')} as #{consulta_marcada.first.hora_final.strftime('%R')}"
