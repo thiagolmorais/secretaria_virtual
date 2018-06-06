@@ -14,7 +14,8 @@ class HomeController < ApplicationController
   end
 
   def periodo
-    "#{Time.zone.now.year-1}#{Time.zone.now.month+1}"
+    data = 11.month.ago
+    "#{data.year}#{data.month}"
 
   end
 end
