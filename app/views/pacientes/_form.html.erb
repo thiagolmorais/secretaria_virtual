@@ -4,49 +4,87 @@
   <% end %>
 <% end %>
 
-<br>
-
 <%= form_for @paciente do |f| %>
 
-  <div class="md-form">
-      <%= f.text_field :nome,:id=>"inputMDEx1" ,:class =>"form-control"%>
-      <%= f.label :nome,:for=>"inputMDEx1" %>
+<div class="row">
+<div class="col-md-6">
+  <div class="offset-md-2 col-md-9 offset-md-1">
+    <div class="md-form">
+        <%= f.text_field :nome,:id=>"inputMDEx1" ,:class =>"form-control"%>
+        <%= f.label :nome,:for=>"inputMDEx1" %>
+    </div>
   </div>
 
-  <div class="md-form">
-    <%= f.email_field :email,:id=>"inputMDEx2" ,:class =>"form-control"%>
-    <%= f.label :email,:for=>"inputMDEx2" %>
-  </div><br>
-
-  <div class="md-form">
-    <%= f.text_field :telefone,:id=>"inputMDEx3" ,:class =>"form-control"%>
-    <%= f.label :telefone,:for=>"inputMDEx3" %>
+  <div class="col-md-11">
+    <h6>
+      <%= f.label :nascimento,:for=>"date-picker-example" %>
+      <%= f.date_field :nascimento,:id=>"date-picker-example"%>
+    </h6>
   </div>
 
-  <%= f.label :sexo%>
-  <%= f.select(:sexo, ['Masculino', 'Feminino'],{}, { :class => 'custom-select my-1 mr-sm-2' })%><br><br>
+  <div class="offset-md-2 col-md-1">
+    <h6>
+    <%= f.label :sexo %>
+  </div>
+  <div class="offset-md-2 col-md-4">
+    <%= f.select(:sexo, ['Masculino', 'Feminino'],{}, { :class => 'custom-select my-1 mr-sm-2' })%>
+    </h6>
+  </div>
 
+  <div class="offset-md-2 col-md-9 offset-md-1">
+  <div class="md-form">
+      <%= f.email_field :email,:id=>"inputMDEx2" ,:class =>"form-control"%>
+      <%= f.label :email,:for=>"inputMDEx2" %>
+    </div>
+  </div>
 
-  <%= f.label :nascimento,:for=>"date-picker-example" %>
-  <%= f.date_field :nascimento,:id=>"date-picker-example"%><br><br>
+  <div class="offset-md-2 col-md-9 offset-md-1">
+    <div class="md-form">
+      <%= f.text_field :telefone,:id=>"inputMDEx3" ,:class =>"form-control"%>
+      <%= f.label :telefone,:for=>"inputMDEx3" %>
+    </div>
+  </div>
 
+  <div class="col-md-11">
+    <h6>
+      <%= f.label :paciente_desde,:for=>"date-picker-example1" %>
+      <%= f.date_field :paciente_desde,:id=>"date-picker-example1" %>
+    </h6>
+  </div>
 
+  <div class="offset-md-2 col-md-1">
+    <h6>
+    <%= f.label :status %>
+  </div>
+  <div class="offset-md-2 col-md-4">
+    <%= f.select(:status, [['Ativo', true], ['Inativo', false]],{}, { :class => 'custom-select my-1 mr-sm-2' })%>
+  </h6>
+  </div>
 
-  <%= f.label :paciente_desde,:for=>"date-picker-example1" %>
-  <%= f.date_field :paciente_desde,:id=>"date-picker-example1" %><br><br>
+  <div class="offset-md-2 col-md-1">
+    <h6>
+    <%= f.label :dia_vencimento %>
+  </div>
+  <div class="offset-md-2 col-md-4">
+    <%= f.select(:dia_vencimento, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+      17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],{}, { :class => 'custom-select my-1 mr-sm-2' })%>
+    </h6>
+  </div>
+  </div>
 
+  <div class="col-md-6">
+  <div class="offset-md-1 col-md-10 offset-md-1">
+    <i class="fa fa-pencil prefix"></i>
+    <h6>
+    <%= f.label :observacao,:for=>"textareaPrefix" %>
+    <%= f.text_area :observacao,:id=>"textareaPrefix" ,:class=>"form-control md-textarea",:rows=>"3"%>
+  </h6>
+  </div>
 
-  <%= f.label :status %>
-  <%= f.select(:status, [['Ativo', true], ['Inativo', false]],{}, { :class => 'custom-select my-1 mr-sm-2' })%><br><br>
+  <div class="offset-md-1 col-md-10 offset-md-1">
+    <%= f.submit 'Gravar', :class => 'btn btn-primary btn-md'%>   <%= link_to 'Voltar', pacientes_path, :class => 'btn btn-danger btn-md' %>
+  </div>
 
-  <%= f.label :dia_vencimento %>
-  <%= f.select(:dia_vencimento, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
-    17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],{}, { :class => 'custom-select my-1 mr-sm-2' })%><br><br>
-
-  <i class="fa fa-pencil prefix"></i>
-  <%= f.label :observacao,:for=>"textareaPrefix" %>
-   <%= f.text_area :observacao,:id=>"textareaPrefix" ,:class=>"form-control md-textarea",:rows=>"3"%>
-
-  <%= f.submit 'Gravar', :class => 'btn btn-primary btn-md'%>   <%= link_to 'Voltar', pacientes_path, :class => 'btn btn-danger btn-md' %>
-
-<% end %>
+  </div>
+  <% end %>
+</div>

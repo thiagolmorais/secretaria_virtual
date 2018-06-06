@@ -8,15 +8,18 @@
 <br>
 
 <%= form_for @consulta, url: form_url do |f| %>
-
-  <%= f.label :paciente_id %>
-  <%= f.collection_select :paciente_id, @pacientes, :id, :nome,:class=>'custom-select'%>
-
-  <%= f.label :data,:for=>"date-picker-example" %>
-  <%= f.date_field :data,:id=>"date-picker-example"%>
-
-  <%= f.label :hora_inicial, 'Hora' %>
-  <%= f.time_field :hora_inicial%><br>
-
-  <%= f.submit 'Gravar',:class=>'btn btn-indigo' %><%= link_to 'Voltar', consultas_path,:class=>'btn btn-unique'%>
+  <div class="row">
+    <div class="offset-md-4 col-md-4 offset-md-4">
+      <%= f.label :paciente_id %>
+      <%= f.collection_select :paciente_id, @pacientes, :id, :nome,{}, { :class => 'custom-select my-1 mr-sm-2' }%>
+      <br>
+      <%= f.label :data,:for=>"date-picker-example" %>
+      <%= f.date_field :data,:id=>"date-picker-example"%>
+      <br>
+      <%= f.label :hora_inicial, 'Hora' %>
+      <%= f.time_field :hora_inicial%><br>
+      <br>
+      <%= f.submit 'Gravar',:class=>'btn btn-indigo' %><%= link_to 'Voltar', consultas_path,:class=>'btn btn-unique'%>
+    <div>
+  <div>
 <% end %>
