@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Configuracao.create(duracao_consulta: 3600 ,periodo_reajuste: 365)
+Configuracao.create(duracao_consulta: 1 ,periodo_reajuste: 12)
 User.create(email: 'user@email.com', password: 123456)
 paciente_a = Paciente.create(nome: 'Paciente A', telefone: '999999999',
                              observacao: 'Paciente blablabla',
