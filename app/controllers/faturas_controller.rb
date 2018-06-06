@@ -13,7 +13,7 @@ class FaturasController < ApplicationController
       redirect_to new_paciente_preco_path(@consulta.paciente_id)
     else
       @fatura = Fatura.new(fatura_params)
-      @fatura.valor = @consulta.valor_consulta.valor
+      @fatura.valor = @consulta.valor
       @fatura.vencimento = Time.zone.now
       @consulta.status = true
       @fatura.save

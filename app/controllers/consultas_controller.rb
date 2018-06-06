@@ -25,6 +25,7 @@ class ConsultasController < ApplicationController
     @consulta.hora_final = @consulta.hora_inicial + @configuracao.duracao_consulta
     consulta_marcada = @consulta.horario_disponivel
     if consulta_marcada.empty?
+      @consulta.valor = @consulta.valor_consulta.valor
       @consulta.save
       flash[:notice] = 'Consulta cadastrada com sucesso!'
       redirect_to consultas_agenda_path
