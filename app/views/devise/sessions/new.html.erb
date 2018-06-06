@@ -1,69 +1,29 @@
-<style>
-      .spinner {
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        top: calc(50% - 20px);
-        left: calc(50% - 20px);
-        background-color: #333;
-        border-radius: 100%;
-        -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
-        animation: sk-scaleout 1.0s infinite ease-in-out;
-      }
-      @-webkit-keyframes sk-scaleout {
-        0% { -webkit-transform: scale(0) }
-        100% {
-          -webkit-transform: scale(1.0);
-          opacity: 0;
-        }
-      }
-      @keyframes sk-scaleout {
-        0% {
-          -webkit-transform: scale(0);
-          transform: scale(0);
-        } 100% {
-          -webkit-transform: scale(1.0);
-          transform: scale(1.0);
-          opacity: 0;
-        }
-      }
-
-      .login{
-        margin-top: 15vh;
-      }
-    </style>
-  </head>
-
-  <body class="app animated fadeInUpBig">
+<body class="app animated fadeInUpBig">
   <i id="icon" class="fa fa-group"></i>
-    <div class="container" id="panel">
-      <h2>Login</h2>
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="md-form">
-        <%= f.email_field :email,:id=>"inputMDEx" ,:class =>"form-control"%>
-          <%= f.label :email,:for=>"inputMDEx" %>
-        </div><br>
+  <div class="container" id="panel">
+    <h2>Login</h2>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="md-form">
+      <%= f.email_field :email,:id=>"inputMDEx" ,:class =>"form-control"%>
+      <%= f.label :email,:for=>"inputMDEx" %>
+    </div><br>
 
-        <div class="md-form">
-        <%= f.password_field :password,:id=>"inputMDEx1" ,:class =>"form-control"%>
-          <%= f.label :password,:for=>"inputMDEx1" %>
-        </div>
-        <% if devise_mapping.rememberable? -%><br>
-          <div class="field">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
-          </div>
-        <% end -%>
-        <br>
-        <div class="actions">
-          <%= f.submit "Entrar", class:"btn btn-sm btn-deep-purple" %><%= render "devise/shared/links" %>
-        </div>
-
-
-        <% end %>
-
+    <div class="md-form">
+      <%= f.password_field :password,:id=>"inputMDEx1" ,:class =>"form-control"%>
+      <%= f.label :password,:for=>"inputMDEx1" %>
+    </div>
+    <% if devise_mapping.rememberable? -%><br>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me , :class=>"lembrar"%>
       </div>
+    <% end -%>
+    <div class="actions">
+      <%= f.submit "Entrar", class:"btn btn-sm btn-deep-purple" %><%= render "devise/shared/links" %>
+    </div>
 
-      </div>
+  <% end %>
 
-    </div> <!-- /container -->
+</div>
+
+</body>
