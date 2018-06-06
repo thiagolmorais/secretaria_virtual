@@ -19,7 +19,7 @@ feature 'Usuario gera pagamento' do
     click_on 'Quitar'
 
     expect(page).to have_content(paciente.nome)
-    expect(page).to have_content('42018')
+    expect(page).to have_content('20184')
     expect(page).to have_content('120,75')
     expect(page).to have_content('Pago')
     expect(page).to have_link('Estornar pagamento')
