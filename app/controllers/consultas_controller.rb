@@ -21,15 +21,19 @@ class ConsultasController < ApplicationController
   def create
     @configuracao = Configuracao.last
     @consulta = Consulta.new(consulta_params)
-
     @consulta.competencia = "#{@consulta.data.year}#{@consulta.data.month}" if @consulta.data
     @consulta.hora_final = @consulta.hora_inicial + @configuracao.consulta_horas
-
     consulta_marcada = @consulta.horario_disponivel
     if consulta_marcada.empty?
-      @consulta.save
-      flash[:notice] = 'Consulta cadastrada com sucesso!'
-      redirect_to consultas_path
+      @consulta.valor = @consulta.valor_consulta.valor if @consulta.data
+      if @consulta.save
+        flash[:notice] = 'Consulta cadastrada com sucesso!'
+        redirect_to consultas_path
+      else
+        @pacientes = Paciente.all
+        render :new
+      end
+
     else
       @pacientes = Paciente.all
       flash.now[:notice] = "Já há consulta marcada das #{consulta_marcada.first.hora_inicial.strftime('%R')} as #{consulta_marcada.first.hora_final.strftime('%R')}"
