@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   before_action :authenticate_user!
   def index
-    @pacientes = Paciente.all.order(:nome)
+    @hash_pagamento = pagamentos
     @pagamento_grafico = pagamentos.values
     @periodo_grafico = pagamentos.keys
     @pacientes = Paciente.all.order(:nome).paginate(page: params[:page], per_page: 5)
@@ -16,6 +16,5 @@ class HomeController < ApplicationController
   def periodo
     data = 11.month.ago
     "#{data.year}#{data.month}"
-
   end
 end
