@@ -14,29 +14,17 @@
         </tr>
     </thead>
     <tbody>
-      <% @competencias = Consulta.select(:competencia).distinct %>
       <% @competencias.each do |competencia| %>
-      <% saldo_agendado = 0 %>
-      <tr>
-        <td><%= competencia.competencia %></td>
-        <% consultas_competencia = Consulta.where(competencia: competencia.competencia, status:false) %>
-        <% consultas_competencia.each do |valor| %>
-          <% saldo_agendado = valor.valor_consulta.valor + saldo_agendado %>
-        <% end %>
-        <% number_to_currency valor = agendados = saldo_agendado %>
-        <% number_to_currency valor = atendidos = Fatura.where(status: false, competencia: competencia.competencia).sum(:valor) %>
-        <% number_to_currency valor = pagos = Pagamento.where(competencia: competencia.competencia, status: true).sum(:valor) %>
-        <td><%= number_to_currency valor = agendados + atendidos + pagos %></td>
-        <td><%= number_to_currency valor = pagos %></td>
-      </tr>
+        <tr>
+          <td><%= competencia.competencia %></td>
+          <td><%= number_to_currency @valor_previsto[competencia.competencia] %></td>
+          <% realizado = @valor_realizado[competencia.competencia] %>
+          <td><%= realizado.nil? ? number_to_currency(0) : number_to_currency(realizado) %></td>
+        </tr>
       <% end %>
     </tbody>
 </table>
 
 </div>
 
-</div>
-</div>
-
-</div>
 <%= javascript_include_tag "busca.js"%>
