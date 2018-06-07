@@ -97,24 +97,7 @@ $secondary-color: color("yellow", "base") !default;
 #no-list{
   list-style: none;
 }
-#panel{
 
-  margin-top:10%;
-  background: white;
-  height: 380px;
-  max-width: 480px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
-  box-shadow: 0 1px 1px rgba(0,0,0,0.05);
-  color: black;
-}
-
-.app{
-  background: #0d47a1;
-  color: white;
-}
 .fa{
   cursor: pointer;
   color: white;
@@ -154,50 +137,14 @@ $secondary-color: color("yellow", "base") !default;
   }
 }
 
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 5;
-  top: 0;
-  left: 0;
-  background: #3f51b5; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-  color: white;
-  font-family: 'Do Hyeon', sans-serif;
-}
 
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: white;
-  display: block;
-}
-
-.sidenav a:hover {
-  color: white
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
 
 #main {
   transition: margin-left .5s;
   padding: 16px;
 }
 
-@media screen and (max-height: 450px) {
-.sidenav {padding-top: 15px;}
-.sidenav a {font-size: 18px;}
-}
+
 
 .alert-s{
   animation-delay: 0.2s;
@@ -333,9 +280,7 @@ hr.sidehr{
   border-top: 1px solid white;
   height: 5px;
 }
-.actions{
-  margin-top:3%;
-}
+
 .fixed{
   top: 0;
   z-index: 4;
@@ -483,17 +428,7 @@ input[type=date],input[type=time]{
 .custom-select:focus {
   outline: none
 }
-#icon{
-  text-shadow: rgb(28, 37, 103) 0px 0px 0px, rgb(28, 38, 105) 1px 1px 0px, rgb(29, 38, 106) 2px 2px 0px, rgb(29, 39, 108) 3px 3px 0px, rgb(30, 40, 110) 4px 4px 0px, rgb(30, 40, 111) 5px 5px 0px, rgb(31, 41, 113) 6px 6px 0px, rgb(31, 41, 115) 7px 7px 0px, rgb(32, 42, 116) 8px 8px 0px, rgb(32, 43, 118) 9px 9px 0px, rgb(33, 43, 120) 10px 10px 0px, rgb(33, 44, 122) 11px 11px 0px, rgb(34, 44, 123) 12px 12px 0px, rgb(34, 45, 125) 13px 13px 0px, rgb(34, 46, 127) 14px 14px 0px, rgb(35, 46, 128) 15px 15px 0px, rgb(35, 47, 130) 16px 16px 0px, rgb(36, 47, 132) 17px 17px 0px, rgb(36, 48, 133) 18px 18px 0px, rgb(37, 49, 135) 19px 19px 0px, rgb(37, 49, 137) 20px 20px 0px, rgb(38, 50, 139) 21px 21px 0px, rgb(38, 51, 140) 22px 22px 0px, rgb(39, 51, 142) 23px 23px 0px, rgb(39, 52, 144) 24px 24px 0px, rgb(40, 52, 145) 25px 25px 0px;
-  font-size: 106px;
-  color: rgb(255, 255, 255);
-  height: 96px;
-  width: 69px;
-  line-height: 157px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: 75px;
-}
+
 #edit{
   color:black;
 }

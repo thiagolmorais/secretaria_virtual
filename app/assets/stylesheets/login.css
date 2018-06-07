@@ -1,0 +1,72 @@
+#panel {
+  margin-top: 10vh;
+  background: white;
+  height: 380px;
+  max-width: 480px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  color: black;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+#icon{
+  text-shadow: rgb(28, 37, 103) 0px 0px 0px, rgb(28, 38, 105) 1px 1px 0px, rgb(29, 38, 106) 2px 2px 0px, rgb(29, 39, 108) 3px 3px 0px, rgb(30, 40, 110) 4px 4px 0px, rgb(30, 40, 111) 5px 5px 0px, rgb(31, 41, 113) 6px 6px 0px, rgb(31, 41, 115) 7px 7px 0px, rgb(32, 42, 116) 8px 8px 0px, rgb(32, 43, 118) 9px 9px 0px, rgb(33, 43, 120) 10px 10px 0px, rgb(33, 44, 122) 11px 11px 0px, rgb(34, 44, 123) 12px 12px 0px, rgb(34, 45, 125) 13px 13px 0px, rgb(34, 46, 127) 14px 14px 0px, rgb(35, 46, 128) 15px 15px 0px, rgb(35, 47, 130) 16px 16px 0px, rgb(36, 47, 132) 17px 17px 0px, rgb(36, 48, 133) 18px 18px 0px, rgb(37, 49, 135) 19px 19px 0px, rgb(37, 49, 137) 20px 20px 0px, rgb(38, 50, 139) 21px 21px 0px, rgb(38, 51, 140) 22px 22px 0px, rgb(39, 51, 142) 23px 23px 0px, rgb(39, 52, 144) 24px 24px 0px, rgb(40, 52, 145) 25px 25px 0px;
+  font-size: 5em;
+  color: rgb(255, 255, 255);
+  height: 96px;
+  width: 98%;
+  line-height: 157px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.app {
+  background: #0d47a1;
+  color: white;
+}
+
+.lembrar{
+  font-size: 1rem;
+}
+
+
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
+  background-color: #333;
+  border-radius: 100%;
+  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0)
+  }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    opacity: 0;
+  }
+
+}
