@@ -3,7 +3,8 @@ module Api
     skip_before_action :verify_authenticity_token
     def index
       pacientes = Paciente.all
-      json = pacientes.as_json
+      array = pacientes.to_a
+      json = array.as_json
       render json: { pacientes: json }
     end
 
