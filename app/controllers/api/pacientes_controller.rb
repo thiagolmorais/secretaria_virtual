@@ -2,7 +2,7 @@ module Api
   class PacientesController < ApplicationController
     skip_before_action :verify_authenticity_token
     def index
-      pacientes = Paciente.all
+      pacientes = Paciente.order(:nome)
       json = pacientes.as_json
       render json: { pacientes: json }
     end
@@ -18,7 +18,7 @@ module Api
     def create
       @paciente = Paciente.new(paciente_params)
       if @paciente.save
-        render json: @paciente, status: :created, location: @paciente
+        render json:{ message: 'Paciente Cadastrado com sucesso!' }, status: :created
       else
         render json: @paciente.errors, status: :unprocessable_entity
       end

@@ -1,7 +1,7 @@
 class ConsultasController < ApplicationController
   before_action :authenticate_user!
   def index
-    @consultas = Consulta.all.order(:data)
+    @consultas = Consulta.order(:data).order(:hora_inicial)
   end
 
   def show
@@ -10,7 +10,7 @@ class ConsultasController < ApplicationController
   end
 
   def agenda
-    @consultas = Consulta.search(params).order(:data).paginate(page: params[:page], per_page: 10)
+    @consultas = Consulta.search(params).order(:data).order(:hora_inicial).paginate(page: params[:page], per_page: 10)
   end
 
   def new

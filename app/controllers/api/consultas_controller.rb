@@ -2,7 +2,7 @@ module Api
   class ConsultasController < ApplicationController
     skip_before_action :verify_authenticity_token
     def index
-      consultas = Consulta.all
+      consultas = Consulta.order(:data).order(:hora_inicial)
       json = consultas.as_json
       render json: { consultas: json }
     end
@@ -37,7 +37,7 @@ module Api
     end
 
     def update
-      @pacientes = Paciente.all
+      @pacientes = Paciente.order(:nome)
       @consulta = Consulta.find(params[:id])
       if @consulta.update(consulta_params)
         render json: @consulta, status: :created, location: consulta_path(@consulta)
