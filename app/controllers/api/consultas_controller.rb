@@ -16,12 +16,23 @@ module Api
     end
 
     def create
+      @configuracao = Configuracao.last
       @consulta = Consulta.new(consulta_params)
       @consulta.competencia = "#{@consulta.data.year}#{@consulta.data.month}" if @consulta.data
-      if @consulta.save
-        render json: @consulta, status: :created, location: consulta_path(@consulta)
+      @consulta.hora_final = @consulta.hora_inicial + @configuracao.consulta_horas
+      consulta_marcada = @consulta.horario_disponivel
+      if consulta_marcada.empty?
+        @consulta.valor = @consulta.valor_consulta.valor if @consulta.data
+        if @consulta.save
+          render json: { message: 'Consulta cadastrada com sucesso!' }
+        else
+          @pacientes = Paciente.all
+          render json: @consulta.errors, status: :unprocessable_entity
+        end
+
       else
-        render json: @consulta.errors, status: :unprocessable_entity
+        @pacientes = Paciente.all
+        render json: { message: "Já há consulta marcada das #{consulta_marcada.first.hora_inicial.strftime('%R')} as #{consulta_marcada.first.hora_final.strftime('%R')}" }
       end
     end
 
@@ -47,7 +58,7 @@ module Api
     private
 
     def consulta_params
-      params.require(:consulta).permit(:data, :hora, :paciente_id)
+      params.require(:consulta).permit(:data, :hora_inicial, :hora_final, :paciente_id)
     end
   end
 end
